@@ -46,7 +46,6 @@ internal class TeleporterReferenceAssigner : MonoBehaviour
         light.transform.localPosition = lightLocalPos;
 
         teleporter.portalFxPrefab = fxPrefab;
-        teleporter.cinematicEndControllerPrefabReference = precursorTp.cinematicEndControllerPrefabReference;
 
         teleporter.Start();
     }

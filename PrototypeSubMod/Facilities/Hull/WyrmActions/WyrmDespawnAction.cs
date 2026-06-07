@@ -9,18 +9,18 @@ public class WyrmDespawnAction : CreatureAction
     
     private bool performing;
     
-    public override float Evaluate(Creature creature, float time)
+    public override float Evaluate(float time)
     {
         return performing ? 100 : 0;
     }
     
-    public override void Perform(Creature creature, float time, float deltaTime)
+    public override void Perform(float time, float deltaTime)
     {
         if (performing) return;
         
         if (WaitScreen.IsWaiting) return;
         
-        base.Perform(creature, time, deltaTime);
+        base.Perform( time, deltaTime);
         
         performing = true;
 

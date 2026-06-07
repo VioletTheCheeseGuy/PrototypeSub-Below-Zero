@@ -29,7 +29,7 @@ internal class DockingRadialAbility : ProtoUpgrade
     {
         if (ProtoStoryLocker.StoryEndingActive) return false;
 
-        if (!dockingManager.GetDockingBay().HasUndockingClearance())
+        if (!dockingManager.GetDockingBay())
         {
             ErrorMessage.AddError(Language.main.Get("ProtoNoDockingClearance"));
             return false;
@@ -42,7 +42,7 @@ internal class DockingRadialAbility : ProtoUpgrade
     public override void OnSelectedChanged(bool changed) { }
     public override bool GetShouldShow()
     {
-        return finsManager.GetInstalledFinCount() >= ProtoFinsManager.FinsForDocking && dockingManager.GetDockingBay().dockedVehicle;
+        return finsManager.GetInstalledFinCount() >= ProtoFinsManager.FinsForDocking && dockingManager.GetDockingBay().dockedObject.vehicle;
     }
 
     public override TechType GetTechType() => TechType.None;

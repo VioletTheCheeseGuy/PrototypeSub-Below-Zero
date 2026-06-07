@@ -40,7 +40,7 @@ internal class PrecursorTeleporter_Patches
         return matcher.InstructionEnumeration();
     }
 
-    [HarmonyPatch(nameof(PrecursorTeleporter.TeleportRoutine)), HarmonyPostfix]
+    [HarmonyPatch(nameof(PrecursorTeleporter.BeginTeleportPlayer)), HarmonyPostfix]
     private static void TeleportRoutine_Postfix(PrecursorTeleporter __instance)
     {
         if (!__instance.enabled || __instance == null) return;

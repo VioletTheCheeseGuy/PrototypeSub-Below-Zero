@@ -7,10 +7,10 @@ using UnityEngine.UI;
 
 namespace PrototypeSubMod.Patches;
 
-[HarmonyPatch(typeof(MainMenuLoadPanel))]
+//[HarmonyPatch(typeof(MainMenuLoadPanel))]
 internal class MainMenuLoadPanel_Patches
 {
-    [HarmonyPatch(nameof(MainMenuLoadPanel.UpdateLoadButtonState)), HarmonyPostfix]
+    //[HarmonyPatch(nameof(MainMenuLoadPanel.UpdateLoadButtonState)), HarmonyPostfix]
     private static void UpdateLoadButtonState_Postfix(MainMenuLoadButton lb)
     {
         var protoIcon = lb.saveIcons.FindChild("SavedPrototype");

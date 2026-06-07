@@ -73,11 +73,11 @@ public class WyrmShootTarget : WyrmAction
         impactVFX.SetActive(false);
     }
     
-    public override void Perform(Creature creature, float time, float deltaTime)
+    public override void Perform(float time, float deltaTime)
     {
         if (performing) return;
         
-        base.Perform(creature, time, deltaTime);
+        base.Perform(time, deltaTime);
         
         canShoot = false;
         hasShot = false;

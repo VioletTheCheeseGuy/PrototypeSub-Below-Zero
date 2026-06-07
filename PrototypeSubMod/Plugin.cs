@@ -182,7 +182,7 @@ namespace PrototypeSubMod
             
             CompatPatchRegisterer.RegisterCompatibilityPatches(harmony);
             InitializeSlotMapping();
-            RegisterTitleAddons();
+            //RegisterTitleAddons();
             
             var miscSW = new System.Diagnostics.Stopwatch();
             miscSW.Start();
@@ -512,21 +512,7 @@ namespace PrototypeSubMod
             
             var audioSW = new System.Diagnostics.Stopwatch();
             audioSW.Start();
-            var customFmodRequest = AudioBundle.LoadAllAssetsAsync(typeof(CustomFMODAsset));
-            yield return customFmodRequest;
-            
-            foreach (var asset in customFmodRequest.allAssets)
-            {
-                var customAsset = (CustomFMODAsset)asset;
-                if (customAsset.audioClip == null)
-                {
-                    Logger.LogError($"{customAsset} does not have an audio clip! Skipping registration");
-                    continue;
-                }
-                
-                Logger.LogDebug($"Registering audio for {customAsset}");
-                SubAudioLoader.RegisterAssetAudio(customAsset);
-            }
+            SubAudioLoader.LoadAllAudio(AudioBundle);
             
             var multiFmodRequest = AudioBundle.LoadAllAssetsAsync(typeof(MultiClipFMODAsset));
             yield return multiFmodRequest;

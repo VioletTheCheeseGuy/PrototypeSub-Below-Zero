@@ -35,13 +35,11 @@ public class Blink : Factor
     private float maxBlinkDuration = 2f;
     private float blinkRechargeRate = 0.3f;
     private float ionEnergyPerResource = 1f;
-
     private float timeBetweenGhostFrames = 0.1f;
     private float ghostDeletionDelay = 2f;
     private float timeBetweenGhostDeletions = 0.1f;
     private float ghostFadeTime = 0.1f;
     private float timeNextDeleteGhost;
-
     private float chromaticAbberationVal = 2.5f;
     private float depthOfFieldVal = 0.1f;
     private float fovMultiplier = 1.5f;
@@ -56,7 +54,7 @@ public class Blink : Factor
     private ChromaticAberrationModel.Settings originalChromaticSettings;
     private DepthOfFieldModel.Settings originalDepthOfFieldSettings;
     private PlayerController controller;
-    private PDACameraFOVControl pdaCameraControl;
+
     private Coroutine timescaleCoroutine;
     private Coroutine fovCoroutine;
     private BlinkResourceUI resourceUi;
@@ -72,7 +70,6 @@ public class Blink : Factor
     private void Awake()
     {
         UWE.CoroutineHost.StartCoroutine(GetGhostMaterial());
-        pdaCameraControl = Player.main.GetComponent<PDACameraFOVControl>();
         suitManager = Player.main.GetComponent<PrecursorSuitManager>();
         Inventory.main.equipment.onEquip += RefreshIonManager;
     }
@@ -92,7 +89,7 @@ public class Blink : Factor
     {
         if (currentBlinkResource <= 0) return;
         
-        if (Player.main.precursorOutOfWater || Player.main.transform.position.y > 0) return;
+        if (Player.main.forceWalkMotorMode || Player.main.transform.position.y > 0) return;
         if (Player.main.isPiloting || Player.main.pda.isOpen) return;
         if (Player.main.currentSub != null) return;
         if (Player.main.cinematicModeActive) return;
@@ -152,10 +149,6 @@ public class Blink : Factor
         depthSettings.focusDistance = depthOfFieldVal;
         postProcessing.profile.depthOfField.settings = depthSettings;
 
-        if (pdaCameraControl)
-        {
-            pdaCameraControl.enabled = false;
-        }
         
         timeNextDeleteGhost = Time.time + ghostDeletionDelay;
         timeStartedBlink = Time.unscaledTime;
@@ -189,15 +182,7 @@ public class Blink : Factor
 
     private void ResetEffects()
     {
-        if (fovCoroutine != null)
-        {
-            UWE.CoroutineHost.StopCoroutine(fovCoroutine);
-        }
-        fovCoroutine = UWE.CoroutineHost.StartCoroutine(LerpFOV(MiscSettings.fieldOfView, fovExitTransitionTime, () =>
-        {
-            if (!pdaCameraControl) return;
-            pdaCameraControl.enabled = true;
-        }));
+
         
         var postProcessing = SNCameraRoot.main.mainCam.GetComponent<PostProcessingBehaviour>();
         postProcessing.profile.chromaticAberration.enabled = wasChromaticActive;
@@ -243,7 +228,7 @@ public class Blink : Factor
         }
         
         float currentTime = 0;
-        float initialFOV = SNCameraRoot.main.CurrentFieldOfView;
+        float initialFOV = SNCameraRoot.main.mainCamera.fieldOfView;
         while (currentTime < time)
         {
             var fov = CubicOut(initialFOV, targetFOV, currentTime / time);
@@ -310,7 +295,7 @@ public class Blink : Factor
             StopUse();
         }
 
-        if ((Player.main.precursorOutOfWater || Player.main.transform.position.y > 0) && inUse)
+        if ((Player.main.forceWalkMotorMode || Player.main.transform.position.y > 0) && inUse)
         {
             StopUse();
         }
@@ -465,7 +450,7 @@ public class Blink : Factor
         if (StoryGoalManager.main.IsGoalComplete("ProtoBlinkEquipped")) return;
 
         StoryGoalManager.main.OnGoalComplete("ProtoBlinkEquipped");
-        var tooltipText = Language.main.GetFormat("ProtoBlinkFactorHint", GameInput.FormatButton(GetUseButton()));
+        var tooltipText = Language.main.GetFormat("ProtoBlinkFactorHint");
         Hint.main.message.SetText(tooltipText);
         Hint.main.message.Show();
     }

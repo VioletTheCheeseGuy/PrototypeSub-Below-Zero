@@ -8,7 +8,7 @@ namespace PrototypeSubMod.Patches;
 [HarmonyPatch(typeof(FootstepSounds))]
 public static class FootstepSounds_Patches
 {
-    [HarmonyPatch(nameof(FootstepSounds.OnStep)), HarmonyTranspiler]
+    //[HarmonyPatch(nameof(FootstepSounds.OnStep)), HarmonyTranspiler]
     private static IEnumerable<CodeInstruction> OnStep_Transpiler(IEnumerable<CodeInstruction> instructions)
     {
         var outOfWaterField = typeof(Player).GetField("precursorOutOfWater", BindingFlags.Public | BindingFlags.Instance);

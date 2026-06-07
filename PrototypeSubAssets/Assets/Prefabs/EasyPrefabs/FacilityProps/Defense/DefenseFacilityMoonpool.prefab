@@ -146,7 +146,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 361237049326858929}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: -1098756451, guid: 06dd3d5416bf43ea368cc39ff96e6d5a, type: 3}
+  m_Script: {fileID: -286774823, guid: 06dd3d5416bf43ea368cc39ff96e6d5a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   setToMotorModeOnEnter: 1
@@ -8748,7 +8748,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 3268803942133644515}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: -1098756451, guid: 06dd3d5416bf43ea368cc39ff96e6d5a, type: 3}
+  m_Script: {fileID: -286774823, guid: 06dd3d5416bf43ea368cc39ff96e6d5a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   setToMotorModeOnEnter: 2
@@ -9819,7 +9819,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 5379623738430093062}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: -1098756451, guid: 06dd3d5416bf43ea368cc39ff96e6d5a, type: 3}
+  m_Script: {fileID: -286774823, guid: 06dd3d5416bf43ea368cc39ff96e6d5a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   setToMotorModeOnEnter: 2

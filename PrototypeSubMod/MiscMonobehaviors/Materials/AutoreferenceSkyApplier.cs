@@ -26,8 +26,7 @@ internal class AutoreferenceSkyApplier : SkyApplier
 
         if (this == null) yield break;
         
-        var environment = GetEnvironment(gameObject, anchorSky);
-        GetAndApplySkybox(environment);
+        ApplySkybox();
     }
 
     private new void OnEnable()

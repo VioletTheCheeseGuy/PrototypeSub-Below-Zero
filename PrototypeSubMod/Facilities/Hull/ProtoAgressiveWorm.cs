@@ -200,11 +200,11 @@ public class ProtoAggressiveWorm : Creature, IProtoTreeEventListener
         
         foreach (var action in actions)
         {
-            action.StopPerform(this, Time.time);
+            action.StopPerform(Time.time);
             action.SendMessage("OverrideStopPerform");
         }
         
-        despawnAction.Perform(this, Time.time, 0);
+        despawnAction.Perform(Time.time, 0);
     }
 
     public bool IsDespawning() => despawnAction.IsPerforming();

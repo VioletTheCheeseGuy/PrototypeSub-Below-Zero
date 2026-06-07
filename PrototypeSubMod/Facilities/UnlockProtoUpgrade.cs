@@ -31,7 +31,7 @@ internal class UnlockProtoUpgrade : MonoBehaviour
     {
         if (unlocked) return;
 
-        KnownTech.Add(techType.TechType);
+        KnownTech.Add(techType.TechType, false);
 
         int lockedCount = upgradeCategory.GetLockedUpgrades().Count;
         string message = Language.main.GetFormat("ProtoUpgradeUnlocked", Language.main.Get(techType.TechType), lockedCount);
@@ -47,7 +47,7 @@ internal class UnlockProtoUpgrade : MonoBehaviour
 
         if (!string.IsNullOrEmpty(encyclopediaKey))
         {
-            PDAEncyclopedia.Add(encyclopediaKey, true);
+            PDAEncyclopedia.Add(encyclopediaKey, true,false);
         }
 
         unlocked = true;

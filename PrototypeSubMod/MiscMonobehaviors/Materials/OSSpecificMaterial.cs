@@ -20,13 +20,16 @@ public class OSSpecificMaterial : MonoBehaviour
         {
             foreach (var material in mats)
             {
-                var shader = Plugin.ShadersAssetBundle.LoadAsset<Shader>(material.shader.name.Split('/')[^1]);
+                var shader = Plugin.ShadersAssetBundle.LoadAsset<Shader>(material.shader.name.Split('/')[material.name.Split('/').Length - 1]);
                 material.shader = shader;
             }
         }
         else
         {
-            mats[materialIndex].shader = Plugin.ShadersAssetBundle.LoadAsset<Shader>(mats[materialIndex].shader.name.Split('/')[^1]);
+            var shaderName = mats[materialIndex].shader.name.Split('/');
+            mats[materialIndex].shader =
+                Plugin.ShadersAssetBundle.LoadAsset<Shader>(
+                    shaderName[shaderName.Length - 1]);
         }
 
         renderer.materials = mats;

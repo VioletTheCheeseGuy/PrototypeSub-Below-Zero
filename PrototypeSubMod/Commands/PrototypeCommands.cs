@@ -101,8 +101,8 @@ internal static class PrototypeCommands
     [ConsoleCommand("noghost")]
     public static string NoGhost()
     {
-        var ghostSpawners = GameObject.FindObjectsOfType<VoidGhostLeviathansSpawner>();
-        var ghosts = GameObject.FindObjectsOfType<GhostLeviatanVoid>();
+        var ghostSpawners = GameObject.FindObjectsOfType<VoidLeviathansSpawner>();
+        var ghosts = GameObject.FindObjectsOfType<VoidLeviathan>();
 
         for (int i = ghosts.Length - 1; i >= 0; i--)
         {

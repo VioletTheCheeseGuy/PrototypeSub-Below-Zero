@@ -28,7 +28,7 @@ internal class IonPrism_Craftable
         prefab.SetEquipment(Plugin.PrototypePowerType);
         prefab.SetPdaGroupCategory(Plugin.ProtoFabricatorGroup, Plugin.ProtoFabricatorCatgeory);
 
-        CraftDataHandler.SetPickupSound(prefabInfo.TechType, "event:/loot/pickup_precursorioncrystal");
+        CraftDataHandler.SetSoundType(prefabInfo.TechType,TechData.SoundType.PrecursorIonCrystal);
         CraftDataHandler.SetBackgroundType(prefabInfo.TechType, CraftData.BackgroundType.Blueprint);
 
         prefab.Register();

@@ -14,7 +14,7 @@ public class BeaconPlacementSlot : MonoBehaviour, IHandTarget
     public void OnHandHover(GUIHand hand)
     {
         HandReticle main = HandReticle.main;
-        var useText = Language.main.GetFormat("MeasurePuzzleInputBeacon", GameInput.FormatButton(GameInput.Button.LeftHand));
+        var useText = Language.main.GetFormat("MeasurePuzzleInputBeacon");
         main.SetTextRaw(HandReticle.TextType.Hand, useText);
     }
 

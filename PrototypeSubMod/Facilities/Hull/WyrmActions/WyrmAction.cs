@@ -26,7 +26,7 @@ public abstract class WyrmAction : CreatureAction
         firstEncounterManager = GetComponent<WyrmFirstEncounterManager>();
     }
 
-    public override float Evaluate(Creature creature, float time)
+    public override float Evaluate(float time)
     {
         if (aggressiveWorm.IsDespawning()) return 0;
         
@@ -39,7 +39,7 @@ public abstract class WyrmAction : CreatureAction
         return Random.Range(0, activationChance);
     }
 
-    public override void Perform(Creature creature, float time, float deltaTime)
+    public override void Perform(float time, float deltaTime)
     {
         if (performing) return;
 
@@ -47,7 +47,7 @@ public abstract class WyrmAction : CreatureAction
         AttackStage = 0;
         OnActionStart?.Invoke();
         
-        base.Perform(creature, time, deltaTime);
+        base.Perform(time, deltaTime);
 
         wormAnimator.SetTravelTarget(GetMovementPoints()[AttackStage], OnReachedTargetPoint);
         aggressiveWorm.OnActionStarted(this);

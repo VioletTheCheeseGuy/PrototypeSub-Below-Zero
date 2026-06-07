@@ -186,9 +186,9 @@ internal class NewUpgradesScreen : MonoBehaviour
             if (!Plugin.GlobalSaveData.unlockedCategoriesLastCheck.Contains(item.localizationKey)) return;
         }
 
-        PDALog.Add(hullKeyPDAKey);
-        KnownTech.Add(HullFacilityKey.prefabInfo.TechType);
-        PDAEncyclopedia.Add("HullFacilityTabletEncy", true);
+        PDALog.Add(hullKeyPDAKey, false);
+        KnownTech.Add(HullFacilityKey.prefabInfo.TechType, false);
+        PDAEncyclopedia.Add("HullFacilityTabletEncy", true, false);
         
         queuedPdaMessages.Add(hullKeyPDAKey);
         
@@ -212,7 +212,7 @@ internal class NewUpgradesScreen : MonoBehaviour
 
         Plugin.GlobalSaveData.storyEndPingSpawned = true;
         UWE.CoroutineHost.StartCoroutine(SpawnStoryEndPing());
-        PDALog.Add(storyEndPDAKey);
+        PDALog.Add(storyEndPDAKey, false);
         queuedPdaMessages.Add(storyEndPDAKey);
         IngameMenu.main.SaveGame();
     }

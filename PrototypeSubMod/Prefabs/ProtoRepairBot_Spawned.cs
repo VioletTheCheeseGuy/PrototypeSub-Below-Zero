@@ -53,7 +53,6 @@ internal class ProtoRepairBot_Spawned
         gameObject.RemoveComponentImmediate<SphereCollider>();
         gameObject.RemoveComponentImmediate<BoxCollider>();
         gameObject.RemoveComponentImmediate<WorldForces>();
-        gameObject.RemoveComponentImmediate<CaveCrawlerGravity>();
         gameObject.RemoveComponentImmediate<LiveMixin>();
         gameObject.RemoveComponentImmediate<CreatureFlinch>();
         gameObject.RemoveComponentImmediate<OnSurfaceMovement>();
@@ -62,7 +61,6 @@ internal class ProtoRepairBot_Spawned
         gameObject.RemoveComponentImmediate<CreatureUtils>();
         gameObject.RemoveComponentImmediate<MoveOnSurface>();
         gameObject.RemoveComponentImmediate<CrawlerAttackLastTarget>();
-        gameObject.RemoveComponentImmediate<CrawlerAvoidEdges>();
         gameObject.RemoveComponentImmediate<AggressiveWhenSeeTarget>();
         gameObject.RemoveComponentImmediate<MeleeAttack>();
         gameObject.RemoveComponentImmediate<LastTarget>();

@@ -222,6 +222,6 @@ public class PowerDepositManager : MonoBehaviour, IItemSelectorManager
     {
         yield return new WaitForSeconds(12f);
         
-        PDALog.Add("NotifyPlayerNoExtinguishers");
+        PDALog.Add("NotifyPlayerNoExtinguishers",false);
     }
 }

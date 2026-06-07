@@ -27,7 +27,7 @@ public static class PDAScanner_Patches
  
         if (WasJustUnlocked(ProtoGrandReefWyrms.prefabInfo.TechType, __state.wasUnlocked))
         {
-            PDALog.Add("OnScanDisabledWyrm");
+            PDALog.Add("OnScanDisabledWyrm", false);
             ScanUnlockedWyrm();
         }
 

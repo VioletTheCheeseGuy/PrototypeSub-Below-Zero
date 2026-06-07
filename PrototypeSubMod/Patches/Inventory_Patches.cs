@@ -151,9 +151,9 @@ internal class Inventory_Patches
     private static void Awake_Postfix(Inventory __instance)
     {
         var glovesManager = __instance.gameObject.EnsureComponent<PropulsionGlovesManager>();
-        __instance.quickSlots.onSelect += _ => glovesManager.UpdateToolActive();
-        __instance.equipment.onEquip += (_, _) => glovesManager.UpdateToolActive();
-        __instance.equipment.onUnequip += (_, _) => glovesManager.UpdateToolActive();
+        //__instance.quickSlots.onSelect += _ => glovesManager.UpdateToolActive();
+        //__instance.equipment.onEquip += (_, _) => glovesManager.UpdateToolActive();
+        //__instance.equipment.onUnequip += (_, _) => glovesManager.UpdateToolActive();
     }
 
     [HarmonyPatch(nameof(Inventory.ExecuteItemAction)), HarmonyPrefix]

@@ -27,7 +27,6 @@ internal class AlienBuildingBlock : RelicBlock
         prefab.SetRecipe(ROTACompatManager.GetRelevantRecipe("AlienBuildingBlock.json")).WithCraftingTime(1f);
         prefab.SetPdaGroupCategory(Plugin.ProtoFabricatorGroup, Plugin.ProtoFabricatorCatgeory);
 
-        CraftDataHandler.SetEatingSound(prefabInfo.TechType, "event:/player/use_first_aid");
         prefab.Register();
     }
     

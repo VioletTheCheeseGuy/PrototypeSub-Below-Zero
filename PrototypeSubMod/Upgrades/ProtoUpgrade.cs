@@ -54,7 +54,7 @@ internal abstract class ProtoUpgrade : MonoBehaviour, IProtoUpgrade, IAbilityIco
     {
         if (installedAtStart)
         {
-            KnownTech.Add(techType.TechType);
+            KnownTech.Add(techType.TechType, false);
             upgradeInstalled = true;
         }
     }

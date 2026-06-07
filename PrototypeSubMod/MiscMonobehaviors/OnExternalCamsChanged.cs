@@ -19,12 +19,12 @@ internal class OnExternalCamsChanged : MonoBehaviour
 
     private void LateUpdate()
     {
-        if (externalCams.active != enabledLastFrame)
+        if (externalCams.GetUsingCameras() != enabledLastFrame)
         {
-            if (externalCams.active) onCamsEnabled?.Invoke();
-            if (!externalCams.active) onCamsDisabled?.Invoke();
+            if (externalCams.GetUsingCameras()) onCamsEnabled?.Invoke();
+            if (!externalCams.GetUsingCameras()) onCamsDisabled?.Invoke();
         }
 
-        enabledLastFrame = externalCams.active;
+        enabledLastFrame = externalCams.GetUsingCameras();
     }
 }

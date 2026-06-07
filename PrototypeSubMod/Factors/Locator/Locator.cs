@@ -43,7 +43,7 @@ public class Locator : Factor
         if (StoryGoalManager.main.IsGoalComplete("ProtoLocatorEquipped")) return;
 
         StoryGoalManager.main.OnGoalComplete("ProtoLocatorEquipped");
-        var text = Language.main.GetFormat("ProtoLocatorHint", GameInput.FormatButton(GetUseButton()));
+        var text = Language.main.GetFormat("ProtoLocatorHint");
         Hint.main.message.SetText(text);
         Hint.main.message.Show();
     }

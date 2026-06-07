@@ -1,10 +1,11 @@
-﻿using System;
+﻿using Nautilus.Utility;
+using PrototypeSubMod.PowerSystem;
 using PrototypeSubMod.Upgrades;
+using PrototypeSubMod.Utility;
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
-using Nautilus.Utility;
-using PrototypeSubMod.PowerSystem;
 using UnityEngine;
 
 namespace PrototypeSubMod.StasisPulse;
@@ -72,14 +73,13 @@ internal class ProtoStasisPulse : ProtoUpgrade
 
         for (int i = 0; i < stasisMaterials.Length; i++)
         {
-            materials[i] = MaterialUtils.StasisFieldMaterial;
+            materials[i] = MaterialUtils.ShinyGlassMaterial;
         }
 
         sphereVisual.materials = materials;
         sphereVisual.GetComponent<MeshFilter>().mesh = stasisSphere.GetComponent<MeshFilter>().mesh;
         textureSpeedTokens = FlashingLightHelpers.CreateUberShaderVector4ScalerTokens(sphereVisual.materials[0], sphereVisual.materials[1]);
 
-        MiscSettings.isFlashesEnabled.changedEvent.AddHandler(this, OnFlashesEnabledChanged);
         UpdateTextureSpeed();
 
         sphereVisual.enabled = true;

@@ -11,13 +11,13 @@ public static class PuzzleHintRegistration
     public static void Register()
     {
         #region Number Puzzle Hint
-        StoryGoalHandler.RegisterCompoundGoal("ProtoNumberPuzzleHint", Story.GoalType.Encyclopedia, 20,
+        Nautilus.Handlers.StoryGoalHandler.RegisterCompoundGoal("ProtoNumberPuzzleHint", Story.GoalType.Encyclopedia, 20,
             "OnPlayProtoRadioMessage1");
         
         #endregion
         
         #region Bearing Puzzle Hint
-        StoryGoalHandler.RegisterCompoundGoal("ProtoBearingPuzzleHint", Story.GoalType.Encyclopedia, 20,
+        Nautilus.Handlers.StoryGoalHandler.RegisterCompoundGoal("ProtoBearingPuzzleHint", Story.GoalType.Encyclopedia, 20,
             "OnPlayProtoRadioMessage2");
         #endregion
 
@@ -25,7 +25,7 @@ public static class PuzzleHintRegistration
 
         var calibrationPingTechType = CustomPing.CreatePing("CalibrationSitePing", Plugin.HintPingType,
             visitable: false, components: typeof(DestroyOnCalibrationCompletion));
-        StoryGoalHandler.RegisterCustomEvent("OnPlayProtoRadioMessage3", () =>
+        Nautilus.Handlers.StoryGoalHandler.RegisterCustomEvent("OnPlayProtoRadioMessage3", () =>
         {
             UWE.CoroutineHost.StartCoroutine(SpawnPrefab(calibrationPingTechType, CalibrationRunManager.InitialPoint));
         });
@@ -35,13 +35,13 @@ public static class PuzzleHintRegistration
         
         var transmissionStartTechType = CustomPing.CreatePing("TransmissionSiteStartPing", Plugin.HintPingType, visitable: false);
         var transmissionSiteTechType = CustomPing.CreatePing("TransmissionSitePing", Plugin.HintPingType);
-        StoryGoalHandler.RegisterCompoundGoal("ProtoTransmissionSiteHint", Story.GoalType.Story, 20,
+        Nautilus.Handlers.StoryGoalHandler.RegisterCompoundGoal("ProtoTransmissionSiteHint", Story.GoalType.Story, 20,
             "OnPlayProtoRadioMessage4");
-        StoryGoalHandler.RegisterCustomEvent("ProtoTransmissionSiteHint", () =>
+        Nautilus.Handlers.StoryGoalHandler.RegisterCustomEvent("ProtoTransmissionSiteHint", () =>
         {
-            PDALog.Add("ProtoTransmissionSiteHint");
-            PDAEncyclopedia.Add("ProtoTransmissionSiteEncy", true);
-            PDAEncyclopedia.Add("TransmissionSiteHint", true);
+            PDALog.Add("ProtoTransmissionSiteHint", false);
+            PDAEncyclopedia.Add("ProtoTransmissionSiteEncy", true, false);
+            PDAEncyclopedia.Add("TransmissionSiteHint", true, false);
         });
 
         #endregion

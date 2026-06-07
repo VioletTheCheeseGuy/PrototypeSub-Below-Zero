@@ -62,7 +62,7 @@ internal class MoonpoolDoorManager : MonoBehaviour
 
         if (!Plugin.GlobalSaveData.EngineFacilityPointsRepaired)
         {
-            PDALog.Add("ProtoRevisitDefenseFacility");
+            PDALog.Add("ProtoRevisitDefenseFacility",false);
         }
         else
         {

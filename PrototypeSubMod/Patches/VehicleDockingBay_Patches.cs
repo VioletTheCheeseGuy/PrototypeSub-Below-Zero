@@ -6,7 +6,7 @@ namespace PrototypeSubMod.Patches;
 [HarmonyPatch(typeof(VehicleDockingBay))]
 public class VehicleDockingBay_Patches
 {
-    [HarmonyPatch(nameof(VehicleDockingBay.DockVehicle)), HarmonyPrefix]
+    //[HarmonyPatch(nameof(VehicleDockingBay)), HarmonyPrefix]
     private static void DockVehicle_Prefix(VehicleDockingBay __instance)
     {
         var manager = __instance.GetComponentInChildren<ProtoDockingManager>();

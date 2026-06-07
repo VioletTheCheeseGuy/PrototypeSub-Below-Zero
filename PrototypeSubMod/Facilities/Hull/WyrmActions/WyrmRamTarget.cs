@@ -19,11 +19,11 @@ public class WyrmRamTarget : WyrmAction
         shoveSub.OnHitSub += OnHitSub;
     }
     
-    public override void Perform(Creature creature, float time, float deltaTime)
+    public override void Perform(float time, float deltaTime)
     {
         if (performing) return;
         
-        base.Perform(creature, time, deltaTime);
+        base.Perform(time, deltaTime);
         hasDamagedTarget = false;
         
         Plugin.Logger.LogInfo($"Started ram target");

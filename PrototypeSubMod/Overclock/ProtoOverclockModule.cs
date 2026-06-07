@@ -31,7 +31,6 @@ internal class ProtoOverclockModule : ProtoUpgrade
 
     private PilotingChair chair;
     private TetherManager tetherManager;
-    private PDACameraFOVControl pdaCameraControl;
     private bool underRadialControl;
     private float currentHullBreachTime;
     private float currentTimeBetweenBreaches;
@@ -40,7 +39,6 @@ internal class ProtoOverclockModule : ProtoUpgrade
     private void Start()
     {
         chair = subRoot.GetComponentInChildren<PilotingChair>();
-        pdaCameraControl = Player.main.GetComponent<PDACameraFOVControl>();
         tetherManager = subRoot.GetComponentInChildren<TetherManager>();
     }
     
@@ -100,7 +98,7 @@ internal class ProtoOverclockModule : ProtoUpgrade
         motorHandler.AddTurningTorqueMultiplier(new  ProtoMotorHandler.ValueRegistrar(this, turningTorqueMultiplier));
         
         MainCameraControl.main.ShakeCamera(0.2f * normalizedSpeed);
-        SNCameraRoot.main.SetFov(Mathf.Lerp(SNCameraRoot.main.CurrentFieldOfView,
+        SNCameraRoot.main.SetFov(Mathf.Lerp(SNCameraRoot.main.mainCamera.fieldOfView,
             MiscSettings.fieldOfView + fovIncrease * normalizedSpeed, Time.deltaTime * 2f));
 
         HandleSFXVolume();
@@ -130,8 +128,6 @@ internal class ProtoOverclockModule : ProtoUpgrade
         {
             currentHullBreachTime -= Time.deltaTime;
         }
-
-        if (GameModeUtils.IsInvisible()) return;
 
         if (currentHullBreachTime < hullBreachMinActiveTime)
         {
@@ -166,7 +162,6 @@ internal class ProtoOverclockModule : ProtoUpgrade
         
         base.SetUpgradeEnabled(enabled);
 
-        pdaCameraControl.enabled = !enabled;
         if (upgradeEnabled)
         {
             subRoot.voiceNotificationManager.PlayVoiceNotification(enabledVoiceline, false);

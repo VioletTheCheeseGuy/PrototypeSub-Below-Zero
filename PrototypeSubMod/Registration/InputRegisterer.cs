@@ -10,23 +10,11 @@ public static class InputRegisterer
     
     public static void Register()
     {
-        TetherSubButton = EnumHandler.AddEntry<GameInput.Button>("ProtoTetherSubButton")
-            .CreateInput()
-            .WithBinding(GameInput.Device.Keyboard, GameInputHandler.Paths.Keyboard.V)
-            .WithBinding(GameInput.Device.Controller, GameInputHandler.Paths.Gamepad.DpadDown)
-            .WithCategory("PrototypeInputCategory");
+        TetherSubButton = EnumHandler.AddEntry<GameInput.Button>("ProtoTetherSubButton");
         
-        TetherMarkerButton = EnumHandler.AddEntry<GameInput.Button>("ProtoTetherMarkerButton")
-            .CreateInput()
-            .WithBinding(GameInput.Device.Keyboard, GameInputHandler.Paths.Keyboard.X)
-            .WithBinding(GameInput.Device.Controller, GameInputHandler.Paths.Gamepad.DpadUp)
-            .WithCategory("PrototypeInputCategory");
+        TetherMarkerButton = EnumHandler.AddEntry<GameInput.Button>("ProtoTetherMarkerButton");
         
-        LocatorButton = EnumHandler.AddEntry<GameInput.Button>("ProtoLocatorPingButton")
-            .CreateInput()
-            .WithBinding(GameInput.Device.Keyboard, GameInputHandler.Paths.Keyboard.P)
-            .WithBinding(GameInput.Device.Controller, GameInputHandler.Paths.Gamepad.DpadLeft)
-            .WithCategory("PrototypeInputCategory");
+        LocatorButton = EnumHandler.AddEntry<GameInput.Button>("ProtoLocatorPingButton");
     
     }
 }

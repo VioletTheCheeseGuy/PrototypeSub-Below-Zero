@@ -70,6 +70,8 @@ public class PrototypePowerSource : MonoBehaviour, IPowerInterface, ISaveDataLis
         return Charge;
     }
 
+
+
     public bool HasInboundPower(IPowerInterface powerInterface)
     {
         return false;
@@ -79,8 +81,6 @@ public class PrototypePowerSource : MonoBehaviour, IPowerInterface, ISaveDataLis
     {
         float chargeChange;
         modified = 0;
-
-        if (!GameModeUtils.RequiresPower()) return true;
         
         if (battery == null) return false;
         
@@ -147,6 +147,16 @@ public class PrototypePowerSource : MonoBehaviour, IPowerInterface, ISaveDataLis
     {
         var relay = PowerSource.FindRelay(transform);
         relay.AddInboundPower(this);
+    }
+    public GameObject GetGameObject()
+    {
+        return this.gameObject;
+    }
+
+    public void PollPowerRate(out float F1,out float F2)
+    {
+        F1 = GetPower();
+        F2 = GetMaxPower();
     }
 
     public void OnSaveDataLoaded(BaseSubDataClass saveData)

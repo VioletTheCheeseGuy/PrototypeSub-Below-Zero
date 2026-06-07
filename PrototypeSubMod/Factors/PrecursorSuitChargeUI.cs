@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using PrototypeSubMod.Prefabs;
 using UnityEngine;
 using UnityEngine.UI;
@@ -27,8 +28,25 @@ public class PrecursorSuitChargeUI : MonoBehaviour
         UpdateUIVisibility();
         Inventory.main.equipment.onAddItem += OnAddItem;
         Inventory.main.equipment.onRemoveItem += OnRemoveItem;
-        GameModeUtils.onGameModeChanged.AddHandler(this, OnGameModeChanged);
-        OnGameModeChanged(GameModeUtils.currentGameMode);
+    }
+
+    private IEnumerator CheckIfNewGameMode(GameModePresetId CurrentGameMode)
+    {
+        if (GameModeManager.currentPresetId.Value == CurrentGameMode)
+        {
+            yield return RestartCheck(CurrentGameMode);
+        }
+        else
+        {
+            OnGameModeChanged(GameModeManager.currentPresetId.Value);
+        }
+        yield return RestartCheck(CurrentGameMode);
+    }
+
+    private IEnumerator RestartCheck(GameModePresetId CurrentGameMode)
+    {
+        yield return new WaitForSeconds(10f);
+        yield return CheckIfNewGameMode(GameModeManager.currentPresetId.Value);
     }
 
     private void OnAddItem(InventoryItem item)
@@ -41,9 +59,9 @@ public class PrecursorSuitChargeUI : MonoBehaviour
         UpdateUIVisibility();
     }
 
-    private void OnGameModeChanged(GameModeOption option)
+    private void OnGameModeChanged(GameModePresetId option)
     {
-        if ((option & GameModeOption.Freedom) != 0 || (option & GameModeOption.Creative) == GameModeOption.Creative)
+        if ((option & GameModePresetId.Freedom) != 0 || (option & GameModePresetId.Creative) == GameModePresetId.Creative)
         {
             backgroundShadow.sprite = freedomShadow;
         }

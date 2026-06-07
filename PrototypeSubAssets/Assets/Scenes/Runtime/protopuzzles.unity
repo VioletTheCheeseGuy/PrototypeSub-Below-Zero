@@ -270,6 +270,7 @@ MonoBehaviour:
   overrideBiome: protopuzzlefacility
   highDetail: 1
   affectsVisuals: 1
+  playerSpeedModifier: {fileID: 0}
 --- !u!65 &61315416
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -22194,10 +22195,23 @@ PrefabInstance:
     - {fileID: 3582465738236876986, guid: f48bf34a68c425e4080f39452997a8dd, type: 3}
     - {fileID: 6693730928673855257, guid: f48bf34a68c425e4080f39452997a8dd, type: 3}
     - {fileID: 5507432584793203862, guid: f48bf34a68c425e4080f39452997a8dd, type: 3}
+    - {fileID: 2727623695949220502, guid: f48bf34a68c425e4080f39452997a8dd, type: 3}
   m_SourcePrefab: {fileID: 100100000, guid: f48bf34a68c425e4080f39452997a8dd, type: 3}
 --- !u!1 &960946142 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 7852989112936131701, guid: f48bf34a68c425e4080f39452997a8dd,
+    type: 3}
+  m_PrefabInstance: {fileID: 960946141}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &960946143 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8510454403446380349, guid: f48bf34a68c425e4080f39452997a8dd,
+    type: 3}
+  m_PrefabInstance: {fileID: 960946141}
+  m_PrefabAsset: {fileID: 0}
+--- !u!65 &960946144 stripped
+BoxCollider:
+  m_CorrespondingSourceObject: {fileID: 6047928118024197803, guid: f48bf34a68c425e4080f39452997a8dd,
     type: 3}
   m_PrefabInstance: {fileID: 960946141}
   m_PrefabAsset: {fileID: 0}
@@ -22207,6 +22221,20 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 960946141}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &960946146
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 960946143}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -311417207, guid: a7cf2516c626129479cfce7cab60699e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  colliders:
+  - {fileID: 960946144}
 --- !u!1 &1219020295
 GameObject:
   m_ObjectHideFlags: 0

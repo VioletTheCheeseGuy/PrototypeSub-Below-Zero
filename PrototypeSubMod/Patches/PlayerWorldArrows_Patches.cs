@@ -1,9 +1,10 @@
-﻿using System;
-using HarmonyLib;
+﻿using HarmonyLib;
+using Nautilus.Extensions;
 using PrototypeSubMod.LightDistortionField;
 using PrototypeSubMod.Teleporter;
-using UnityEngine;
 using Story;
+using System;
+using UnityEngine;
 
 namespace PrototypeSubMod.Patches;
 
@@ -20,10 +21,24 @@ public class PlayerWorldArrows_Patches
     private static void CreateRadialWheelArrow(PlayerWorldArrows instance)
     {
         var radialWheelTT = (TechType)Enum.Parse(typeof(TechType), "ProtoRadialWheel");
-        instance.CreateWorldArrow(false, false, radialWheelTT, "ProtoRadialHint",
-            null, "ProtoOpenRadialWheel", 0, new Vector3(0, -120, 0), true, localScale: 150f);
 
-        instance.worldArrows[^1].gameConditionDelegate = (ref Transform transform) =>
+        var arrow = new PlayerWorldArrows.PlayerWorldArrow
+        {
+            inInventory = false,
+            underwaterOnly = false,
+            objectTechType = radialWheelTT,
+            arrowText = "ProtoRadialHint",
+            customGoal = "ProtoOpenRadialWheel",
+            priority = 0f,
+            arrowOffset = new Vector3(0f, -120f, 0f),
+            offsetIsLocal = true,
+            localScale = 150f,
+            button = null
+        };
+
+        instance.data.arrows.Add(arrow);
+
+        instance.worldArrows[instance.worldArrows.Count - 1].gameConditionDelegate = (ref Transform transform) =>
         {
             if (Player.main.GetMode() != Player.Mode.Piloting) return false;
             
@@ -44,10 +59,24 @@ public class PlayerWorldArrows_Patches
     private static void CreateInterceptorMapArrow(PlayerWorldArrows instance)
     {
         var interceptorMapTT = (TechType)Enum.Parse(typeof(TechType), "ProtoInterceptorMap");
-        instance.CreateWorldArrow(false, false, interceptorMapTT, "ProtoInterceptorMapHint",
-            null, "ProtoOpenInterceptorMap", 0, new Vector3(0, -0.2f, 0), true, localScale: 0.75f);
 
-        instance.worldArrows[^1].gameConditionDelegate = (ref Transform transform) =>
+        var arrow = new PlayerWorldArrows.PlayerWorldArrow
+        {
+            inInventory = false,
+            underwaterOnly = false,
+            objectTechType = interceptorMapTT,
+            arrowText = "ProtoInterceptorMapHint",
+            customGoal = "ProtoOpenInterceptorMap",
+            priority = 0f,
+            arrowOffset = new Vector3(0f, -0.2f, 0f),
+            offsetIsLocal = true,
+            localScale = 0.75f,
+            button = null
+        };
+
+        instance.data.arrows.Add(arrow);
+
+        instance.worldArrows[instance.worldArrows.Count - 1].gameConditionDelegate = (ref Transform transform) =>
         {
             if (Player.main.currentSub == null) return false;
             

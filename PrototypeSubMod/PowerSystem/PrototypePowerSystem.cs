@@ -335,7 +335,7 @@ public class PrototypePowerSystem : MonoBehaviour, ISaveDataListener, IProtoTree
 
     private void OnDisable()
     {
-        ambientSFX.Stop(STOP_MODE.IMMEDIATE);
+        ambientSFX.Stop();
     }
 
     private void OnEnable()

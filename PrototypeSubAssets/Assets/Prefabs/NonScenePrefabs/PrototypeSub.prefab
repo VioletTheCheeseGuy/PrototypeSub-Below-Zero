@@ -2293,7 +2293,7 @@ MonoBehaviour:
   - {fileID: 6093697494563109956}
   teleporterManager: {fileID: 4787321135117219906}
   lightingController: {fileID: 166681490149920772}
-  emissionController: {fileID: 3371763760948927259}
+  emissionController: {fileID: 0}
   emissiveColor: {r: 0, g: 0, b: 0, a: 1}
   lightingControllerManager: {fileID: 1369342963250766631}
   moddedSubHudManager: {fileID: 1023472354084001354}
@@ -2693,7 +2693,7 @@ MonoBehaviour:
   secondsToConsumeCharge: 30
   lightingController: {fileID: 166681490149920772}
   lightingControllerManager: {fileID: 1369342963250766631}
-  emissionController: {fileID: 3371763760948927259}
+  emissionController: {fileID: 0}
   emissiveColor: {r: 0, g: 0, b: 0, a: 1}
   voiceNotificationManager: {fileID: 5389210478452801882}
   activateCloakNotif: {fileID: 8193633662682056480}
@@ -8731,6 +8731,7 @@ MonoBehaviour:
   text: Proto_PoweringUp
   sound: {fileID: 11400000, guid: 96bfb60de32834842b71c602219a2c38, type: 2}
   minInterval: 30
+  allowDuringConversation: 0
 --- !u!1 &112259522625078648
 GameObject:
   m_ObjectHideFlags: 0
@@ -9190,14 +9191,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 133693622412670340}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 1075793375, guid: a7cf2516c626129479cfce7cab60699e, type: 3}
+  m_Script: {fileID: 1489313116, guid: a7cf2516c626129479cfce7cab60699e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  objectRoots:
-  - {fileID: 862720983185421840}
-  - {fileID: 3420329637403018070}
+  canvasGroup: {fileID: 0}
   transitionSpeed: 0.6
-  updateOnStart: 0
 --- !u!1 &135121029220628093
 GameObject:
   m_ObjectHideFlags: 0
@@ -9860,6 +9858,7 @@ MonoBehaviour:
   text: Proto_AlphaOnline
   sound: {fileID: 11400000, guid: a99503c0adc810748a0c7a3c4ba21758, type: 2}
   minInterval: 30
+  allowDuringConversation: 0
 --- !u!1 &200997888620378090
 GameObject:
   m_ObjectHideFlags: 0
@@ -12813,6 +12812,7 @@ MonoBehaviour:
   text: Proto_CalibrationPointReached
   sound: {fileID: 11400000, guid: 737f3e46f0025b943819bda9a2758467, type: 2}
   minInterval: 15
+  allowDuringConversation: 0
 --- !u!1 &498543400586826796
 GameObject:
   m_ObjectHideFlags: 0
@@ -13475,6 +13475,7 @@ MonoBehaviour:
   text: CalibrationFirstWyrmInteract
   sound: {fileID: 11400000, guid: 89920460c2d8835459386d247d431fbf, type: 2}
   minInterval: 15
+  allowDuringConversation: 0
 --- !u!1 &570068604361182250
 GameObject:
   m_ObjectHideFlags: 0
@@ -14159,6 +14160,7 @@ MonoBehaviour:
   text: Proto_NoPowerForWarp
   sound: {fileID: 11400000, guid: 8f6c56c3299f2824ca1ae0dd2af90d87, type: 2}
   minInterval: 30
+  allowDuringConversation: 0
 --- !u!1 &650745815507595242
 GameObject:
   m_ObjectHideFlags: 0
@@ -14382,6 +14384,7 @@ MonoBehaviour:
   text: Proto_AheadStandard
   sound: {fileID: 11400000, guid: ed48ddc334f69114499ac1ddf100c312, type: 2}
   minInterval: 30
+  allowDuringConversation: 0
 --- !u!1 &678661710746351020
 GameObject:
   m_ObjectHideFlags: 0
@@ -15503,12 +15506,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   asset: {fileID: 11400000, guid: 7bc7efcdf9e0e5a42a9503f60b1bab86, type: 2}
   playOnAwake: 0
-  stopImmediatelyOnDisable: 0
   followParent: 0
   restartOnPlay: 1
   debug: 0
-  subtitlesKey: 
-  playSubtitlesWithUnscaledTime: 1
 --- !u!1 &743541697468741238
 GameObject:
   m_ObjectHideFlags: 0
@@ -15765,12 +15765,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   asset: {fileID: 11400000, guid: 7014580f39529b143a4b55ebf6616745, type: 2}
   playOnAwake: 0
-  stopImmediatelyOnDisable: 0
   followParent: 1
   restartOnPlay: 1
   debug: 0
-  subtitlesKey: 
-  playSubtitlesWithUnscaledTime: 1
   assetStart: {fileID: 0}
   assetStop: {fileID: 0}
   stopSoundInterval: 0
@@ -16527,6 +16524,7 @@ MonoBehaviour:
   text: Proto_LowPower
   sound: {fileID: 11400000, guid: 9e1898c2355322d46aff339d671eee95, type: 2}
   minInterval: 30
+  allowDuringConversation: 0
 --- !u!1 &814836909195803397
 GameObject:
   m_ObjectHideFlags: 0
@@ -16617,6 +16615,7 @@ MonoBehaviour:
   text: Proto_MaxDepth
   sound: {fileID: 11400000, guid: c7131be4685b7a6428a898e31f33fbb2, type: 2}
   minInterval: 0
+  allowDuringConversation: 0
 --- !u!1 &828845086263699013
 GameObject:
   m_ObjectHideFlags: 0
@@ -17016,12 +17015,14 @@ MonoBehaviour:
   m_Script: {fileID: 548206027, guid: 06dd3d5416bf43ea368cc39ff96e6d5a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  data: {fileID: 11400000, guid: 2d4cdc2c542ba124ebe78167171c8dbe, type: 2}
   health: 1
-  startHealthPercent: 1
+  data: {fileID: 11400000, guid: 2d4cdc2c542ba124ebe78167171c8dbe, type: 2}
+  damageSound: {fileID: 0}
+  deathSound: {fileID: 0}
   damageClip: {fileID: 0}
   deathClip: {fileID: 0}
   player: {fileID: 0}
+  startHealthPercent: 1
 --- !u!114 &7138261398514362712
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -17167,12 +17168,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   asset: {fileID: 11400000, guid: 2565c563631e39244b2b095fdb11c500, type: 2}
   playOnAwake: 0
-  stopImmediatelyOnDisable: 0
   followParent: 1
   restartOnPlay: 1
   debug: 0
-  subtitlesKey: 
-  playSubtitlesWithUnscaledTime: 1
 --- !u!95 &2192271074739661416
 Animator:
   serializedVersion: 3
@@ -17619,9 +17617,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 884482549629992693}
   m_Enabled: 0
   m_EditorHideFlags: 0
-  m_Script: {fileID: 845976416, guid: 06dd3d5416bf43ea368cc39ff96e6d5a, type: 3}
+  m_Script: {fileID: -1179288619, guid: 06dd3d5416bf43ea368cc39ff96e6d5a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  shape: 0
+  immovable: 0
+  clipMaterial: {fileID: 0}
   distanceFieldRef:
     m_AssetGUID: 
     m_SubObjectName: 
@@ -17640,7 +17641,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   waterClipProxy: {fileID: 7926302310601121351}
-  sdfCutout: {fileID: 3744712903525198370}
   distanceField: {fileID: 11400000, guid: 24456383be455424e9ccb07101670520, type: 2}
 --- !u!33 &3170950718010279748
 MeshFilter:
@@ -18601,12 +18601,19 @@ MonoBehaviour:
   m_Script: {fileID: -458587425, guid: 06dd3d5416bf43ea368cc39ff96e6d5a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  rumbleCinematic: {fileID: 0}
+  animator: {fileID: 8758197494725931939}
+  director: {fileID: 0}
+  continueTimelinePlaybackOnPlayerRelease: 0
+  labelTrack: 
+  label: 
   animatedTransform: {fileID: 1304395415186268848}
   informGameObject: {fileID: 0}
   endTransform: {fileID: 0}
   onlyUseEndTransformInVr: 0
   playInVr: 0
   interruptAutoMove: 1
+  restoreControl: 1
   playerViewAnimationName: holding_heatblade
   playerViewInterpolateAnimParam: 
   animParam: 
@@ -18616,8 +18623,13 @@ MonoBehaviour:
   receiversAnimParam: 
   animParamReceivers: []
   interpolateDuringAnimation: 1
+  interpolationDelayTime: 0
+  resetToCullCompletely: 1
+  forcePlayerControllerSize: 1
+  leftIKTarget: {fileID: 0}
+  rightIKTarget: {fileID: 0}
+  ikSmoothTime: 0.15
   debug: 0
-  animator: {fileID: 8758197494725931939}
   sound: {fileID: 0}
   enforceCinematicModeEnd: 1
 --- !u!1 &964734506720011445
@@ -18783,12 +18795,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   asset: {fileID: 11400000, guid: 766b5e3282e58d848bb783813ba5815a, type: 2}
   playOnAwake: 0
-  stopImmediatelyOnDisable: 0
   followParent: 0
   restartOnPlay: 1
   debug: 0
-  subtitlesKey: 
-  playSubtitlesWithUnscaledTime: 1
 --- !u!1 &987574694295720633
 GameObject:
   m_ObjectHideFlags: 0
@@ -19228,6 +19237,7 @@ MonoBehaviour:
   text: Proto_IonGeneratorActivate
   sound: {fileID: 11400000, guid: ec6dae6bcc0aa0647b84b03f180562f4, type: 2}
   minInterval: 10
+  allowDuringConversation: 0
 --- !u!1 &1047732954755099166
 GameObject:
   m_ObjectHideFlags: 0
@@ -20107,12 +20117,14 @@ MonoBehaviour:
   m_Script: {fileID: 548206027, guid: 06dd3d5416bf43ea368cc39ff96e6d5a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  data: {fileID: 11400000, guid: 2d4cdc2c542ba124ebe78167171c8dbe, type: 2}
   health: 1
-  startHealthPercent: 1
+  data: {fileID: 11400000, guid: 2d4cdc2c542ba124ebe78167171c8dbe, type: 2}
+  damageSound: {fileID: 0}
+  deathSound: {fileID: 0}
   damageClip: {fileID: 0}
   deathClip: {fileID: 0}
   player: {fileID: 0}
+  startHealthPercent: 1
 --- !u!114 &8467417148424573610
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -20844,12 +20856,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   asset: {fileID: 11400000, guid: d8be2bcb5605bdc47b7c05f37cf8897b, type: 2}
   playOnAwake: 0
-  stopImmediatelyOnDisable: 0
   followParent: 0
   restartOnPlay: 0
   debug: 0
-  subtitlesKey: 
-  playSubtitlesWithUnscaledTime: 1
 --- !u!1 &1141304479906379626
 GameObject:
   m_ObjectHideFlags: 0
@@ -22054,12 +22063,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   asset: {fileID: 11400000, guid: bb4bebd3f2bfb0f4a9402511ef220f25, type: 2}
   playOnAwake: 0
-  stopImmediatelyOnDisable: 0
   followParent: 0
   restartOnPlay: 0
   debug: 0
-  subtitlesKey: 
-  playSubtitlesWithUnscaledTime: 1
   assetStart: {fileID: 0}
   assetStop: {fileID: 0}
   stopSoundInterval: 0
@@ -24030,6 +24036,7 @@ MonoBehaviour:
   text: Proto_CalibrationTestStarted
   sound: {fileID: 11400000, guid: 87a8f6696ef14484683034add85aff48, type: 2}
   minInterval: 15
+  allowDuringConversation: 0
 --- !u!1 &1367142639365980592
 GameObject:
   m_ObjectHideFlags: 0
@@ -24392,6 +24399,7 @@ MonoBehaviour:
   text: Proto_PowerSourceReplenished
   sound: {fileID: 11400000, guid: 5919bd2345252484f927b665a579e1ec, type: 2}
   minInterval: 15
+  allowDuringConversation: 0
 --- !u!1 &1375233422903732063
 GameObject:
   m_ObjectHideFlags: 0
@@ -24651,6 +24659,7 @@ MonoBehaviour:
   text: Proto_AlphaLoaded
   sound: {fileID: 11400000, guid: 3bd1e1a9a394409439ae6290fa1d0295, type: 2}
   minInterval: 30
+  allowDuringConversation: 0
 --- !u!1 &1393947522789025141
 GameObject:
   m_ObjectHideFlags: 0
@@ -24696,12 +24705,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   asset: {fileID: 11400000, guid: 97520cc7f56970443a3e7d7692aa4549, type: 2}
   playOnAwake: 0
-  stopImmediatelyOnDisable: 0
   followParent: 0
   restartOnPlay: 0
   debug: 0
-  subtitlesKey: 
-  playSubtitlesWithUnscaledTime: 1
   assetStart: {fileID: 0}
   assetStop: {fileID: 0}
   stopSoundInterval: 0
@@ -25569,12 +25575,14 @@ MonoBehaviour:
   m_Script: {fileID: 548206027, guid: 06dd3d5416bf43ea368cc39ff96e6d5a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  data: {fileID: 11400000, guid: 2d4cdc2c542ba124ebe78167171c8dbe, type: 2}
   health: 1
-  startHealthPercent: 1
+  data: {fileID: 11400000, guid: 2d4cdc2c542ba124ebe78167171c8dbe, type: 2}
+  damageSound: {fileID: 0}
+  deathSound: {fileID: 0}
   damageClip: {fileID: 0}
   deathClip: {fileID: 0}
   player: {fileID: 0}
+  startHealthPercent: 1
 --- !u!114 &1485308191590477132
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -25862,12 +25870,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   asset: {fileID: 11400000, guid: 5d2d218b490bd60488bb5c259d9d4d87, type: 2}
   playOnAwake: 0
-  stopImmediatelyOnDisable: 0
   followParent: 1
   restartOnPlay: 0
   debug: 0
-  subtitlesKey: 
-  playSubtitlesWithUnscaledTime: 1
   assetStart: {fileID: 0}
   assetStop: {fileID: 0}
   stopSoundInterval: 0
@@ -26353,12 +26358,14 @@ MonoBehaviour:
   m_Script: {fileID: 548206027, guid: 06dd3d5416bf43ea368cc39ff96e6d5a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  data: {fileID: 11400000, guid: 2d4cdc2c542ba124ebe78167171c8dbe, type: 2}
   health: 1
-  startHealthPercent: 1
+  data: {fileID: 11400000, guid: 2d4cdc2c542ba124ebe78167171c8dbe, type: 2}
+  damageSound: {fileID: 0}
+  deathSound: {fileID: 0}
   damageClip: {fileID: 0}
   deathClip: {fileID: 0}
   player: {fileID: 0}
+  startHealthPercent: 1
 --- !u!114 &7524376782834988363
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -26431,6 +26438,7 @@ MonoBehaviour:
   text: Proto_MaxGatesPlaced
   sound: {fileID: 11400000, guid: e83ed56403d2dd24a9db184984749e61, type: 2}
   minInterval: 20
+  allowDuringConversation: 0
 --- !u!1 &1515604097710940122
 GameObject:
   m_ObjectHideFlags: 0
@@ -27181,12 +27189,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   asset: {fileID: 11400000, guid: 8e2fb4ec44f3da4498ef0cc2584d36f6, type: 2}
   playOnAwake: 0
-  stopImmediatelyOnDisable: 0
   followParent: 1
   restartOnPlay: 0
   debug: 0
-  subtitlesKey: 
-  playSubtitlesWithUnscaledTime: 1
   assetStart: {fileID: 0}
   assetStop: {fileID: 0}
   stopSoundInterval: 0
@@ -27659,12 +27664,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   asset: {fileID: 11400000, guid: b8b8617438711e148a0b754ddefbe3a1, type: 2}
   playOnAwake: 0
-  stopImmediatelyOnDisable: 0
   followParent: 0
   restartOnPlay: 0
   debug: 0
-  subtitlesKey: 
-  playSubtitlesWithUnscaledTime: 1
 --- !u!1 &1611050020184393370
 GameObject:
   m_ObjectHideFlags: 0
@@ -29480,12 +29482,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   asset: {fileID: 11400000, guid: 4a7e48def739af14ca4d942c9a9dd9c9, type: 2}
   playOnAwake: 0
-  stopImmediatelyOnDisable: 0
   followParent: 0
   restartOnPlay: 0
   debug: 0
-  subtitlesKey: 
-  playSubtitlesWithUnscaledTime: 1
   assetStart: {fileID: 0}
   assetStop: {fileID: 0}
   stopSoundInterval: 0
@@ -29919,6 +29918,7 @@ MonoBehaviour:
   text: Proto_HullCritical
   sound: {fileID: 11400000, guid: 0de5dc52c79b01b4caa560d8c78aaebf, type: 2}
   minInterval: 60
+  allowDuringConversation: 0
 --- !u!1 &1777599900141682296
 GameObject:
   m_ObjectHideFlags: 0
@@ -30017,7 +30017,7 @@ MonoBehaviour:
   generatorStart: {fileID: 705987101837682260}
   generatorStop: {fileID: 4475118672701369497}
   generatorLoop: {fileID: 5499652777392008206}
-  emissionController: {fileID: 3371763760948927259}
+  emissionController: {fileID: 0}
   powerSystem: {fileID: 7912620590259993429}
   activatedAbilitiesManager: {fileID: 5667138996818512471}
   lightingController: {fileID: 166681490149920772}
@@ -30688,12 +30688,14 @@ MonoBehaviour:
   m_Script: {fileID: 548206027, guid: 06dd3d5416bf43ea368cc39ff96e6d5a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  data: {fileID: 11400000, guid: 2d4cdc2c542ba124ebe78167171c8dbe, type: 2}
   health: 1
-  startHealthPercent: 1
+  data: {fileID: 11400000, guid: 2d4cdc2c542ba124ebe78167171c8dbe, type: 2}
+  damageSound: {fileID: 0}
+  deathSound: {fileID: 0}
   damageClip: {fileID: 0}
   deathClip: {fileID: 0}
   player: {fileID: 0}
+  startHealthPercent: 1
 --- !u!114 &6980103305785125677
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -31028,6 +31030,7 @@ MonoBehaviour:
   text: Proto_BetaDeployed
   sound: {fileID: 11400000, guid: 1d2190c492f2ca24f945b2835c9b9b10, type: 2}
   minInterval: 30
+  allowDuringConversation: 0
 --- !u!1 &1841798288626272769
 GameObject:
   m_ObjectHideFlags: 0
@@ -31820,12 +31823,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   asset: {fileID: 11400000, guid: be00a34787a251c4a9f955dff25de1ba, type: 2}
   playOnAwake: 0
-  stopImmediatelyOnDisable: 0
   followParent: 0
   restartOnPlay: 1
   debug: 0
-  subtitlesKey: 
-  playSubtitlesWithUnscaledTime: 1
 --- !u!1 &1878668253680787027
 GameObject:
   m_ObjectHideFlags: 0
@@ -32154,12 +32154,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   asset: {fileID: 11400000, guid: 0b098ab917e11d04cba5cd05a677138c, type: 2}
   playOnAwake: 0
-  stopImmediatelyOnDisable: 0
   followParent: 0
   restartOnPlay: 1
   debug: 0
-  subtitlesKey: 
-  playSubtitlesWithUnscaledTime: 1
 --- !u!1 &1909685862419835996
 GameObject:
   m_ObjectHideFlags: 0
@@ -38665,12 +38662,19 @@ MonoBehaviour:
   m_Script: {fileID: -458587425, guid: 06dd3d5416bf43ea368cc39ff96e6d5a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  rumbleCinematic: {fileID: 0}
+  animator: {fileID: 2452627834647794985}
+  director: {fileID: 0}
+  continueTimelinePlaybackOnPlayerRelease: 0
+  labelTrack: 
+  label: 
   animatedTransform: {fileID: 2366298466963012557}
   informGameObject: {fileID: 0}
   endTransform: {fileID: 6610091437787740928}
   onlyUseEndTransformInVr: 0
   playInVr: 1
   interruptAutoMove: 1
+  restoreControl: 1
   playerViewAnimationName: 
   playerViewInterpolateAnimParam: 
   animParam: DockSub
@@ -38680,8 +38684,13 @@ MonoBehaviour:
   receiversAnimParam: 
   animParamReceivers: []
   interpolateDuringAnimation: 0
+  interpolationDelayTime: 0
+  resetToCullCompletely: 1
+  forcePlayerControllerSize: 1
+  leftIKTarget: {fileID: 0}
+  rightIKTarget: {fileID: 0}
+  ikSmoothTime: 0.15
   debug: 0
-  animator: {fileID: 2452627834647794985}
   sound: {fileID: 0}
   enforceCinematicModeEnd: 0
 --- !u!1 &1999431658269547802
@@ -39078,12 +39087,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   asset: {fileID: 11400000, guid: d4f369ee50cc38041aafe929bc820881, type: 2}
   playOnAwake: 0
-  stopImmediatelyOnDisable: 0
   followParent: 0
   restartOnPlay: 1
   debug: 0
-  subtitlesKey: 
-  playSubtitlesWithUnscaledTime: 1
 --- !u!1 &2011915138700876418
 GameObject:
   m_ObjectHideFlags: 0
@@ -39209,12 +39215,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   asset: {fileID: 11400000, guid: 1abc470161482bb42a7b6d9286d44d95, type: 2}
   playOnAwake: 0
-  stopImmediatelyOnDisable: 0
   followParent: 0
   restartOnPlay: 0
   debug: 0
-  subtitlesKey: 
-  playSubtitlesWithUnscaledTime: 1
 --- !u!1 &2018422548488354227
 GameObject:
   m_ObjectHideFlags: 0
@@ -41455,12 +41458,14 @@ MonoBehaviour:
   m_Script: {fileID: 548206027, guid: 06dd3d5416bf43ea368cc39ff96e6d5a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  data: {fileID: 11400000, guid: 2d4cdc2c542ba124ebe78167171c8dbe, type: 2}
   health: 1
-  startHealthPercent: 1
+  data: {fileID: 11400000, guid: 2d4cdc2c542ba124ebe78167171c8dbe, type: 2}
+  damageSound: {fileID: 0}
+  deathSound: {fileID: 0}
   damageClip: {fileID: 0}
   deathClip: {fileID: 0}
   player: {fileID: 0}
+  startHealthPercent: 1
 --- !u!114 &6207703228145874060
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -45125,6 +45130,7 @@ MonoBehaviour:
   text: Proto_HullLow
   sound: {fileID: 11400000, guid: 43094cbf13139044db3e1be11cfd9955, type: 2}
   minInterval: 60
+  allowDuringConversation: 0
 --- !u!1 &2417748477041635792
 GameObject:
   m_ObjectHideFlags: 0
@@ -48130,6 +48136,7 @@ MonoBehaviour:
   text: Proto_PowerSourceMax
   sound: {fileID: 11400000, guid: fe27bc96ee5da454b9d16c91c1c3588e, type: 2}
   minInterval: 15
+  allowDuringConversation: 0
 --- !u!1 &2682443481889412880
 GameObject:
   m_ObjectHideFlags: 0
@@ -48598,12 +48605,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   asset: {fileID: 11400000, guid: 9db8ca2c41271e34fb5de1fa763d394b, type: 2}
   playOnAwake: 0
-  stopImmediatelyOnDisable: 0
   followParent: 1
   restartOnPlay: 1
   debug: 0
-  subtitlesKey: 
-  playSubtitlesWithUnscaledTime: 1
 --- !u!1 &2716996638612512821
 GameObject:
   m_ObjectHideFlags: 0
@@ -48957,12 +48961,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   asset: {fileID: 11400000, guid: 7bc7efcdf9e0e5a42a9503f60b1bab86, type: 2}
   playOnAwake: 0
-  stopImmediatelyOnDisable: 0
   followParent: 0
   restartOnPlay: 1
   debug: 0
-  subtitlesKey: 
-  playSubtitlesWithUnscaledTime: 1
 --- !u!1 &2746285872838717943
 GameObject:
   m_ObjectHideFlags: 0
@@ -50595,6 +50596,7 @@ MonoBehaviour:
   text: Proto_LDFActivate
   sound: {fileID: 11400000, guid: 037a74184a7f8c8489e7e25f498e21a9, type: 2}
   minInterval: 20
+  allowDuringConversation: 0
 --- !u!1 &2862896115202323528
 GameObject:
   m_ObjectHideFlags: 0
@@ -57790,12 +57792,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   asset: {fileID: 11400000, guid: 3f6d03094778bf84eac2cdc8e10ddd03, type: 2}
   playOnAwake: 0
-  stopImmediatelyOnDisable: 0
   followParent: 0
   restartOnPlay: 1
   debug: 0
-  subtitlesKey: 
-  playSubtitlesWithUnscaledTime: 1
 --- !u!1 &3085813799942588619
 GameObject:
   m_ObjectHideFlags: 0
@@ -58372,12 +58371,14 @@ MonoBehaviour:
   m_Script: {fileID: 548206027, guid: 06dd3d5416bf43ea368cc39ff96e6d5a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  data: {fileID: 11400000, guid: 2d4cdc2c542ba124ebe78167171c8dbe, type: 2}
   health: 1
-  startHealthPercent: 1
+  data: {fileID: 11400000, guid: 2d4cdc2c542ba124ebe78167171c8dbe, type: 2}
+  damageSound: {fileID: 0}
+  deathSound: {fileID: 0}
   damageClip: {fileID: 0}
   deathClip: {fileID: 0}
   player: {fileID: 0}
+  startHealthPercent: 1
 --- !u!114 &698615644835554219
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -59400,12 +59401,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   asset: {fileID: 11400000, guid: 92ccc3b7443b41d4ba6e4e99fb38a322, type: 2}
   playOnAwake: 0
-  stopImmediatelyOnDisable: 0
   followParent: 0
   restartOnPlay: 0
   debug: 0
-  subtitlesKey: 
-  playSubtitlesWithUnscaledTime: 1
 --- !u!1 &3198511064168744612
 GameObject:
   m_ObjectHideFlags: 0
@@ -59878,6 +59876,7 @@ MonoBehaviour:
   text: Proto_EngineOverheat
   sound: {fileID: 11400000, guid: 8ee30334b04636c40954b1da742d07d3, type: 2}
   minInterval: 30
+  allowDuringConversation: 0
 --- !u!1 &3232901653498883073
 GameObject:
   m_ObjectHideFlags: 0
@@ -61069,6 +61068,7 @@ MonoBehaviour:
   text: Proto_WelcomeAboard
   sound: {fileID: 11400000, guid: 67745b251ea499342bc9fb24dd6af374, type: 2}
   minInterval: 180
+  allowDuringConversation: 0
 --- !u!1 &3306056678989469392
 GameObject:
   m_ObjectHideFlags: 0
@@ -69335,6 +69335,7 @@ MonoBehaviour:
   text: Proto_NoDeploymentSpace
   sound: {fileID: 11400000, guid: 6c00e3964ea97bf4599cc8d7cf857906, type: 2}
   minInterval: 20
+  allowDuringConversation: 0
 --- !u!1 &3515505664591729001
 GameObject:
   m_ObjectHideFlags: 0
@@ -69424,12 +69425,19 @@ MonoBehaviour:
   m_Script: {fileID: -458587425, guid: 06dd3d5416bf43ea368cc39ff96e6d5a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  rumbleCinematic: {fileID: 0}
+  animator: {fileID: 394945745790987557}
+  director: {fileID: 0}
+  continueTimelinePlaybackOnPlayerRelease: 0
+  labelTrack: 
+  label: 
   animatedTransform: {fileID: 4632856045226457494}
   informGameObject: {fileID: 5751862558896933820}
   endTransform: {fileID: 0}
   onlyUseEndTransformInVr: 0
   playInVr: 0
   interruptAutoMove: 1
+  restoreControl: 1
   playerViewAnimationName: precursor_teleporter_in
   playerViewInterpolateAnimParam: 
   animParam: 
@@ -69439,8 +69447,13 @@ MonoBehaviour:
   receiversAnimParam: 
   animParamReceivers: []
   interpolateDuringAnimation: 0
+  interpolationDelayTime: 0
+  resetToCullCompletely: 1
+  forcePlayerControllerSize: 1
+  leftIKTarget: {fileID: 0}
+  rightIKTarget: {fileID: 0}
+  ikSmoothTime: 0.15
   debug: 0
-  animator: {fileID: 394945745790987557}
   sound: {fileID: 0}
   enforceCinematicModeEnd: 0
 --- !u!95 &394945745790987557
@@ -69578,12 +69591,14 @@ MonoBehaviour:
   m_Script: {fileID: 548206027, guid: 06dd3d5416bf43ea368cc39ff96e6d5a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  data: {fileID: 11400000, guid: 2d4cdc2c542ba124ebe78167171c8dbe, type: 2}
   health: 1
-  startHealthPercent: 1
+  data: {fileID: 11400000, guid: 2d4cdc2c542ba124ebe78167171c8dbe, type: 2}
+  damageSound: {fileID: 0}
+  deathSound: {fileID: 0}
   damageClip: {fileID: 0}
   deathClip: {fileID: 0}
   player: {fileID: 0}
+  startHealthPercent: 1
 --- !u!114 &1883180054233061932
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -70594,6 +70609,7 @@ MonoBehaviour:
   text: Proto_WelcomeAboard_Issue
   sound: {fileID: 11400000, guid: be4155a853bbe2546b1333ae31e1e5db, type: 2}
   minInterval: 180
+  allowDuringConversation: 0
 --- !u!1 &3604568437329352226
 GameObject:
   m_ObjectHideFlags: 0
@@ -70721,6 +70737,7 @@ MonoBehaviour:
   text: Proto_CriticalPower
   sound: {fileID: 11400000, guid: d80aa62b9acb67242939c9e6f2fb1e69, type: 2}
   minInterval: 30
+  allowDuringConversation: 0
 --- !u!1 &3606747314947883794
 GameObject:
   m_ObjectHideFlags: 0
@@ -70930,12 +70947,14 @@ MonoBehaviour:
   m_Script: {fileID: 548206027, guid: 06dd3d5416bf43ea368cc39ff96e6d5a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  data: {fileID: 11400000, guid: 2d4cdc2c542ba124ebe78167171c8dbe, type: 2}
   health: 1
-  startHealthPercent: 1
+  data: {fileID: 11400000, guid: 2d4cdc2c542ba124ebe78167171c8dbe, type: 2}
+  damageSound: {fileID: 0}
+  deathSound: {fileID: 0}
   damageClip: {fileID: 0}
   deathClip: {fileID: 0}
   player: {fileID: 0}
+  startHealthPercent: 1
 --- !u!114 &145282563254301552
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -71988,12 +72007,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   asset: {fileID: 11400000, guid: 3f6d03094778bf84eac2cdc8e10ddd03, type: 2}
   playOnAwake: 0
-  stopImmediatelyOnDisable: 0
   followParent: 0
   restartOnPlay: 1
   debug: 0
-  subtitlesKey: 
-  playSubtitlesWithUnscaledTime: 1
 --- !u!1 &3701194059255833175
 GameObject:
   m_ObjectHideFlags: 0
@@ -72074,12 +72090,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   asset: {fileID: 11400000, guid: 2565c563631e39244b2b095fdb11c500, type: 2}
   playOnAwake: 0
-  stopImmediatelyOnDisable: 0
   followParent: 1
   restartOnPlay: 1
   debug: 0
-  subtitlesKey: 
-  playSubtitlesWithUnscaledTime: 1
 --- !u!1 &3712198725634162497
 GameObject:
   m_ObjectHideFlags: 0
@@ -73965,12 +73978,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   asset: {fileID: 11400000, guid: 3f6d03094778bf84eac2cdc8e10ddd03, type: 2}
   playOnAwake: 0
-  stopImmediatelyOnDisable: 0
   followParent: 0
   restartOnPlay: 1
   debug: 0
-  subtitlesKey: 
-  playSubtitlesWithUnscaledTime: 1
 --- !u!1 &3864372687943047130
 GameObject:
   m_ObjectHideFlags: 0
@@ -74852,6 +74862,7 @@ MonoBehaviour:
   text: Proto_InterceptorLocked
   sound: {fileID: 11400000, guid: ae5dc62867f94f247b95a738ea38bed0, type: 2}
   minInterval: 15
+  allowDuringConversation: 0
 --- !u!1 &3935585151662229552
 GameObject:
   m_ObjectHideFlags: 0
@@ -75842,6 +75853,7 @@ MonoBehaviour:
   text: Proto_FireSuppression
   sound: {fileID: 11400000, guid: f960b6e3d3c1f334aaaeab5739a96789, type: 2}
   minInterval: 30
+  allowDuringConversation: 0
 --- !u!1 &3982211717349593266
 GameObject:
   m_ObjectHideFlags: 0
@@ -76865,6 +76877,7 @@ MonoBehaviour:
   text: Proto_EngineCritical
   sound: {fileID: 11400000, guid: 4912313623e8cef418c46f2f60d3492f, type: 2}
   minInterval: 30
+  allowDuringConversation: 0
 --- !u!1 &4081416153275153760
 GameObject:
   m_ObjectHideFlags: 0
@@ -77134,7 +77147,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   motorMode: {fileID: 2278157053698757509}
-  emissionController: {fileID: 3371763760948927259}
+  emissionController: {fileID: 0}
   lightingController: {fileID: 166681490149920772}
   lightingControllerManager: {fileID: 1369342963250766631}
   disableDuration: 10
@@ -77918,10 +77931,12 @@ MonoBehaviour:
   m_Script: {fileID: -1371935165, guid: a7cf2516c626129479cfce7cab60699e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  triggerType: 0
-  volumeTriggerType: 0
-  showIconOnHandHover: 1
   cinematicController: {fileID: 9098187359360129369}
+  triggerType: 0
+  debug: 0
+  showIconOnHandHover: 1
+  volumeTriggerType: 0
+  storyGoal: 
   secureInventory: 0
   restoreActiveQuickSlot: 0
   onCinematicStart:
@@ -77941,7 +77956,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  debug: 0
+  checkSpaceAtEndPoint: 0
   subRoot: {fileID: 6246764057006774658}
   motorMode: {fileID: 2278157053698757509}
   emissivePingPong: {fileID: 2914468712499822291}
@@ -78811,12 +78826,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   asset: {fileID: 11400000, guid: 8f77599f47f69c04a94fd0a2b6b81c6d, type: 2}
   playOnAwake: 0
-  stopImmediatelyOnDisable: 0
   followParent: 0
   restartOnPlay: 1
   debug: 0
-  subtitlesKey: 
-  playSubtitlesWithUnscaledTime: 1
 --- !u!1 &4184907177882125825
 GameObject:
   m_ObjectHideFlags: 0
@@ -79503,6 +79515,7 @@ MonoBehaviour:
   text: Proto_OnTransmissionSiteReached
   sound: {fileID: 11400000, guid: 1717d71c81d4efe41a017d5169f3cdff, type: 2}
   minInterval: 30
+  allowDuringConversation: 0
 --- !u!1 &4225132754204930943
 GameObject:
   m_ObjectHideFlags: 0
@@ -80919,12 +80932,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   asset: {fileID: 11400000, guid: 7fa7bb8b92adf5142818317104fc8402, type: 2}
   playOnAwake: 0
-  stopImmediatelyOnDisable: 0
   followParent: 1
   restartOnPlay: 0
   debug: 0
-  subtitlesKey: 
-  playSubtitlesWithUnscaledTime: 1
   assetStart: {fileID: 0}
   assetStop: {fileID: 0}
   stopSoundInterval: 0
@@ -80942,12 +80952,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   asset: {fileID: 11400000, guid: d46cb72c921ced748a246f809b61b244, type: 2}
   playOnAwake: 0
-  stopImmediatelyOnDisable: 0
   followParent: 1
   restartOnPlay: 1
   debug: 0
-  subtitlesKey: 
-  playSubtitlesWithUnscaledTime: 1
 --- !u!1 &4353771001357202758
 GameObject:
   m_ObjectHideFlags: 0
@@ -81655,10 +81662,12 @@ MonoBehaviour:
   m_Script: {fileID: 1236747828, guid: 06dd3d5416bf43ea368cc39ff96e6d5a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  triggerType: 0
-  volumeTriggerType: 0
-  showIconOnHandHover: 1
   cinematicController: {fileID: 856017990843558810}
+  triggerType: 0
+  debug: 0
+  showIconOnHandHover: 1
+  volumeTriggerType: 0
+  storyGoal: 
   secureInventory: 0
   restoreActiveQuickSlot: 0
   onCinematicStart:
@@ -81667,7 +81676,7 @@ MonoBehaviour:
   onCinematicEnd:
     m_PersistentCalls:
       m_Calls: []
-  debug: 0
+  checkSpaceAtEndPoint: 0
   animator: {fileID: 1528186747040085670}
   subRoot: {fileID: 6246764057006774658}
   sittingPosition: {fileID: 7500718350233339117}
@@ -82527,12 +82536,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   asset: {fileID: 11400000, guid: 83505cdf41e28554d968c1dc0420a839, type: 2}
   playOnAwake: 0
-  stopImmediatelyOnDisable: 0
   followParent: 1
   restartOnPlay: 0
   debug: 0
-  subtitlesKey: 
-  playSubtitlesWithUnscaledTime: 1
   assetStart: {fileID: 0}
   assetStop: {fileID: 0}
   stopSoundInterval: 0
@@ -82795,12 +82801,19 @@ MonoBehaviour:
   m_Script: {fileID: -458587425, guid: 06dd3d5416bf43ea368cc39ff96e6d5a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  rumbleCinematic: {fileID: 0}
+  animator: {fileID: 1528186747040085670}
+  director: {fileID: 0}
+  continueTimelinePlaybackOnPlayerRelease: 0
+  labelTrack: 
+  label: 
   animatedTransform: {fileID: 7500718350233339117}
   informGameObject: {fileID: 4412618025411933017}
   endTransform: {fileID: 0}
   onlyUseEndTransformInVr: 0
   playInVr: 0
   interruptAutoMove: 1
+  restoreControl: 1
   playerViewAnimationName: 
   playerViewInterpolateAnimParam: 
   animParam: stopPiloting
@@ -82810,8 +82823,13 @@ MonoBehaviour:
   receiversAnimParam: 
   animParamReceivers: []
   interpolateDuringAnimation: 1
+  interpolationDelayTime: 0
+  resetToCullCompletely: 1
+  forcePlayerControllerSize: 1
+  leftIKTarget: {fileID: 0}
+  rightIKTarget: {fileID: 0}
+  ikSmoothTime: 0.15
   debug: 0
-  animator: {fileID: 1528186747040085670}
   sound: {fileID: 11400000, guid: a54dcd9d13a28a84eaa0ac6a203eeb5e, type: 2}
   enforceCinematicModeEnd: 1
 --- !u!1 &4508121796037645156
@@ -83155,6 +83173,7 @@ MonoBehaviour:
   text: Proto_CalibrationEngineRestart
   sound: {fileID: 11400000, guid: c3051be7c98412b42bd4ad959d7227c6, type: 2}
   minInterval: 15
+  allowDuringConversation: 0
 --- !u!1 &4529555044294690265
 GameObject:
   m_ObjectHideFlags: 0
@@ -83201,6 +83220,7 @@ MonoBehaviour:
   text: Proto_BetaOffline
   sound: {fileID: 11400000, guid: 5d9e49ca577ed774fa4840d30ff43570, type: 2}
   minInterval: 30
+  allowDuringConversation: 0
 --- !u!1 &4552465091102268648
 GameObject:
   m_ObjectHideFlags: 0
@@ -83590,12 +83610,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   asset: {fileID: 11400000, guid: 37e3501d4a68d8b4ba7d617bf86e506a, type: 2}
   playOnAwake: 0
-  stopImmediatelyOnDisable: 0
   followParent: 0
   restartOnPlay: 1
   debug: 0
-  subtitlesKey: 
-  playSubtitlesWithUnscaledTime: 1
 --- !u!1 &4580365690610608759
 GameObject:
   m_ObjectHideFlags: 0
@@ -83685,12 +83702,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   asset: {fileID: 11400000, guid: 7bc7efcdf9e0e5a42a9503f60b1bab86, type: 2}
   playOnAwake: 0
-  stopImmediatelyOnDisable: 0
   followParent: 0
   restartOnPlay: 1
   debug: 0
-  subtitlesKey: 
-  playSubtitlesWithUnscaledTime: 1
 --- !u!1 &4591208315579502656
 GameObject:
   m_ObjectHideFlags: 0
@@ -85447,12 +85461,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   asset: {fileID: 11400000, guid: 574fd408c5c8f874baaa73cba3e4a920, type: 2}
   playOnAwake: 0
-  stopImmediatelyOnDisable: 0
   followParent: 0
   restartOnPlay: 1
   debug: 0
-  subtitlesKey: 
-  playSubtitlesWithUnscaledTime: 1
 --- !u!1 &4751834892090604194
 GameObject:
   m_ObjectHideFlags: 0
@@ -85572,12 +85583,19 @@ MonoBehaviour:
   m_Script: {fileID: -458587425, guid: 06dd3d5416bf43ea368cc39ff96e6d5a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  rumbleCinematic: {fileID: 0}
+  animator: {fileID: 2452627834647794985}
+  director: {fileID: 0}
+  continueTimelinePlaybackOnPlayerRelease: 0
+  labelTrack: 
+  label: 
   animatedTransform: {fileID: 2366298466963012557}
   informGameObject: {fileID: 0}
   endTransform: {fileID: 1915041907544905410}
   onlyUseEndTransformInVr: 0
   playInVr: 1
   interruptAutoMove: 1
+  restoreControl: 1
   playerViewAnimationName: 
   playerViewInterpolateAnimParam: 
   animParam: DockSub
@@ -85587,8 +85605,13 @@ MonoBehaviour:
   receiversAnimParam: 
   animParamReceivers: []
   interpolateDuringAnimation: 0
+  interpolationDelayTime: 0
+  resetToCullCompletely: 1
+  forcePlayerControllerSize: 1
+  leftIKTarget: {fileID: 0}
+  rightIKTarget: {fileID: 0}
+  ikSmoothTime: 0.15
   debug: 0
-  animator: {fileID: 2452627834647794985}
   sound: {fileID: 0}
   enforceCinematicModeEnd: 0
 --- !u!114 &1153117520681683529
@@ -85940,6 +85963,7 @@ MonoBehaviour:
   text: Proto_NoPowerForWarp
   sound: {fileID: 11400000, guid: 8f6c56c3299f2824ca1ae0dd2af90d87, type: 2}
   minInterval: 30
+  allowDuringConversation: 0
 --- !u!1 &4822295739935681959
 GameObject:
   m_ObjectHideFlags: 0
@@ -86110,12 +86134,14 @@ MonoBehaviour:
   m_Script: {fileID: 548206027, guid: 06dd3d5416bf43ea368cc39ff96e6d5a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  data: {fileID: 11400000, guid: 2d4cdc2c542ba124ebe78167171c8dbe, type: 2}
   health: 1
-  startHealthPercent: 1
+  data: {fileID: 11400000, guid: 2d4cdc2c542ba124ebe78167171c8dbe, type: 2}
+  damageSound: {fileID: 0}
+  deathSound: {fileID: 0}
   damageClip: {fileID: 0}
   deathClip: {fileID: 0}
   player: {fileID: 0}
+  startHealthPercent: 1
 --- !u!114 &4587779213803266009
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -86671,6 +86697,7 @@ MonoBehaviour:
   text: Proto_OverrideTime1
   sound: {fileID: 11400000, guid: 4524d01c5515da24cbbaab3e1565cade, type: 2}
   minInterval: 0
+  allowDuringConversation: 0
 --- !u!114 &8903655467832787683
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -87909,12 +87936,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   asset: {fileID: 11400000, guid: a16ffbf433a3687489556372bb7999a9, type: 2}
   playOnAwake: 0
-  stopImmediatelyOnDisable: 0
   followParent: 0
   restartOnPlay: 0
   debug: 0
-  subtitlesKey: 
-  playSubtitlesWithUnscaledTime: 1
 --- !u!1 &4958197012815387709
 GameObject:
   m_ObjectHideFlags: 0
@@ -87961,6 +87985,7 @@ MonoBehaviour:
   text: Proto_DeployingDecoy
   sound: {fileID: 11400000, guid: ddc2f26509373b041a4d93829c4ec0ce, type: 2}
   minInterval: 0
+  allowDuringConversation: 0
 --- !u!1 &4967098993276694412
 GameObject:
   m_ObjectHideFlags: 0
@@ -88050,12 +88075,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   asset: {fileID: 11400000, guid: e286a56b1c3114041a14d53e8f36678f, type: 2}
   playOnAwake: 0
-  stopImmediatelyOnDisable: 0
   followParent: 0
   restartOnPlay: 0
   debug: 0
-  subtitlesKey: 
-  playSubtitlesWithUnscaledTime: 1
 --- !u!1 &4983560527840817710
 GameObject:
   m_ObjectHideFlags: 0
@@ -88644,6 +88666,7 @@ MonoBehaviour:
   text: Proto_AheadFlank
   sound: {fileID: 11400000, guid: 5dfc8733b93376a44877ee83d7f5e885, type: 2}
   minInterval: 30
+  allowDuringConversation: 0
 --- !u!1 &5029790097370288888
 GameObject:
   m_ObjectHideFlags: 0
@@ -94141,6 +94164,7 @@ MonoBehaviour:
   text: Proto_NoGateDetected
   sound: {fileID: 11400000, guid: 35339090ccac1ca4a899be1b081af628, type: 2}
   minInterval: 20
+  allowDuringConversation: 0
 --- !u!1 &5101830746266522828
 GameObject:
   m_ObjectHideFlags: 0
@@ -96379,12 +96403,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   asset: {fileID: 11400000, guid: be00a34787a251c4a9f955dff25de1ba, type: 2}
   playOnAwake: 0
-  stopImmediatelyOnDisable: 0
   followParent: 0
   restartOnPlay: 1
   debug: 0
-  subtitlesKey: 
-  playSubtitlesWithUnscaledTime: 1
 --- !u!1 &5292978591348674597
 GameObject:
   m_ObjectHideFlags: 0
@@ -96773,12 +96794,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   asset: {fileID: 11400000, guid: 47657cf6e5472d446a9b0fc369d88581, type: 2}
   playOnAwake: 0
-  stopImmediatelyOnDisable: 0
   followParent: 1
   restartOnPlay: 1
   debug: 0
-  subtitlesKey: 
-  playSubtitlesWithUnscaledTime: 1
 --- !u!114 &5637910654644201706
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -98258,7 +98276,7 @@ MonoBehaviour:
   m_Script: {fileID: 185446688, guid: a7cf2516c626129479cfce7cab60699e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  emissionColorController: {fileID: 3371763760948927259}
+  emissionColorController: {fileID: 0}
 --- !u!1 &5438369838202318959
 GameObject:
   m_ObjectHideFlags: 0
@@ -98868,6 +98886,7 @@ MonoBehaviour:
   text: Proto_AheadSlow
   sound: {fileID: 11400000, guid: e3e30bb2ed7db7842b4186efa02d3824, type: 2}
   minInterval: 30
+  allowDuringConversation: 0
 --- !u!1 &5507524177530620184
 GameObject:
   m_ObjectHideFlags: 0
@@ -99725,6 +99744,7 @@ MonoBehaviour:
   text: Proto_WelcomeAboard_Critical
   sound: {fileID: 11400000, guid: 0554e93024d3781428b49f286f80eb44, type: 2}
   minInterval: 180
+  allowDuringConversation: 0
 --- !u!1 &5586264620946356894
 GameObject:
   m_ObjectHideFlags: 0
@@ -100777,6 +100797,7 @@ MonoBehaviour:
   text: Proto_AlphaDeployed
   sound: {fileID: 11400000, guid: 29496321b38687341b58ab7d575c9ecd, type: 2}
   minInterval: 30
+  allowDuringConversation: 0
 --- !u!1 &5682483565457239481
 GameObject:
   m_ObjectHideFlags: 0
@@ -101271,6 +101292,7 @@ MonoBehaviour:
   text: Proto_ShieldsRaised
   sound: {fileID: 11400000, guid: ade7c1c9450b1624a86fbf1720fc3527, type: 2}
   minInterval: 30
+  allowDuringConversation: 0
 --- !u!1 &5741194082397527933
 GameObject:
   m_ObjectHideFlags: 0
@@ -101403,14 +101425,11 @@ MonoBehaviour:
   warpToPos: {x: -662, y: 2, z: -1060}
   warpToAngle: 0
   cinematicTriggerIn: {fileID: 5421666647570582094}
-  cinematicEndControllerPrefabReference:
-    m_AssetGUID: 
-    m_SubObjectName: 
-    m_SubObjectType: 
-    m_EditorAssetChanged: 0
   portalFxPrefab: {fileID: 0}
   portalFxSpawnPoint: {fileID: 2481976090472108561}
   registerPrisonExitPoint: {fileID: 0}
+  loadSceneOnTeleport: 
+  warpToInScene: 
   alwaysOn: 1
   hasFirstUse: 0
   powerUpSound: {fileID: 11400000, guid: 47f651d419a15d440ab273cae9bed15c, type: 2}
@@ -101554,6 +101573,7 @@ MonoBehaviour:
   text: Proto_InvalidOperation
   sound: {fileID: 11400000, guid: b268746e0be9db44e8e3b05aeab83629, type: 2}
   minInterval: 10
+  allowDuringConversation: 0
 --- !u!1 &5756309560451314290
 GameObject:
   m_ObjectHideFlags: 0
@@ -107755,12 +107775,14 @@ MonoBehaviour:
   m_Script: {fileID: 548206027, guid: 06dd3d5416bf43ea368cc39ff96e6d5a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  data: {fileID: 11400000, guid: 2d4cdc2c542ba124ebe78167171c8dbe, type: 2}
   health: 1
-  startHealthPercent: 1
+  data: {fileID: 11400000, guid: 2d4cdc2c542ba124ebe78167171c8dbe, type: 2}
+  damageSound: {fileID: 0}
+  deathSound: {fileID: 0}
   damageClip: {fileID: 0}
   deathClip: {fileID: 0}
   player: {fileID: 0}
+  startHealthPercent: 1
 --- !u!114 &1893372232457714367
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -107965,6 +107987,7 @@ MonoBehaviour:
   text: Proto_AlphaOffline
   sound: {fileID: 11400000, guid: 910764b3445bbf14fa4efd537bc07151, type: 2}
   minInterval: 30
+  allowDuringConversation: 0
 --- !u!1 &5886443600850481085
 GameObject:
   m_ObjectHideFlags: 0
@@ -108776,12 +108799,14 @@ MonoBehaviour:
   m_Script: {fileID: 548206027, guid: 06dd3d5416bf43ea368cc39ff96e6d5a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  data: {fileID: 11400000, guid: 2d4cdc2c542ba124ebe78167171c8dbe, type: 2}
   health: 1
-  startHealthPercent: 1
+  data: {fileID: 11400000, guid: 2d4cdc2c542ba124ebe78167171c8dbe, type: 2}
+  damageSound: {fileID: 0}
+  deathSound: {fileID: 0}
   damageClip: {fileID: 0}
   deathClip: {fileID: 0}
   player: {fileID: 0}
+  startHealthPercent: 1
 --- !u!114 &3819193047333525250
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -109914,12 +109939,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   asset: {fileID: 11400000, guid: fe25b509bac7e4741b828a0b29a4c978, type: 2}
   playOnAwake: 0
-  stopImmediatelyOnDisable: 0
   followParent: 0
   restartOnPlay: 1
   debug: 0
-  subtitlesKey: 
-  playSubtitlesWithUnscaledTime: 1
 --- !u!1 &6039580468516369577
 GameObject:
   m_ObjectHideFlags: 0
@@ -110801,6 +110823,7 @@ MonoBehaviour:
   text: Proto_CavitationDetected
   sound: {fileID: 11400000, guid: b9b8da5c60722aa448677530d148fc26, type: 2}
   minInterval: 30
+  allowDuringConversation: 0
 --- !u!1 &6082635415321285344
 GameObject:
   m_ObjectHideFlags: 0
@@ -111655,12 +111678,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   asset: {fileID: 11400000, guid: 4ece7f2b1b339d54585e7ca2fe505797, type: 2}
   playOnAwake: 0
-  stopImmediatelyOnDisable: 0
   followParent: 0
   restartOnPlay: 0
   debug: 0
-  subtitlesKey: 
-  playSubtitlesWithUnscaledTime: 1
   assetStart: {fileID: 0}
   assetStop: {fileID: 0}
   stopSoundInterval: 0
@@ -114894,12 +114914,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   asset: {fileID: 11400000, guid: be00a34787a251c4a9f955dff25de1ba, type: 2}
   playOnAwake: 0
-  stopImmediatelyOnDisable: 0
   followParent: 0
   restartOnPlay: 1
   debug: 0
-  subtitlesKey: 
-  playSubtitlesWithUnscaledTime: 1
 --- !u!1 &6368920858442955654
 GameObject:
   m_ObjectHideFlags: 0
@@ -116384,12 +116401,14 @@ MonoBehaviour:
   m_Script: {fileID: 548206027, guid: 06dd3d5416bf43ea368cc39ff96e6d5a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  data: {fileID: 11400000, guid: 2d4cdc2c542ba124ebe78167171c8dbe, type: 2}
   health: 1
-  startHealthPercent: 1
+  data: {fileID: 11400000, guid: 2d4cdc2c542ba124ebe78167171c8dbe, type: 2}
+  damageSound: {fileID: 0}
+  deathSound: {fileID: 0}
   damageClip: {fileID: 0}
   deathClip: {fileID: 0}
   player: {fileID: 0}
+  startHealthPercent: 1
 --- !u!114 &7350566173453562974
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -116493,6 +116512,7 @@ MonoBehaviour:
   text: Proto_OpenMoonpool
   sound: {fileID: 11400000, guid: 4dbb8f21051c1954eb6768fd5b4d95e4, type: 2}
   minInterval: 0
+  allowDuringConversation: 0
 --- !u!1 &6473857156310235523
 GameObject:
   m_ObjectHideFlags: 0
@@ -118160,12 +118180,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   asset: {fileID: 11400000, guid: af6e17fe9d7797242b3fa7fc7a5ce7cd, type: 2}
   playOnAwake: 0
-  stopImmediatelyOnDisable: 0
   followParent: 0
   restartOnPlay: 0
   debug: 0
-  subtitlesKey: 
-  playSubtitlesWithUnscaledTime: 1
 --- !u!1 &6596680014530632132
 GameObject:
   m_ObjectHideFlags: 0
@@ -119451,12 +119468,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   asset: {fileID: 11400000, guid: c64f45ac4354dee499eed1110f9206f8, type: 2}
   playOnAwake: 0
-  stopImmediatelyOnDisable: 0
   followParent: 1
   restartOnPlay: 1
   debug: 0
-  subtitlesKey: 
-  playSubtitlesWithUnscaledTime: 1
 --- !u!1 &6678398469864942480
 GameObject:
   m_ObjectHideFlags: 0
@@ -119630,6 +119644,7 @@ MonoBehaviour:
   text: Proto_PhotonBeacon
   sound: {fileID: 11400000, guid: 78c5ec5c5002e0a409b1759d82fdc042, type: 2}
   minInterval: 0
+  allowDuringConversation: 0
 --- !u!1 &6682559139020535493
 GameObject:
   m_ObjectHideFlags: 0
@@ -125396,6 +125411,7 @@ MonoBehaviour:
   text: Proto_ProtocolThree
   sound: {fileID: 11400000, guid: d89df22a5cf607c42bc3003c7f95e1cc, type: 2}
   minInterval: 0
+  allowDuringConversation: 0
 --- !u!1 &6769451457295983776
 GameObject:
   m_ObjectHideFlags: 0
@@ -126942,6 +126958,7 @@ MonoBehaviour:
   text: Proto_OverrideTime2
   sound: {fileID: 11400000, guid: 269e362ace99f94409fb9d6b1a4d59e8, type: 2}
   minInterval: 0
+  allowDuringConversation: 0
 --- !u!114 &4530692796619655022
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -127737,6 +127754,7 @@ MonoBehaviour:
   text: Proto_OverclockEnabled
   sound: {fileID: 11400000, guid: caf4453969e132e4a84dcb81437fdc60, type: 2}
   minInterval: 30
+  allowDuringConversation: 0
 --- !u!1 &6930311499877795799
 GameObject:
   m_ObjectHideFlags: 0
@@ -128494,12 +128512,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   asset: {fileID: 11400000, guid: 8031daf981e8c5a44856b2944740115f, type: 2}
   playOnAwake: 0
-  stopImmediatelyOnDisable: 0
   followParent: 0
   restartOnPlay: 1
   debug: 0
-  subtitlesKey: 
-  playSubtitlesWithUnscaledTime: 1
 --- !u!1 &7000873716603978183
 GameObject:
   m_ObjectHideFlags: 0
@@ -129638,6 +129653,7 @@ MonoBehaviour:
   text: Proto_BetaOnline
   sound: {fileID: 11400000, guid: 265e1ce098093fa4ea1a9621aa3b30fe, type: 2}
   minInterval: 30
+  allowDuringConversation: 0
 --- !u!1 &7104562171113940211
 GameObject:
   m_ObjectHideFlags: 0
@@ -130896,12 +130912,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   asset: {fileID: 11400000, guid: 16c236d72c8678e46848df1153819cf6, type: 2}
   playOnAwake: 0
-  stopImmediatelyOnDisable: 0
   followParent: 0
   restartOnPlay: 1
   debug: 0
-  subtitlesKey: 
-  playSubtitlesWithUnscaledTime: 1
 --- !u!1 &7223673808474278913
 GameObject:
   m_ObjectHideFlags: 0
@@ -131732,12 +131745,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   asset: {fileID: 11400000, guid: 8bbbfe7dccc4c6a4ab89ac7a933d394d, type: 2}
   playOnAwake: 0
-  stopImmediatelyOnDisable: 0
   followParent: 0
   restartOnPlay: 1
   debug: 0
-  subtitlesKey: 
-  playSubtitlesWithUnscaledTime: 1
 --- !u!1 &7297064704280902229
 GameObject:
   m_ObjectHideFlags: 0
@@ -131828,6 +131838,7 @@ MonoBehaviour:
   text: Proto_FireExtinguished
   sound: {fileID: 11400000, guid: 71ddced9a6c6dd748a902b1ec48e1601, type: 2}
   minInterval: 30
+  allowDuringConversation: 0
 --- !u!1 &7311153176581240492
 GameObject:
   m_ObjectHideFlags: 0
@@ -132569,12 +132580,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   asset: {fileID: 11400000, guid: f52913bddcb2e914a93be13e2fbd7dac, type: 2}
   playOnAwake: 0
-  stopImmediatelyOnDisable: 0
   followParent: 0
   restartOnPlay: 0
   debug: 0
-  subtitlesKey: 
-  playSubtitlesWithUnscaledTime: 1
 --- !u!1 &7359308257092936075
 GameObject:
   m_ObjectHideFlags: 0
@@ -133900,12 +133908,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   asset: {fileID: 11400000, guid: f1130ed5e848ae945820c06868eeb20f, type: 2}
   playOnAwake: 0
-  stopImmediatelyOnDisable: 0
   followParent: 0
   restartOnPlay: 0
   debug: 0
-  subtitlesKey: 
-  playSubtitlesWithUnscaledTime: 1
 --- !u!1 &7437724545407338534
 GameObject:
   m_ObjectHideFlags: 0
@@ -135025,6 +135030,7 @@ MonoBehaviour:
   text: Proto_TransmissionDeviceFirstLoaded
   sound: {fileID: 11400000, guid: 5ce86571cea06ec498b37ccda60c9731, type: 2}
   minInterval: 30
+  allowDuringConversation: 0
 --- !u!1 &7518969716690489277
 GameObject:
   m_ObjectHideFlags: 0
@@ -135173,12 +135179,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   asset: {fileID: 11400000, guid: 3f6d03094778bf84eac2cdc8e10ddd03, type: 2}
   playOnAwake: 0
-  stopImmediatelyOnDisable: 0
   followParent: 0
   restartOnPlay: 1
   debug: 0
-  subtitlesKey: 
-  playSubtitlesWithUnscaledTime: 1
 --- !u!1 &7525384708978990028
 GameObject:
   m_ObjectHideFlags: 0
@@ -135662,12 +135665,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   asset: {fileID: 11400000, guid: 08c4164439e2e864f8923f2945d1571c, type: 2}
   playOnAwake: 0
-  stopImmediatelyOnDisable: 0
   followParent: 0
   restartOnPlay: 1
   debug: 0
-  subtitlesKey: 
-  playSubtitlesWithUnscaledTime: 1
 --- !u!1 &7580796174806701889
 GameObject:
   m_ObjectHideFlags: 0
@@ -136654,6 +136654,7 @@ MonoBehaviour:
   text: Proto_CalibrationTestFailed
   sound: {fileID: 11400000, guid: 323332b1530b0e844be3d43509a68bbf, type: 2}
   minInterval: 15
+  allowDuringConversation: 0
 --- !u!1 &7643486218918561889
 GameObject:
   m_ObjectHideFlags: 0
@@ -142269,12 +142270,19 @@ MonoBehaviour:
   m_Script: {fileID: -458587425, guid: 06dd3d5416bf43ea368cc39ff96e6d5a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  rumbleCinematic: {fileID: 0}
+  animator: {fileID: 1528186747040085670}
+  director: {fileID: 0}
+  continueTimelinePlaybackOnPlayerRelease: 0
+  labelTrack: 
+  label: 
   animatedTransform: {fileID: 7500718350233339117}
   informGameObject: {fileID: 4412618025411933017}
   endTransform: {fileID: 0}
   onlyUseEndTransformInVr: 0
   playInVr: 0
   interruptAutoMove: 1
+  restoreControl: 1
   playerViewAnimationName: 
   playerViewInterpolateAnimParam: 
   animParam: startPiloting
@@ -142284,8 +142292,13 @@ MonoBehaviour:
   receiversAnimParam: 
   animParamReceivers: []
   interpolateDuringAnimation: 1
+  interpolationDelayTime: 0
+  resetToCullCompletely: 1
+  forcePlayerControllerSize: 1
+  leftIKTarget: {fileID: 0}
+  rightIKTarget: {fileID: 0}
+  ikSmoothTime: 0.15
   debug: 0
-  animator: {fileID: 1528186747040085670}
   sound: {fileID: 11400000, guid: 5a812c082b0963b44898f65540b0bc61, type: 2}
   enforceCinematicModeEnd: 1
 --- !u!1 &7698677530494539146
@@ -142298,7 +142311,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1088727767623084273}
   - component: {fileID: 7438436000696815096}
-  - component: {fileID: 3371763760948927259}
   - component: {fileID: 1369342963250766631}
   - component: {fileID: 7039344239093920621}
   - component: {fileID: 6213313396215825347}
@@ -142346,22 +142358,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   controller: {fileID: 166681490149920772}
   fadeSpeed: 1
---- !u!114 &3371763760948927259
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7698677530494539146}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 1075793375, guid: a7cf2516c626129479cfce7cab60699e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  objectRoots:
-  - {fileID: 8041321529513965086}
-  transitionSpeed: 1
-  updateOnStart: 1
 --- !u!114 &1369342963250766631
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -142386,7 +142382,7 @@ MonoBehaviour:
   m_Script: {fileID: -1060566013, guid: a7cf2516c626129479cfce7cab60699e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  colorController: {fileID: 3371763760948927259}
+  colorController: {fileID: 0}
   emissionColor: {r: 0.5707547, g: 1, b: 0.6820405, a: 1}
   intensity: 1.25
   priority: 0
@@ -142404,7 +142400,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   voiceNotificationManager: {fileID: 5389210478452801882}
   wyrmFirstInteractionVoiceline: {fileID: 792538775469447211}
-  emissionColorController: {fileID: 3371763760948927259}
+  emissionColorController: {fileID: 0}
   colorDuringSequence: {r: 1, g: 0, b: 0, a: 1}
 --- !u!1 &7711173583319160317
 GameObject:
@@ -143707,12 +143703,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   asset: {fileID: 11400000, guid: fff1571b6e0ca41418612f1b0a986c2c, type: 2}
   playOnAwake: 0
-  stopImmediatelyOnDisable: 0
   followParent: 1
   restartOnPlay: 0
   debug: 0
-  subtitlesKey: 
-  playSubtitlesWithUnscaledTime: 1
   assetStart: {fileID: 0}
   assetStop: {fileID: 0}
   stopSoundInterval: 0
@@ -144223,6 +144216,7 @@ MonoBehaviour:
   text: Proto_ConfirmDeconstruction
   sound: {fileID: 11400000, guid: 4c2a32c77813882498eca00373178fd7, type: 2}
   minInterval: 10
+  allowDuringConversation: 0
 --- !u!1 &7857373028942178314
 GameObject:
   m_ObjectHideFlags: 0
@@ -144268,12 +144262,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   asset: {fileID: 11400000, guid: be00a34787a251c4a9f955dff25de1ba, type: 2}
   playOnAwake: 0
-  stopImmediatelyOnDisable: 0
   followParent: 0
   restartOnPlay: 1
   debug: 0
-  subtitlesKey: 
-  playSubtitlesWithUnscaledTime: 1
 --- !u!1 &7861703288134124064
 GameObject:
   m_ObjectHideFlags: 0
@@ -145575,12 +145566,15 @@ MonoBehaviour:
   lineWidth: 48
   transparentShaders: []
   disableBehaviours: []
+  disableObjects: []
   surfaceSplashFX: {fileID: 0}
   surfaceSplashSound: {fileID: 0}
   surfaceSplashVelocity: 0.1
   heightOffset: -500000
+  localOffset: {x: 0, y: 0, z: 0}
   localRotation: {x: 0, y: 0, z: 0}
   constructSound: {fileID: 0}
+  constructLoopingSound: {fileID: 0}
   onConstructionStarted:
     m_PersistentCalls:
       m_Calls:
@@ -146449,6 +146443,7 @@ MonoBehaviour:
   text: Proto_EmergencyPower
   sound: {fileID: 11400000, guid: e070546bde6f2d74cb81bcb658bec6b9, type: 2}
   minInterval: 30
+  allowDuringConversation: 0
 --- !u!1 &7979307515649066499
 GameObject:
   m_ObjectHideFlags: 0
@@ -147245,6 +147240,7 @@ MonoBehaviour:
   insideSoundsRoot: {fileID: 0}
   outsideSoundsRoot: {fileID: 0}
   useTwoCams: 1
+  depthClearer: {fileID: 0}
   lightControl: {fileID: 166681490149920772}
   interiorSky: {fileID: 0}
   glassSky: {fileID: 0}
@@ -147298,6 +147294,7 @@ MonoBehaviour:
   shieldPowerCost: 50
   sonarPowerCost: 10
   silentRunningPowerCost: 5
+  poweredWarmUpDegreesPerSecond: 0.5
   damageManager: {fileID: 6639853693612777650}
   noiseManager: {fileID: 4493698966587842884}
   shieldFX: {fileID: 0}
@@ -147306,7 +147303,6 @@ MonoBehaviour:
   enterHatchSFX: {fileID: 0}
   isBase: 0
   isCyclops: 0
-  targetingTechTypeExcludeList: 
   LOD: {fileID: 4867459689348228103}
 --- !u!114 &7059317525052420639
 MonoBehaviour:
@@ -147416,6 +147412,8 @@ MonoBehaviour:
   handleDrag: 1
   aboveWaterDrag: 0.1
   underwaterDrag: 0.6
+  handleWind: 0
+  windScalar: 1
   aboveWaterOverride: 0
   useRigidbody: {fileID: 455190807124239361}
   moveWithPlatform: 0
@@ -147495,12 +147493,14 @@ MonoBehaviour:
   m_Script: {fileID: 548206027, guid: 06dd3d5416bf43ea368cc39ff96e6d5a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  data: {fileID: 11400000, guid: b9334f10b45fd774180fcae94a1ac026, type: 2}
   health: 3000
-  startHealthPercent: 1
+  data: {fileID: 11400000, guid: b9334f10b45fd774180fcae94a1ac026, type: 2}
+  damageSound: {fileID: 0}
+  deathSound: {fileID: 0}
   damageClip: {fileID: 0}
   deathClip: {fileID: 0}
   player: {fileID: 0}
+  startHealthPercent: 1
 --- !u!114 &258591673224128622
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -147529,6 +147529,7 @@ MonoBehaviour:
   m_Script: {fileID: -654001900, guid: 06dd3d5416bf43ea368cc39ff96e6d5a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  showPowerBeam: 1
   powerSystemPreviewPrefab: {fileID: 4679174898744913484, guid: e755412dab191ba459232fd6bfacefe7,
     type: 3}
   maxOutboundDistance: 0
@@ -147717,12 +147718,15 @@ MonoBehaviour:
   - {fileID: 6246764057006774658}
   - {fileID: 5440040289278515553}
   - {fileID: 4869569100593414595}
+  disableObjects: []
   surfaceSplashFX: {fileID: 0}
   surfaceSplashSound: {fileID: 0}
   surfaceSplashVelocity: 0.1
   heightOffset: 0
+  localOffset: {x: 0, y: 0, z: 0}
   localRotation: {x: 0, y: 0, z: 0}
   constructSound: {fileID: 0}
+  constructLoopingSound: {fileID: 0}
   onConstructionStarted:
     m_PersistentCalls:
       m_Calls:
@@ -148071,6 +148075,8 @@ MonoBehaviour:
   mirroredSelfDamageFraction: 0
   capMirrorDamage: -1
   minDamageInterval: 5
+  impactSound: {fileID: 0}
+  checkForFishHitSound: 0
 --- !u!1 &8042164777215895960
 GameObject:
   m_ObjectHideFlags: 0
@@ -148298,6 +148304,7 @@ MonoBehaviour:
   text: Proto_HullDamage
   sound: {fileID: 11400000, guid: 233779d3dc34ba2479b5729b662e597d, type: 2}
   minInterval: 240
+  allowDuringConversation: 0
 --- !u!1 &8057458715113343597
 GameObject:
   m_ObjectHideFlags: 0
@@ -149119,12 +149126,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   asset: {fileID: 11400000, guid: ed39d448b4fcb7a40a215682d3364254, type: 2}
   playOnAwake: 0
-  stopImmediatelyOnDisable: 0
   followParent: 0
   restartOnPlay: 0
   debug: 0
-  subtitlesKey: 
-  playSubtitlesWithUnscaledTime: 1
 --- !u!1 &8134959334226285873
 GameObject:
   m_ObjectHideFlags: 0
@@ -149912,6 +149916,7 @@ MonoBehaviour:
   damageRadius: 100
   damageAmount: 5
   damageType: 12
+  isPilotingPlayerProtected: 0
   doDebug: 0
 --- !u!114 &1867960456188050392
 MonoBehaviour:
@@ -150211,12 +150216,19 @@ MonoBehaviour:
   m_Script: {fileID: -458587425, guid: 06dd3d5416bf43ea368cc39ff96e6d5a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  rumbleCinematic: {fileID: 0}
+  animator: {fileID: 6949161103244616324}
+  director: {fileID: 0}
+  continueTimelinePlaybackOnPlayerRelease: 0
+  labelTrack: 
+  label: 
   animatedTransform: {fileID: 3551492372959453165}
   informGameObject: {fileID: 6500070165771424394}
   endTransform: {fileID: 0}
   onlyUseEndTransformInVr: 0
   playInVr: 0
   interruptAutoMove: 1
+  restoreControl: 1
   playerViewAnimationName: 
   playerViewInterpolateAnimParam: 
   animParam: precursor_crystalterminal
@@ -150226,8 +150238,13 @@ MonoBehaviour:
   receiversAnimParam: 
   animParamReceivers: []
   interpolateDuringAnimation: 1
+  interpolationDelayTime: 0
+  resetToCullCompletely: 1
+  forcePlayerControllerSize: 1
+  leftIKTarget: {fileID: 0}
+  rightIKTarget: {fileID: 0}
+  ikSmoothTime: 0.15
   debug: 0
-  animator: {fileID: 6949161103244616324}
   sound: {fileID: 0}
   enforceCinematicModeEnd: 0
 --- !u!95 &6949161103244616324
@@ -151599,6 +151616,7 @@ MonoBehaviour:
   text: Proto_EmergencyWarp
   sound: {fileID: 11400000, guid: 6d462344fb41086479f4abdf36379497, type: 2}
   minInterval: 0
+  allowDuringConversation: 0
 --- !u!1 &8272114772299048146
 GameObject:
   m_ObjectHideFlags: 0
@@ -151645,6 +151663,7 @@ MonoBehaviour:
   text: Proto_PoweringDown
   sound: {fileID: 11400000, guid: 117e51b1d1f4cf24aa2db322db474090, type: 2}
   minInterval: 30
+  allowDuringConversation: 0
 --- !u!1 &8272848912601811282
 GameObject:
   m_ObjectHideFlags: 0
@@ -151950,12 +151969,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   asset: {fileID: 11400000, guid: 1450c62ed82ab8f40bb78722e506664a, type: 2}
   playOnAwake: 0
-  stopImmediatelyOnDisable: 0
   followParent: 1
   restartOnPlay: 1
   debug: 0
-  subtitlesKey: 
-  playSubtitlesWithUnscaledTime: 1
 --- !u!1 &8295107924302059983
 GameObject:
   m_ObjectHideFlags: 0
@@ -152260,12 +152276,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   asset: {fileID: 11400000, guid: a005e195083b4ae40a02a9f3278cd7d0, type: 2}
   playOnAwake: 0
-  stopImmediatelyOnDisable: 0
   followParent: 0
   restartOnPlay: 0
   debug: 0
-  subtitlesKey: 
-  playSubtitlesWithUnscaledTime: 1
 --- !u!1 &8311432512989693894
 GameObject:
   m_ObjectHideFlags: 0
@@ -152311,12 +152324,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   asset: {fileID: 11400000, guid: b44e5572095285948b109aec5b2ec2ae, type: 2}
   playOnAwake: 0
-  stopImmediatelyOnDisable: 0
   followParent: 1
   restartOnPlay: 1
   debug: 0
-  subtitlesKey: 
-  playSubtitlesWithUnscaledTime: 1
   assetStart: {fileID: 11400000, guid: 0f0b2b5371aae804ba3e9d9d6c038842, type: 2}
   assetStop: {fileID: 11400000, guid: 09a42c934c7d2bd4d876a3a0188a07a1, type: 2}
   stopSoundInterval: 0
@@ -152687,7 +152697,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 8321405651605252494}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 1276199984, guid: 06dd3d5416bf43ea368cc39ff96e6d5a, type: 3}
+  m_Script: {fileID: -1557567707, guid: a7cf2516c626129479cfce7cab60699e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   onClick:
@@ -152947,12 +152957,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   asset: {fileID: 11400000, guid: 4de2cca8867ba554daba658fc0df8cab, type: 2}
   playOnAwake: 0
-  stopImmediatelyOnDisable: 0
   followParent: 1
   restartOnPlay: 1
   debug: 0
-  subtitlesKey: 
-  playSubtitlesWithUnscaledTime: 1
 --- !u!114 &8243117187385072684
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -152967,12 +152974,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   asset: {fileID: 11400000, guid: e07bb5af9e135e947ad3fa19bb186a8d, type: 2}
   playOnAwake: 0
-  stopImmediatelyOnDisable: 0
   followParent: 1
   restartOnPlay: 1
   debug: 0
-  subtitlesKey: 
-  playSubtitlesWithUnscaledTime: 1
 --- !u!1 &8339261961035027275
 GameObject:
   m_ObjectHideFlags: 0
@@ -153018,12 +153022,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   asset: {fileID: 11400000, guid: d7204e9b776f9644ca90ff1c1879243b, type: 2}
   playOnAwake: 0
-  stopImmediatelyOnDisable: 0
   followParent: 0
   restartOnPlay: 0
   debug: 0
-  subtitlesKey: 
-  playSubtitlesWithUnscaledTime: 1
 --- !u!1 &8343490387802134456
 GameObject:
   m_ObjectHideFlags: 0
@@ -153536,18 +153537,18 @@ MonoBehaviour:
   dockingEndPos: {fileID: 654448816747073069}
   dockingEndPosExo: {fileID: 654448816747073069}
   exit: {fileID: 6610091437787740928}
-  subRoot: {fileID: 6246764057006774658}
   dockPlayerCinematic: {fileID: 1034837722348328678}
   exosuitDockPlayerCinematic: {fileID: 1034837722348328678}
   interpolationTime: 1
-  requiresAnimationStateForDocking: 0
-  animationStateNameForDocking: 
-  requiresUndockingClearance: 1
-  undockingClearanceCastDistance: 4
-  castBoxCollider: {fileID: 266226727440378082}
-  dockedCollision: {fileID: 6218669005008522226}
   bayDoorsOpenSFX: {fileID: 0}
   bayDoorsCloseSFX: {fileID: 0}
+  dockType: 1
+  expansionManager: {fileID: 0}
+  chargingSound: {fileID: 0}
+  powerConsumer: {fileID: 0}
+  pushObjects: {fileID: 0}
+  dockedCollision: {fileID: 6218669005008522226}
+  disableDockableCollisionInProcess: 1
 --- !u!114 &136425930056231072
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -154301,12 +154302,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   asset: {fileID: 11400000, guid: aefdbdf2c6f43cf4197f0a879f5928e7, type: 2}
   playOnAwake: 0
-  stopImmediatelyOnDisable: 0
   followParent: 0
   restartOnPlay: 0
   debug: 0
-  subtitlesKey: 
-  playSubtitlesWithUnscaledTime: 1
   assetStart: {fileID: 0}
   assetStop: {fileID: 0}
   stopSoundInterval: 0
@@ -155986,12 +155984,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   asset: {fileID: 11400000, guid: 7bc7efcdf9e0e5a42a9503f60b1bab86, type: 2}
   playOnAwake: 0
-  stopImmediatelyOnDisable: 0
   followParent: 0
   restartOnPlay: 1
   debug: 0
-  subtitlesKey: 
-  playSubtitlesWithUnscaledTime: 1
 --- !u!1 &8552261869732721248
 GameObject:
   m_ObjectHideFlags: 0
@@ -156078,12 +156073,14 @@ MonoBehaviour:
   m_Script: {fileID: 548206027, guid: 06dd3d5416bf43ea368cc39ff96e6d5a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  data: {fileID: 11400000, guid: 2d4cdc2c542ba124ebe78167171c8dbe, type: 2}
   health: 1
-  startHealthPercent: 1
+  data: {fileID: 11400000, guid: 2d4cdc2c542ba124ebe78167171c8dbe, type: 2}
+  damageSound: {fileID: 0}
+  deathSound: {fileID: 0}
   damageClip: {fileID: 0}
   deathClip: {fileID: 0}
   player: {fileID: 0}
+  startHealthPercent: 1
 --- !u!114 &5473577409798861307
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -159092,6 +159089,7 @@ MonoBehaviour:
   text: Proto_HullRestored
   sound: {fileID: 11400000, guid: 3009815b7409d094191b7135e5ab2d86, type: 2}
   minInterval: 20
+  allowDuringConversation: 0
 --- !u!1 &8807193748716885597
 GameObject:
   m_ObjectHideFlags: 0
@@ -159137,12 +159135,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   asset: {fileID: 11400000, guid: dbc7c19729dfc794ab0dc148ce3beb4a, type: 2}
   playOnAwake: 0
-  stopImmediatelyOnDisable: 0
   followParent: 0
   restartOnPlay: 1
   debug: 0
-  subtitlesKey: 
-  playSubtitlesWithUnscaledTime: 1
 --- !u!1 &8812333050789277594
 GameObject:
   m_ObjectHideFlags: 0
@@ -159342,7 +159337,7 @@ MonoBehaviour:
   subRoot: {fileID: 6246764057006774658}
   transmissionDeviceLocation: {fileID: 8633221664925078231}
   cinematicAnimator: {fileID: 5730738829192544641}
-  subEmissionController: {fileID: 3371763760948927259}
+  subEmissionController: {fileID: 0}
   subLights:
   - {fileID: 4845933739188931785}
   - {fileID: 4166053727826206020}
@@ -159399,7 +159394,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   animatorTrigger: FinShot
-  finEmissionController: {fileID: 8501706819737969184}
+  finEmissionController: {fileID: 0}
   finsManager: {fileID: 5268246492107117187}
   pistonsAnimator: {fileID: 2192271074739661416}
   finsLockingSfx: {fileID: 5744670675703912182}
@@ -159636,12 +159631,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   asset: {fileID: 11400000, guid: c68943199743a1140917e5803bda2104, type: 2}
   playOnAwake: 0
-  stopImmediatelyOnDisable: 0
   followParent: 0
   restartOnPlay: 1
   debug: 0
-  subtitlesKey: 
-  playSubtitlesWithUnscaledTime: 1
 --- !u!1 &8835602106114429255
 GameObject:
   m_ObjectHideFlags: 0
@@ -159768,6 +159760,7 @@ MonoBehaviour:
   text: Proto_ReactorLocked
   sound: {fileID: 11400000, guid: 4b4172e121cdd8943aaa149f37b007f5, type: 2}
   minInterval: 15
+  allowDuringConversation: 0
 --- !u!1 &8842871293087540317
 GameObject:
   m_ObjectHideFlags: 0
@@ -160511,6 +160504,7 @@ MonoBehaviour:
   text: Proto_AbandonShip
   sound: {fileID: 11400000, guid: 5ce86571cea06ec498b37ccda60c9731, type: 2}
   minInterval: 0
+  allowDuringConversation: 0
 --- !u!114 &8825268564763005431
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -160568,12 +160562,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   asset: {fileID: 11400000, guid: 25405428728b3b44ebd2b1c5dfa572d0, type: 2}
   playOnAwake: 0
-  stopImmediatelyOnDisable: 0
   followParent: 0
   restartOnPlay: 1
   debug: 0
-  subtitlesKey: 
-  playSubtitlesWithUnscaledTime: 1
 --- !u!1 &8899486147514195884
 GameObject:
   m_ObjectHideFlags: 0
@@ -160652,6 +160643,7 @@ MonoBehaviour:
   text: Proto_CreatureAttack
   sound: {fileID: 11400000, guid: 579a8087bfd6f0443b5ce1e2dd05f256, type: 2}
   minInterval: 60
+  allowDuringConversation: 0
 --- !u!1 &8909869296153903664
 GameObject:
   m_ObjectHideFlags: 0
@@ -161496,6 +161488,7 @@ MonoBehaviour:
   text: Proto_TotalHullFailure
   sound: {fileID: 11400000, guid: 360fa7022fef92e4dabbdb8f65874b4c, type: 2}
   minInterval: 0
+  allowDuringConversation: 0
 --- !u!1 &8986833435672954304
 GameObject:
   m_ObjectHideFlags: 0
@@ -162672,6 +162665,7 @@ MonoBehaviour:
   text: Proto_BetaLoaded
   sound: {fileID: 11400000, guid: 585698706f1bf3d4f9fba30ab42275a9, type: 2}
   minInterval: 30
+  allowDuringConversation: 0
 --- !u!1 &9050739376935902171
 GameObject:
   m_ObjectHideFlags: 0
@@ -163748,12 +163742,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   asset: {fileID: 11400000, guid: 373f1c3c227c066459584b6770c9d84f, type: 2}
   playOnAwake: 0
-  stopImmediatelyOnDisable: 0
   followParent: 0
   restartOnPlay: 0
   debug: 0
-  subtitlesKey: 
-  playSubtitlesWithUnscaledTime: 1
 --- !u!1 &9159742468464245874
 GameObject:
   m_ObjectHideFlags: 0
@@ -164160,12 +164151,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   asset: {fileID: 11400000, guid: 97520cc7f56970443a3e7d7692aa4549, type: 2}
   playOnAwake: 0
-  stopImmediatelyOnDisable: 0
   followParent: 1
   restartOnPlay: 1
   debug: 0
-  subtitlesKey: 
-  playSubtitlesWithUnscaledTime: 1
 --- !u!1 &9204220446433064780
 GameObject:
   m_ObjectHideFlags: 0
@@ -164415,6 +164403,7 @@ MonoBehaviour:
   text: Proto_FireDetected
   sound: {fileID: 11400000, guid: f71281ec098c65e48b9e7e5a0b649eb5, type: 2}
   minInterval: 20
+  allowDuringConversation: 0
 --- !u!1001 &31593558358713451
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -164704,12 +164693,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7c0259505d053534b8945520005848a2, type: 3}
---- !u!224 &6775864879633901944 stripped
-RectTransform:
-  m_CorrespondingSourceObject: {fileID: 6821952385836252387, guid: 7c0259505d053534b8945520005848a2,
-    type: 3}
-  m_PrefabInstance: {fileID: 46378198333281691}
-  m_PrefabAsset: {fileID: 0}
 --- !u!114 &6408671123995258999 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 6364968183512704492, guid: 7c0259505d053534b8945520005848a2,
@@ -164722,6 +164705,12 @@ MonoBehaviour:
   m_Script: {fileID: 1561069652, guid: a7cf2516c626129479cfce7cab60699e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!224 &6775864879633901944 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 6821952385836252387, guid: 7c0259505d053534b8945520005848a2,
+    type: 3}
+  m_PrefabInstance: {fileID: 46378198333281691}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &155352944312382604
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -164801,9 +164790,9 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: a34e1e06b0a54d64e9659429c3fa2180, type: 3}
---- !u!23 &1578081828364773384 stripped
-MeshRenderer:
-  m_CorrespondingSourceObject: {fileID: -7511558181221131132, guid: a34e1e06b0a54d64e9659429c3fa2180,
+--- !u!1 &1073692345448384989 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: a34e1e06b0a54d64e9659429c3fa2180,
     type: 3}
   m_PrefabInstance: {fileID: 155352944312382604}
   m_PrefabAsset: {fileID: 0}
@@ -164813,9 +164802,9 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 155352944312382604}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &1073692345448384989 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: a34e1e06b0a54d64e9659429c3fa2180,
+--- !u!23 &1578081828364773384 stripped
+MeshRenderer:
+  m_CorrespondingSourceObject: {fileID: -7511558181221131132, guid: a34e1e06b0a54d64e9659429c3fa2180,
     type: 3}
   m_PrefabInstance: {fileID: 155352944312382604}
   m_PrefabAsset: {fileID: 0}
@@ -164963,6 +164952,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7c0259505d053534b8945520005848a2, type: 3}
+--- !u!224 &6386987971160183561 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 6821952385836252387, guid: 7c0259505d053534b8945520005848a2,
+    type: 3}
+  m_PrefabInstance: {fileID: 436658075086614506}
+  m_PrefabAsset: {fileID: 0}
 --- !u!114 &6799233549471304198 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 6364968183512704492, guid: 7c0259505d053534b8945520005848a2,
@@ -164975,12 +164970,6 @@ MonoBehaviour:
   m_Script: {fileID: 1561069652, guid: a7cf2516c626129479cfce7cab60699e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!224 &6386987971160183561 stripped
-RectTransform:
-  m_CorrespondingSourceObject: {fileID: 6821952385836252387, guid: 7c0259505d053534b8945520005848a2,
-    type: 3}
-  m_PrefabInstance: {fileID: 436658075086614506}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &520282271556029249
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -165410,33 +165399,9 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 0d02ebe1acb47a643b265e94c5315476, type: 3}
---- !u!1 &9133065079651788837 stripped
+--- !u!1 &8800740071595075794 stripped
 GameObject:
-  m_CorrespondingSourceObject: {fileID: -466329591000292508, guid: 0d02ebe1acb47a643b265e94c5315476,
-    type: 3}
-  m_PrefabInstance: {fileID: 520282271556029249}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &7995067842491230142 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: -1599826595754709761, guid: 0d02ebe1acb47a643b265e94c5315476,
-    type: 3}
-  m_PrefabInstance: {fileID: 520282271556029249}
-  m_PrefabAsset: {fileID: 0}
---- !u!4 &50331816942021802 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 0d02ebe1acb47a643b265e94c5315476,
-    type: 3}
-  m_PrefabInstance: {fileID: 520282271556029249}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &862720983185421840 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 0d02ebe1acb47a643b265e94c5315476,
-    type: 3}
-  m_PrefabInstance: {fileID: 520282271556029249}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &8357101625425757593 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 8413298455615655640, guid: 0d02ebe1acb47a643b265e94c5315476,
+  m_CorrespondingSourceObject: {fileID: -208595431880416365, guid: 0d02ebe1acb47a643b265e94c5315476,
     type: 3}
   m_PrefabInstance: {fileID: 520282271556029249}
   m_PrefabAsset: {fileID: 0}
@@ -165446,21 +165411,9 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 520282271556029249}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &8849510334773934829 stripped
+--- !u!1 &9133065079651788837 stripped
 GameObject:
-  m_CorrespondingSourceObject: {fileID: -146455793059827284, guid: 0d02ebe1acb47a643b265e94c5315476,
-    type: 3}
-  m_PrefabInstance: {fileID: 520282271556029249}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &4386226756014672200 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: -4906838889796845047, guid: 0d02ebe1acb47a643b265e94c5315476,
-    type: 3}
-  m_PrefabInstance: {fileID: 520282271556029249}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &217470593121310029 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: -8917983085848355316, guid: 0d02ebe1acb47a643b265e94c5315476,
+  m_CorrespondingSourceObject: {fileID: -466329591000292508, guid: 0d02ebe1acb47a643b265e94c5315476,
     type: 3}
   m_PrefabInstance: {fileID: 520282271556029249}
   m_PrefabAsset: {fileID: 0}
@@ -165470,15 +165423,51 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 520282271556029249}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &347115562844508054 stripped
+--- !u!1 &4386226756014672200 stripped
 GameObject:
-  m_CorrespondingSourceObject: {fileID: 281855664364225751, guid: 0d02ebe1acb47a643b265e94c5315476,
+  m_CorrespondingSourceObject: {fileID: -4906838889796845047, guid: 0d02ebe1acb47a643b265e94c5315476,
     type: 3}
   m_PrefabInstance: {fileID: 520282271556029249}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &8800740071595075794 stripped
+--- !u!1 &7995067842491230142 stripped
 GameObject:
-  m_CorrespondingSourceObject: {fileID: -208595431880416365, guid: 0d02ebe1acb47a643b265e94c5315476,
+  m_CorrespondingSourceObject: {fileID: -1599826595754709761, guid: 0d02ebe1acb47a643b265e94c5315476,
+    type: 3}
+  m_PrefabInstance: {fileID: 520282271556029249}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &217470593121310029 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: -8917983085848355316, guid: 0d02ebe1acb47a643b265e94c5315476,
+    type: 3}
+  m_PrefabInstance: {fileID: 520282271556029249}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &8849510334773934829 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: -146455793059827284, guid: 0d02ebe1acb47a643b265e94c5315476,
+    type: 3}
+  m_PrefabInstance: {fileID: 520282271556029249}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &50331816942021802 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 0d02ebe1acb47a643b265e94c5315476,
+    type: 3}
+  m_PrefabInstance: {fileID: 520282271556029249}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &8357101625425757593 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 8413298455615655640, guid: 0d02ebe1acb47a643b265e94c5315476,
+    type: 3}
+  m_PrefabInstance: {fileID: 520282271556029249}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &862720983185421840 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 0d02ebe1acb47a643b265e94c5315476,
+    type: 3}
+  m_PrefabInstance: {fileID: 520282271556029249}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &347115562844508054 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 281855664364225751, guid: 0d02ebe1acb47a643b265e94c5315476,
     type: 3}
   m_PrefabInstance: {fileID: 520282271556029249}
   m_PrefabAsset: {fileID: 0}
@@ -165768,15 +165757,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f4bfff416e963c643beeb7ec87e12445, type: 3}
---- !u!4 &3317365120797151446 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 2331910008592740995, guid: f4bfff416e963c643beeb7ec87e12445,
-    type: 3}
-  m_PrefabInstance: {fileID: 1032799637833753173}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &185865970663202564 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: f4bfff416e963c643beeb7ec87e12445,
+    type: 3}
+  m_PrefabInstance: {fileID: 1032799637833753173}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &3317365120797151446 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 2331910008592740995, guid: f4bfff416e963c643beeb7ec87e12445,
     type: 3}
   m_PrefabInstance: {fileID: 1032799637833753173}
   m_PrefabAsset: {fileID: 0}
@@ -165915,15 +165904,9 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: efd0adaf580ab004aafe885a6f682c95, type: 3}
---- !u!4 &666900694588003211 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: efd0adaf580ab004aafe885a6f682c95,
-    type: 3}
-  m_PrefabInstance: {fileID: 1066218246167622752}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &147103701009516849 stripped
+--- !u!1 &1127247010491116217 stripped
 GameObject:
-  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: efd0adaf580ab004aafe885a6f682c95,
+  m_CorrespondingSourceObject: {fileID: 103370549273419481, guid: efd0adaf580ab004aafe885a6f682c95,
     type: 3}
   m_PrefabInstance: {fileID: 1066218246167622752}
   m_PrefabAsset: {fileID: 0}
@@ -165933,9 +165916,15 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 1066218246167622752}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &1127247010491116217 stripped
+--- !u!1 &147103701009516849 stripped
 GameObject:
-  m_CorrespondingSourceObject: {fileID: 103370549273419481, guid: efd0adaf580ab004aafe885a6f682c95,
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: efd0adaf580ab004aafe885a6f682c95,
+    type: 3}
+  m_PrefabInstance: {fileID: 1066218246167622752}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &666900694588003211 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: efd0adaf580ab004aafe885a6f682c95,
     type: 3}
   m_PrefabInstance: {fileID: 1066218246167622752}
   m_PrefabAsset: {fileID: 0}
@@ -166028,12 +166017,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d6cc3db34565c3a4ba68573b0eeec2a0, type: 3}
---- !u!4 &1224879765472228638 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 2253812858737788773, guid: d6cc3db34565c3a4ba68573b0eeec2a0,
-    type: 3}
-  m_PrefabInstance: {fileID: 1132799834664678011}
-  m_PrefabAsset: {fileID: 0}
 --- !u!114 &4466343788103864506 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 3621781888743187137, guid: d6cc3db34565c3a4ba68573b0eeec2a0,
@@ -166046,6 +166029,12 @@ MonoBehaviour:
   m_Script: {fileID: -2039529286, guid: a7cf2516c626129479cfce7cab60699e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!4 &1224879765472228638 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 2253812858737788773, guid: d6cc3db34565c3a4ba68573b0eeec2a0,
+    type: 3}
+  m_PrefabInstance: {fileID: 1132799834664678011}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1285518651436313734
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -166190,12 +166179,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7c0259505d053534b8945520005848a2, type: 3}
---- !u!224 &5727283415206973541 stripped
-RectTransform:
-  m_CorrespondingSourceObject: {fileID: 6821952385836252387, guid: 7c0259505d053534b8945520005848a2,
-    type: 3}
-  m_PrefabInstance: {fileID: 1285518651436313734}
-  m_PrefabAsset: {fileID: 0}
 --- !u!114 &5297355419762559338 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 6364968183512704492, guid: 7c0259505d053534b8945520005848a2,
@@ -166208,6 +166191,12 @@ MonoBehaviour:
   m_Script: {fileID: 1561069652, guid: a7cf2516c626129479cfce7cab60699e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!224 &5727283415206973541 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 6821952385836252387, guid: 7c0259505d053534b8945520005848a2,
+    type: 3}
+  m_PrefabInstance: {fileID: 1285518651436313734}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1769292678150283041
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -166787,12 +166776,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7c0259505d053534b8945520005848a2, type: 3}
---- !u!224 &4915857036990711891 stripped
-RectTransform:
-  m_CorrespondingSourceObject: {fileID: 6821952385836252387, guid: 7c0259505d053534b8945520005848a2,
-    type: 3}
-  m_PrefabInstance: {fileID: 1915384864891892912}
-  m_PrefabAsset: {fileID: 0}
 --- !u!114 &4809906756114862428 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 6364968183512704492, guid: 7c0259505d053534b8945520005848a2,
@@ -166805,6 +166788,12 @@ MonoBehaviour:
   m_Script: {fileID: 1561069652, guid: a7cf2516c626129479cfce7cab60699e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!224 &4915857036990711891 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 6821952385836252387, guid: 7c0259505d053534b8945520005848a2,
+    type: 3}
+  m_PrefabInstance: {fileID: 1915384864891892912}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &1939675607411802324
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -167850,15 +167839,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 998cac50151b9f84f93d8056626a8b88, type: 3}
---- !u!1 &2631261462489248196 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 998cac50151b9f84f93d8056626a8b88,
-    type: 3}
-  m_PrefabInstance: {fileID: 2901856969681112213}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &3445199802166995838 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 998cac50151b9f84f93d8056626a8b88,
+    type: 3}
+  m_PrefabInstance: {fileID: 2901856969681112213}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &2631261462489248196 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 998cac50151b9f84f93d8056626a8b88,
     type: 3}
   m_PrefabInstance: {fileID: 2901856969681112213}
   m_PrefabAsset: {fileID: 0}
@@ -168343,12 +168332,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d6cc3db34565c3a4ba68573b0eeec2a0, type: 3}
---- !u!4 &3859485751470618971 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 2253812858737788773, guid: d6cc3db34565c3a4ba68573b0eeec2a0,
-    type: 3}
-  m_PrefabInstance: {fileID: 3082858037385395774}
-  m_PrefabAsset: {fileID: 0}
 --- !u!114 &1768688137450249471 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 3621781888743187137, guid: d6cc3db34565c3a4ba68573b0eeec2a0,
@@ -168361,6 +168344,12 @@ MonoBehaviour:
   m_Script: {fileID: -2039529286, guid: a7cf2516c626129479cfce7cab60699e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!4 &3859485751470618971 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 2253812858737788773, guid: d6cc3db34565c3a4ba68573b0eeec2a0,
+    type: 3}
+  m_PrefabInstance: {fileID: 3082858037385395774}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &3205930514529510682
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -168450,6 +168439,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d6cc3db34565c3a4ba68573b0eeec2a0, type: 3}
+--- !u!4 &3691515782293611135 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 2253812858737788773, guid: d6cc3db34565c3a4ba68573b0eeec2a0,
+    type: 3}
+  m_PrefabInstance: {fileID: 3205930514529510682}
+  m_PrefabAsset: {fileID: 0}
 --- !u!114 &2179433950003775451 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 3621781888743187137, guid: d6cc3db34565c3a4ba68573b0eeec2a0,
@@ -168462,12 +168457,6 @@ MonoBehaviour:
   m_Script: {fileID: -2039529286, guid: a7cf2516c626129479cfce7cab60699e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!4 &3691515782293611135 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 2253812858737788773, guid: d6cc3db34565c3a4ba68573b0eeec2a0,
-    type: 3}
-  m_PrefabInstance: {fileID: 3205930514529510682}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &3462396111115188159
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -168612,12 +168601,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7c0259505d053534b8945520005848a2, type: 3}
---- !u!224 &7971537812754467676 stripped
-RectTransform:
-  m_CorrespondingSourceObject: {fileID: 6821952385836252387, guid: 7c0259505d053534b8945520005848a2,
-    type: 3}
-  m_PrefabInstance: {fileID: 3462396111115188159}
-  m_PrefabAsset: {fileID: 0}
 --- !u!114 &7518775229330936403 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 6364968183512704492, guid: 7c0259505d053534b8945520005848a2,
@@ -168630,6 +168613,12 @@ MonoBehaviour:
   m_Script: {fileID: 1561069652, guid: a7cf2516c626129479cfce7cab60699e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!224 &7971537812754467676 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 6821952385836252387, guid: 7c0259505d053534b8945520005848a2,
+    type: 3}
+  m_PrefabInstance: {fileID: 3462396111115188159}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &3875704161150014438
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -168849,12 +168838,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f4bfff416e963c643beeb7ec87e12445, type: 3}
---- !u!4 &1993306242269306114 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 2331910008592740995, guid: f4bfff416e963c643beeb7ec87e12445,
-    type: 3}
-  m_PrefabInstance: {fileID: 4320428391978168193}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &4359352249393317994 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: f4bfff416e963c643beeb7ec87e12445,
@@ -168864,6 +168847,12 @@ Transform:
 --- !u!1 &3977900486762418896 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: f4bfff416e963c643beeb7ec87e12445,
+    type: 3}
+  m_PrefabInstance: {fileID: 4320428391978168193}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &1993306242269306114 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 2331910008592740995, guid: f4bfff416e963c643beeb7ec87e12445,
     type: 3}
   m_PrefabInstance: {fileID: 4320428391978168193}
   m_PrefabAsset: {fileID: 0}
@@ -168986,6 +168975,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f4bfff416e963c643beeb7ec87e12445, type: 3}
+--- !u!4 &4312021780338305383 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: f4bfff416e963c643beeb7ec87e12445,
+    type: 3}
+  m_PrefabInstance: {fileID: 4349872010133933708}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &3502868510957089757 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: f4bfff416e963c643beeb7ec87e12445,
@@ -168995,12 +168990,6 @@ GameObject:
 --- !u!4 &2017966984241331215 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2331910008592740995, guid: f4bfff416e963c643beeb7ec87e12445,
-    type: 3}
-  m_PrefabInstance: {fileID: 4349872010133933708}
-  m_PrefabAsset: {fileID: 0}
---- !u!4 &4312021780338305383 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: f4bfff416e963c643beeb7ec87e12445,
     type: 3}
   m_PrefabInstance: {fileID: 4349872010133933708}
   m_PrefabAsset: {fileID: 0}
@@ -169873,12 +169862,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1b5668bfeb68e9e488991770bdd42cd1, type: 3}
---- !u!4 &4250408086625819013 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 1b5668bfeb68e9e488991770bdd42cd1,
-    type: 3}
-  m_PrefabInstance: {fileID: 4428941550482554478}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &7912092061449193707 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -3405945002933291387, guid: 1b5668bfeb68e9e488991770bdd42cd1,
@@ -169897,15 +169880,21 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 4428941550482554478}
   m_PrefabAsset: {fileID: 0}
+--- !u!4 &5953417460742577681 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: -1159664273818804097, guid: 1b5668bfeb68e9e488991770bdd42cd1,
+    type: 3}
+  m_PrefabInstance: {fileID: 4428941550482554478}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &3582520105272591167 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 1b5668bfeb68e9e488991770bdd42cd1,
     type: 3}
   m_PrefabInstance: {fileID: 4428941550482554478}
   m_PrefabAsset: {fileID: 0}
---- !u!4 &5953417460742577681 stripped
+--- !u!4 &4250408086625819013 stripped
 Transform:
-  m_CorrespondingSourceObject: {fileID: -1159664273818804097, guid: 1b5668bfeb68e9e488991770bdd42cd1,
+  m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 1b5668bfeb68e9e488991770bdd42cd1,
     type: 3}
   m_PrefabInstance: {fileID: 4428941550482554478}
   m_PrefabAsset: {fileID: 0}
@@ -170492,15 +170481,15 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 4542504114478245101}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &3732180882622306748 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: efd0adaf580ab004aafe885a6f682c95,
-    type: 3}
-  m_PrefabInstance: {fileID: 4542504114478245101}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &4071410269904208646 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: efd0adaf580ab004aafe885a6f682c95,
+    type: 3}
+  m_PrefabInstance: {fileID: 4542504114478245101}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &3732180882622306748 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: efd0adaf580ab004aafe885a6f682c95,
     type: 3}
   m_PrefabInstance: {fileID: 4542504114478245101}
   m_PrefabAsset: {fileID: 0}
@@ -171201,15 +171190,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f4bfff416e963c643beeb7ec87e12445, type: 3}
---- !u!4 &7788133166520665140 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 2331910008592740995, guid: f4bfff416e963c643beeb7ec87e12445,
-    type: 3}
-  m_PrefabInstance: {fileID: 5497094240464680631}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &5459246116929491292 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: f4bfff416e963c643beeb7ec87e12445,
+    type: 3}
+  m_PrefabInstance: {fileID: 5497094240464680631}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &7788133166520665140 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 2331910008592740995, guid: f4bfff416e963c643beeb7ec87e12445,
     type: 3}
   m_PrefabInstance: {fileID: 5497094240464680631}
   m_PrefabAsset: {fileID: 0}
@@ -171660,6 +171649,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2ee05a97ed01c7c4096a4f8563a7baab, type: 3}
+--- !u!1 &776980516098744647 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6472063117670209335, guid: 2ee05a97ed01c7c4096a4f8563a7baab,
+    type: 3}
+  m_PrefabInstance: {fileID: 5987817956415174256}
+  m_PrefabAsset: {fileID: 0}
 --- !u!114 &4638550263077954703 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 1388921056208261887, guid: 2ee05a97ed01c7c4096a4f8563a7baab,
@@ -171672,12 +171667,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!1 &776980516098744647 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 6472063117670209335, guid: 2ee05a97ed01c7c4096a4f8563a7baab,
-    type: 3}
-  m_PrefabInstance: {fileID: 5987817956415174256}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &6016143287134708541
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -171919,15 +171908,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2f6badcbf21855247a8be5f647997235, type: 3}
---- !u!1 &6307435720694822390 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 2f6badcbf21855247a8be5f647997235,
-    type: 3}
-  m_PrefabInstance: {fileID: 6578046631786236071}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &6684278571821674316 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: 2f6badcbf21855247a8be5f647997235,
+    type: 3}
+  m_PrefabInstance: {fileID: 6578046631786236071}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &6307435720694822390 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: 2f6badcbf21855247a8be5f647997235,
     type: 3}
   m_PrefabInstance: {fileID: 6578046631786236071}
   m_PrefabAsset: {fileID: 0}
@@ -172225,12 +172214,6 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7c0259505d053534b8945520005848a2, type: 3}
---- !u!224 &4529143817689983951 stripped
-RectTransform:
-  m_CorrespondingSourceObject: {fileID: 6821952385836252387, guid: 7c0259505d053534b8945520005848a2,
-    type: 3}
-  m_PrefabInstance: {fileID: 6950938524870022956}
-  m_PrefabAsset: {fileID: 0}
 --- !u!114 &4044893365257679552 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 6364968183512704492, guid: 7c0259505d053534b8945520005848a2,
@@ -172243,6 +172226,12 @@ MonoBehaviour:
   m_Script: {fileID: 1561069652, guid: a7cf2516c626129479cfce7cab60699e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!224 &4529143817689983951 stripped
+RectTransform:
+  m_CorrespondingSourceObject: {fileID: 6821952385836252387, guid: 7c0259505d053534b8945520005848a2,
+    type: 3}
+  m_PrefabInstance: {fileID: 6950938524870022956}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &7087927465023016427
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -172402,9 +172391,9 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: efd0adaf580ab004aafe885a6f682c95, type: 3}
---- !u!4 &7506299473825543909 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: -8469340293408474354, guid: efd0adaf580ab004aafe885a6f682c95,
+--- !u!1 &7147879524175401778 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 103370549273419481, guid: efd0adaf580ab004aafe885a6f682c95,
     type: 3}
   m_PrefabInstance: {fileID: 7087927465023016427}
   m_PrefabAsset: {fileID: 0}
@@ -172420,9 +172409,9 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 7087927465023016427}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &7147879524175401778 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 103370549273419481, guid: efd0adaf580ab004aafe885a6f682c95,
+--- !u!4 &7506299473825543909 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: -8469340293408474354, guid: efd0adaf580ab004aafe885a6f682c95,
     type: 3}
   m_PrefabInstance: {fileID: 7087927465023016427}
   m_PrefabAsset: {fileID: 0}
@@ -173139,27 +173128,27 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: efd0adaf580ab004aafe885a6f682c95, type: 3}
---- !u!1 &7393891288874599208 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 103370549273419481, guid: efd0adaf580ab004aafe885a6f682c95,
-    type: 3}
-  m_PrefabInstance: {fileID: 7490433978140466673}
-  m_PrefabAsset: {fileID: 0}
---- !u!4 &6951842007206165018 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: efd0adaf580ab004aafe885a6f682c95,
-    type: 3}
-  m_PrefabInstance: {fileID: 7490433978140466673}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &7891861137575651071 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8469340293408474354, guid: efd0adaf580ab004aafe885a6f682c95,
     type: 3}
   m_PrefabInstance: {fileID: 7490433978140466673}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &7393891288874599208 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 103370549273419481, guid: efd0adaf580ab004aafe885a6f682c95,
+    type: 3}
+  m_PrefabInstance: {fileID: 7490433978140466673}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &7724297701086011552 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: efd0adaf580ab004aafe885a6f682c95,
+    type: 3}
+  m_PrefabInstance: {fileID: 7490433978140466673}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &6951842007206165018 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: efd0adaf580ab004aafe885a6f682c95,
     type: 3}
   m_PrefabInstance: {fileID: 7490433978140466673}
   m_PrefabAsset: {fileID: 0}
@@ -173397,6 +173386,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d6cc3db34565c3a4ba68573b0eeec2a0, type: 3}
+--- !u!4 &8629730198780923759 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 2253812858737788773, guid: d6cc3db34565c3a4ba68573b0eeec2a0,
+    type: 3}
+  m_PrefabInstance: {fileID: 7531658215869270026}
+  m_PrefabAsset: {fileID: 0}
 --- !u!114 &6541184126709492427 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 3621781888743187137, guid: d6cc3db34565c3a4ba68573b0eeec2a0,
@@ -173409,12 +173404,6 @@ MonoBehaviour:
   m_Script: {fileID: -2039529286, guid: a7cf2516c626129479cfce7cab60699e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!4 &8629730198780923759 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 2253812858737788773, guid: d6cc3db34565c3a4ba68573b0eeec2a0,
-    type: 3}
-  m_PrefabInstance: {fileID: 7531658215869270026}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &7647058582467540685
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -173695,9 +173684,9 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 7829708841754183663}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &7910441090683214134 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 103370549273419481, guid: efd0adaf580ab004aafe885a6f682c95,
+--- !u!4 &7719750064037634052 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: efd0adaf580ab004aafe885a6f682c95,
     type: 3}
   m_PrefabInstance: {fileID: 7829708841754183663}
   m_PrefabAsset: {fileID: 0}
@@ -173707,9 +173696,9 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 7829708841754183663}
   m_PrefabAsset: {fileID: 0}
---- !u!4 &7719750064037634052 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: efd0adaf580ab004aafe885a6f682c95,
+--- !u!1 &7910441090683214134 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 103370549273419481, guid: efd0adaf580ab004aafe885a6f682c95,
     type: 3}
   m_PrefabInstance: {fileID: 7829708841754183663}
   m_PrefabAsset: {fileID: 0}
@@ -174227,6 +174216,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 2ee05a97ed01c7c4096a4f8563a7baab, type: 3}
+--- !u!1 &3269806252826356830 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6472063117670209335, guid: 2ee05a97ed01c7c4096a4f8563a7baab,
+    type: 3}
+  m_PrefabInstance: {fileID: 8408726739424066409}
+  m_PrefabAsset: {fileID: 0}
 --- !u!114 &7491663473402292630 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 1388921056208261887, guid: 2ee05a97ed01c7c4096a4f8563a7baab,
@@ -174239,12 +174234,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!1 &3269806252826356830 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 6472063117670209335, guid: 2ee05a97ed01c7c4096a4f8563a7baab,
-    type: 3}
-  m_PrefabInstance: {fileID: 8408726739424066409}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &8416474394336718996
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -174484,6 +174473,12 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d6cc3db34565c3a4ba68573b0eeec2a0, type: 3}
+--- !u!4 &7635523988782540534 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 2253812858737788773, guid: d6cc3db34565c3a4ba68573b0eeec2a0,
+    type: 3}
+  m_PrefabInstance: {fileID: 8552883551461007763}
+  m_PrefabAsset: {fileID: 0}
 --- !u!114 &4968267767760700242 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 3621781888743187137, guid: d6cc3db34565c3a4ba68573b0eeec2a0,
@@ -174496,12 +174491,6 @@ MonoBehaviour:
   m_Script: {fileID: -2039529286, guid: a7cf2516c626129479cfce7cab60699e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!4 &7635523988782540534 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 2253812858737788773, guid: d6cc3db34565c3a4ba68573b0eeec2a0,
-    type: 3}
-  m_PrefabInstance: {fileID: 8552883551461007763}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &8704392987186045986
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -174626,15 +174615,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: efd0adaf580ab004aafe885a6f682c95, type: 3}
---- !u!4 &9171174030883767241 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: efd0adaf580ab004aafe885a6f682c95,
-    type: 3}
-  m_PrefabInstance: {fileID: 8704392987186045986}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1 &8362444108122102131 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: efd0adaf580ab004aafe885a6f682c95,
+    type: 3}
+  m_PrefabInstance: {fileID: 8704392987186045986}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &9171174030883767241 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: efd0adaf580ab004aafe885a6f682c95,
     type: 3}
   m_PrefabInstance: {fileID: 8704392987186045986}
   m_PrefabAsset: {fileID: 0}
@@ -175122,15 +175111,9 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: efd0adaf580ab004aafe885a6f682c95, type: 3}
---- !u!4 &8206374621216532337 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: -8469340293408474354, guid: efd0adaf580ab004aafe885a6f682c95,
-    type: 3}
-  m_PrefabInstance: {fileID: 8904810383522946175}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &8861680173720109734 stripped
+--- !u!1 &8598871477574787374 stripped
 GameObject:
-  m_CorrespondingSourceObject: {fileID: 103370549273419481, guid: efd0adaf580ab004aafe885a6f682c95,
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: efd0adaf580ab004aafe885a6f682c95,
     type: 3}
   m_PrefabInstance: {fileID: 8904810383522946175}
   m_PrefabAsset: {fileID: 0}
@@ -175140,9 +175123,15 @@ Transform:
     type: 3}
   m_PrefabInstance: {fileID: 8904810383522946175}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &8598871477574787374 stripped
+--- !u!1 &8861680173720109734 stripped
 GameObject:
-  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: efd0adaf580ab004aafe885a6f682c95,
+  m_CorrespondingSourceObject: {fileID: 103370549273419481, guid: efd0adaf580ab004aafe885a6f682c95,
+    type: 3}
+  m_PrefabInstance: {fileID: 8904810383522946175}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &8206374621216532337 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: -8469340293408474354, guid: efd0adaf580ab004aafe885a6f682c95,
     type: 3}
   m_PrefabInstance: {fileID: 8904810383522946175}
   m_PrefabAsset: {fileID: 0}
@@ -175410,9 +175399,9 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f4bfff416e963c643beeb7ec87e12445, type: 3}
---- !u!4 &8700108294326395851 stripped
+--- !u!4 &6875550598287423139 stripped
 Transform:
-  m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: f4bfff416e963c643beeb7ec87e12445,
+  m_CorrespondingSourceObject: {fileID: 2331910008592740995, guid: f4bfff416e963c643beeb7ec87e12445,
     type: 3}
   m_PrefabInstance: {fileID: 9166592274870322208}
   m_PrefabAsset: {fileID: 0}
@@ -175422,9 +175411,9 @@ GameObject:
     type: 3}
   m_PrefabInstance: {fileID: 9166592274870322208}
   m_PrefabAsset: {fileID: 0}
---- !u!4 &6875550598287423139 stripped
+--- !u!4 &8700108294326395851 stripped
 Transform:
-  m_CorrespondingSourceObject: {fileID: 2331910008592740995, guid: f4bfff416e963c643beeb7ec87e12445,
+  m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: f4bfff416e963c643beeb7ec87e12445,
     type: 3}
   m_PrefabInstance: {fileID: 9166592274870322208}
   m_PrefabAsset: {fileID: 0}

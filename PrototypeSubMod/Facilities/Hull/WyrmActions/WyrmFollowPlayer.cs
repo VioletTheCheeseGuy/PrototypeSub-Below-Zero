@@ -11,18 +11,18 @@ public class WyrmFollowPlayer : WyrmAction
     
     private float timeLastPerformed;
 
-    public override float Evaluate(Creature creature, float time)
+    public override float Evaluate(float time)
     {
-        return !aggressiveWorm.IsAggressive() ? 1f : base.Evaluate(creature, time);
+        return !aggressiveWorm.IsAggressive() ? 1f : base.Evaluate(time);
     }
 
-    public override void Perform(Creature creature, float time, float deltaTime)
+    public override void Perform(float time, float deltaTime)
     {
         if (performing) return;
 
         if (Time.time < timeLastPerformed + timeBetweenPointRecalculations) return;
 
-        base.Perform(creature, time, deltaTime);
+        base.Perform(time, deltaTime);
         
         Plugin.Logger.LogInfo($"Starting wyrm follow player");
         timeLastPerformed = Time.time;

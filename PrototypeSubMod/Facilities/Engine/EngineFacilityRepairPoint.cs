@@ -24,7 +24,7 @@ public class EngineFacilityRepairPoint : MonoBehaviour
     {
         Plugin.GlobalSaveData.repairedEngineFacilityPoints.Add(gameObject.name);
         int remainingPoints = REPAIR_POINTS_COUNT - Plugin.GlobalSaveData.repairedEngineFacilityPoints.Count;
-        PDALog.Add(remainingPointsVoicelines[remainingPoints].path);
+        PDALog.Add(remainingPointsVoicelines[remainingPoints].path,false);
         gameObject.SetActive(false);
         if (remainingPoints <= 0)
         {

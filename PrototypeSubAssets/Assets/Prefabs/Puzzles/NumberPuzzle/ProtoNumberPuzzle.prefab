@@ -2100,12 +2100,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   asset: {fileID: 11400000, guid: 3eec954f423a7e242b33ee068d3ccd9c, type: 2}
   playOnAwake: 0
-  stopImmediatelyOnDisable: 0
   followParent: 0
   restartOnPlay: 1
   debug: 0
-  subtitlesKey: 
-  playSubtitlesWithUnscaledTime: 1
 --- !u!1 &245986569479117034
 GameObject:
   m_ObjectHideFlags: 0
@@ -4164,6 +4161,7 @@ MonoBehaviour:
   text: NumberPuzzleEntryDenied
   sound: {fileID: 11400000, guid: fbc707d701178134e98a00276d768941, type: 2}
   minInterval: 10
+  allowDuringConversation: 0
 --- !u!1 &512296088180600085
 GameObject:
   m_ObjectHideFlags: 0
@@ -8991,12 +8989,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   asset: {fileID: 11400000, guid: d4f369ee50cc38041aafe929bc820881, type: 2}
   playOnAwake: 0
-  stopImmediatelyOnDisable: 0
   followParent: 0
   restartOnPlay: 1
   debug: 0
-  subtitlesKey: 
-  playSubtitlesWithUnscaledTime: 1
 --- !u!1 &1137823582932692329
 GameObject:
   m_ObjectHideFlags: 0
@@ -30367,6 +30362,7 @@ MonoBehaviour:
   text: NumberPuzzleOnEnter
   sound: {fileID: 11400000, guid: 9d9254b082e631c4aa60450f3ac4e76d, type: 2}
   minInterval: 600
+  allowDuringConversation: 0
 --- !u!1 &3724848257941816565
 GameObject:
   m_ObjectHideFlags: 0
@@ -31787,7 +31783,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8623375861894596642}
   - component: {fileID: 6574855695891651355}
-  - component: {fileID: 1098548401194314990}
+  - component: {fileID: 1517221610238484798}
   m_Layer: 0
   m_Name: SwimTrigger
   m_TagString: Untagged
@@ -31822,7 +31818,7 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: -0.000061035156}
---- !u!114 &1098548401194314990
+--- !u!114 &1517221610238484798
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -31831,10 +31827,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 3895946706321197486}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: -1098756451, guid: 06dd3d5416bf43ea368cc39ff96e6d5a, type: 3}
+  m_Script: {fileID: -286774823, guid: 06dd3d5416bf43ea368cc39ff96e6d5a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   setToMotorModeOnEnter: 1
+  onPlayerEntered:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &3900222412248458937
 GameObject:
   m_ObjectHideFlags: 0
@@ -45859,6 +45858,7 @@ MonoBehaviour:
   text: NumberPuzzleComplete
   sound: {fileID: 11400000, guid: f7f5d7771cf058548a80c9335e406a65, type: 2}
   minInterval: 600
+  allowDuringConversation: 0
 --- !u!1 &5590651778864401099
 GameObject:
   m_ObjectHideFlags: 0
@@ -51244,6 +51244,7 @@ MonoBehaviour:
   text: NumberPuzzleEnterNoQEP
   sound: {fileID: 11400000, guid: 822d10f18d20ab744991d687798ceed6, type: 2}
   minInterval: 600
+  allowDuringConversation: 0
 --- !u!1 &6159361616098309413
 GameObject:
   m_ObjectHideFlags: 0
@@ -61904,6 +61905,7 @@ MonoBehaviour:
   text: NumberPuzzleIncorrect
   sound: {fileID: 11400000, guid: f16a42c675b9e434eb7d58e8a79f1ced, type: 2}
   minInterval: 10
+  allowDuringConversation: 0
 --- !u!1 &7427365622347732592
 GameObject:
   m_ObjectHideFlags: 0
@@ -72444,6 +72446,7 @@ MonoBehaviour:
   overrideBiome: protopuzzlefacility
   highDetail: 1
   affectsVisuals: 1
+  playerSpeedModifier: {fileID: 0}
 --- !u!114 &761171837775921974
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -73408,7 +73411,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7216905273371498127}
   - component: {fileID: 6047928118024197803}
-  - component: {fileID: 2727623695949220502}
+  - component: {fileID: 3812794016745269745}
   m_Layer: 0
   m_Name: BlockSeamoth
   m_TagString: Untagged
@@ -73443,7 +73446,7 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &2727623695949220502
+--- !u!114 &3812794016745269745
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -73452,9 +73455,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 8510454403446380349}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 802140329, guid: 06dd3d5416bf43ea368cc39ff96e6d5a, type: 3}
+  m_Script: {fileID: -311417207, guid: a7cf2516c626129479cfce7cab60699e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  colliders:
+  - {fileID: 6047928118024197803}
 --- !u!1 &8519227677196980746
 GameObject:
   m_ObjectHideFlags: 0
@@ -77646,6 +77651,7 @@ MonoBehaviour:
   text: NumberPuzzleEnterWithQEP
   sound: {fileID: 11400000, guid: 1e6250f23d8cfd348bc2ec250ec1fe8c, type: 2}
   minInterval: 600
+  allowDuringConversation: 0
 --- !u!1 &9006398702750570987
 GameObject:
   m_ObjectHideFlags: 0
@@ -78409,7 +78415,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6353624665796958892}
   - component: {fileID: 6185407822021318703}
-  - component: {fileID: 5390666214005077011}
+  - component: {fileID: 8956385681743365863}
   m_Layer: 0
   m_Name: WalkTrigger
   m_TagString: Untagged
@@ -78444,7 +78450,7 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: -0.000061035156}
---- !u!114 &5390666214005077011
+--- !u!114 &8956385681743365863
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -78453,10 +78459,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 9172242264524727549}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: -1098756451, guid: 06dd3d5416bf43ea368cc39ff96e6d5a, type: 3}
+  m_Script: {fileID: -286774823, guid: 06dd3d5416bf43ea368cc39ff96e6d5a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   setToMotorModeOnEnter: 2
+  onPlayerEntered:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &9174550353427974695
 GameObject:
   m_ObjectHideFlags: 0

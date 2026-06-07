@@ -123,13 +123,12 @@ internal class ProtoTeleporterManager : ProtoUpgrade
         TeleporterOverride.OnTeleportToSubFinished();
         modeManager.SetInterfloorMode();
 
-        Player.main.SetCurrentSub(subRoot, true);
+        Player.main.SetCurrentSub(subRoot);
         idManager.UnselectAll();
     }
 
     public Transform GetTeleportPosition() => teleportPosition;
     public string GetTeleporterID() => teleporterID;
-    public AssetReferenceGameObject GetEndCinematicController() => teleporter.cinematicEndControllerPrefabReference;
 
     /// <summary>
     /// Returns the teleporter ID without the M/S indicator

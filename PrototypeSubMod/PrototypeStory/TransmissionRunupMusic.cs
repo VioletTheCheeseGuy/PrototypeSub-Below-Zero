@@ -16,7 +16,7 @@ public class TransmissionRunupMusic : MonoBehaviour, IScheduledUpdateBehaviour
     
     public void ScheduledUpdate()
     {
-        if (IngameMenu.IsQuitting())
+        if (IngameMenu.main.isQuitting)
         {
             musicPlayer.Stop();
             return;

@@ -10,7 +10,7 @@ namespace PrototypeSubMod.Patches;
 [HarmonyPatch(typeof(WaterTemperatureSimulation))]
 internal class WaterTemperatureSimulation_Patches
 {
-    [HarmonyPatch(nameof(WaterTemperatureSimulation.GetTemperature)), HarmonyPatch(new[] { typeof(Vector3) }), HarmonyTranspiler]
+    //[HarmonyPatch(nameof(WaterTemperatureSimulation.GetTemperature)), HarmonyPatch(new[] { typeof(Vector3) }), HarmonyTranspiler]
     private static IEnumerable<CodeInstruction> GetTemperature_Transpiler(IEnumerable<CodeInstruction> instructions)
     {
         var magnitude = typeof(Vector3).GetProperty("magnitude", BindingFlags.Public | BindingFlags.Instance).GetGetMethod();

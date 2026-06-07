@@ -86,7 +86,7 @@ internal class ProtoEmergencyWarp : ProtoUpgrade
         player.GetComponent<Collider>().enabled = false;
         player.onTeleportationComplete += OnTeleportationComplete;
 
-        Camera.main.GetComponent<TeleportScreenFXController>().StartTeleport();
+        Camera.main.GetComponent<TeleportScreenFXController>().StartTeleport(null);
         subRigidbody.isKinematic = true;
         subRigidbody.velocity = Vector3.zero;
         teleportingToMoonpool = true;
@@ -119,7 +119,7 @@ internal class ProtoEmergencyWarp : ProtoUpgrade
 
     public override bool OnActivated()
     {
-        if (subRoot.powerRelay.GetPower() < PrototypePowerSystem.CHARGE_POWER_AMOUNT * requiredCharges && GameModeUtils.RequiresPower())
+        if (subRoot.powerRelay.GetPower() < PrototypePowerSystem.CHARGE_POWER_AMOUNT * requiredCharges && GameModeManager.gameOptionsManager.options.technologyRequiresPower)
         {
             subRoot.voiceNotificationManager.PlayVoiceNotification(insufficientPowerNotification);
             return false;

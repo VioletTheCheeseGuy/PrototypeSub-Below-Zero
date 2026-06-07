@@ -89,7 +89,7 @@ internal class uGUI_FirstInteractScreen : TerminalScreen
     
     private IEnumerator OrionExposition()
     {
-        PDALog.Add(devResumedPDAKey);
+        PDALog.Add(devResumedPDAKey, false);
 
         yield return new WaitForSeconds(voicelineWaitTime);
 

@@ -57,7 +57,7 @@ public class WyrmFirstEncounterManager : MonoBehaviour
         
         var action = predeterminedActions[actionStage];
         Plugin.Logger.LogInfo($"Starting {action} from Update");
-        action.Perform(null, 0, 0);
+        action.Perform( 0, 0);
         action.OnActionComplete += OnActionCompleted;
         startedSequence = true;
     }
@@ -80,7 +80,7 @@ public class WyrmFirstEncounterManager : MonoBehaviour
         
         var newAction = predeterminedActions[actionStage];
         Plugin.Logger.LogInfo($"Starting {newAction} from OnActionCompleted");
-        newAction.Perform(null, 0, 0);
+        newAction.Perform( 0, 0);
         newAction.OnActionComplete += OnActionCompleted;
     }
 

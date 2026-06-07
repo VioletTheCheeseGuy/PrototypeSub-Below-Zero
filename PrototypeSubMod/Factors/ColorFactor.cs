@@ -94,14 +94,14 @@ public class ColorFactor : Factor, IProtoTreeEventListener
 
     public GameInput.Button GetNextButton()
     {
-        return GameInput.PrimaryDevice == GameInput.Device.Controller
+        return GameInput.GetPrimaryDevice() == GameInput.Device.Controller
             ? GameInput.Button.RightHand
             : GameInput.Button.CycleNext;
     }
 
     public GameInput.Button GetPrevButton()
     {
-        return GameInput.PrimaryDevice == GameInput.Device.Controller
+        return GameInput.GetPrimaryDevice() == GameInput.Device.Controller
             ? GameInput.Button.LeftHand
             : GameInput.Button.CyclePrev;
     }

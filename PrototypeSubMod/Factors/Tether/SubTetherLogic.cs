@@ -32,7 +32,7 @@ public class SubTetherLogic : Factor
         
         if (Player.main.isPiloting) return;
         if (Player.main.pda.isOpen) return;
-        if (Player.main.precursorOutOfWater && Plugin.GlobalSaveData.tetherFactorMarkerLocation == null) return;
+        if (Player.main.forceWalkMotorMode && Plugin.GlobalSaveData.tetherFactorMarkerLocation == null) return;
         if (Player.main.cinematicModeActive) return;
         if (Player.main.pda.isOpen) return;
         if (Player.main.currentSub != null) return;
@@ -66,7 +66,7 @@ public class SubTetherLogic : Factor
         var teleporterManager = subRoot.GetComponentInChildren<ProtoTeleporterManager>();
         var teleportPos = teleporterManager.GetTeleportPosition();
         
-        UWE.CoroutineHost.StartCoroutine(TeleportToLocation(teleportPos.position, teleportPos.eulerAngles.y, teleporterManager.GetEndCinematicController()));
+        UWE.CoroutineHost.StartCoroutine(TeleportToLocation(teleportPos.position, teleportPos.eulerAngles.y));
         FMODUWE.PlayOneShot(AudioUtils.GetFmodAsset("SubTether"), Player.main.transform.position);
 
         ionManager.ConsumeEnergy(resourceCost);
@@ -100,7 +100,7 @@ public class SubTetherLogic : Factor
             }
         }
 
-        Camera.main.GetComponent<TeleportScreenFXController>().StartTeleport();
+        Camera.main.GetComponent<TeleportScreenFXController>().StartTeleport(null);
         yield return new WaitForSeconds(1f);
         
         player.transform.position = position;
@@ -115,8 +115,7 @@ public class SubTetherLogic : Factor
 
         StoryGoalManager.main.OnGoalComplete("ProtoTetherEquipped");
         var markerLogic = GetComponent<MarkerTetherLogic>();
-        var hintText = Language.main.GetFormat("ProtoTetherTooltip", GameInput.FormatButton(GetUseButton()),
-            GameInput.FormatButton(markerLogic.GetUseButton()));
+        var hintText = Language.main.GetFormat("ProtoTetherTooltip");
         Hint.main.message.SetText(hintText);
         Hint.main.message.Show();
     }

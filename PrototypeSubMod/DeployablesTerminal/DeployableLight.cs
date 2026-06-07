@@ -184,14 +184,14 @@ internal class DeployableLight : MonoBehaviour, IProtoTreeEventListener
         Destroy(gameObject, 10f);
 
         breakSFX.Play();
-        loopingSFX.Stop(FMOD.Studio.STOP_MODE.IMMEDIATE);
+        loopingSFX.Stop();
         ecoTarget.enabled = false;
     }
 
     public void OnHandHover(HandTargetEventData data)
     {
         HandReticle main = HandReticle.main;
-        var useText = Language.main.GetFormat("DestroyDeployableLight", GameInput.FormatButton(GameInput.Button.LeftHand));
+        var useText = Language.main.GetFormat("DestroyDeployableLight");
         main.SetTextRaw(HandReticle.TextType.Hand, useText);
     }
 
@@ -230,8 +230,8 @@ internal class DeployableLight : MonoBehaviour, IProtoTreeEventListener
     private void OnDisable()
     {
         Plugin.GlobalSaveData.OnStartedSaving -= SaveLifetimes;
-        breakSFX.Stop(FMOD.Studio.STOP_MODE.IMMEDIATE);
-        loopingSFX.Stop(FMOD.Studio.STOP_MODE.IMMEDIATE);
+        breakSFX.Stop();
+        loopingSFX.Stop();
 
         if (!identifier) return;
         

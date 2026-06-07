@@ -25,8 +25,6 @@ public class ClearWaterlevelReferenceOnGhost : MonoBehaviour
 
     private void ForceOnTriggerExit()
     {
-        if (Player.main.waterPlaneOverride != (IWaterPlane)trigger) return;
-        
         trigger.OnTriggerExit(Player.mainCollider);
         Player.main.SetPrecursorOutOfWater(false);
     }

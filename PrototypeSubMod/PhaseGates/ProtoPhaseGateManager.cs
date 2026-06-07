@@ -106,7 +106,7 @@ internal class ProtoPhaseGateManager : MonoBehaviour, IProtoTreeEventListener
         
         var vfxConstructing = GetComponent<VFXConstructing>();
         vfxConstructing.ghostOverlay = vfxConstructing.gameObject.EnsureComponent<VFXOverlayMaterial>();
-        vfxConstructing.ghostMaterial = new Material(MaterialUtils.GhostMaterial);
+        vfxConstructing.ghostMaterial = new Material(MaterialUtils.ShinyGlassMaterial);
         vfxConstructing.ghostMaterial.color = GetComponent<GhostMaterialSetter>().GetGhostColor();
         vfxConstructing.ghostOverlay.ApplyOverlay(vfxConstructing.ghostMaterial, "VFXDeconstructing", false);
         foreach (var renderer in GetComponentsInChildren<Renderer>())
@@ -156,10 +156,7 @@ internal class ProtoPhaseGateManager : MonoBehaviour, IProtoTreeEventListener
         {
             return;
         }
-        if (PrecursorTeleporter.activeTeleporter != null)
-        {
-            return;
-        }
+        
         if (!TeleporterManager.GetTeleporterActive(teleporter.teleporterIdentifier))
         {
             return;
@@ -170,7 +167,6 @@ internal class ProtoPhaseGateManager : MonoBehaviour, IProtoTreeEventListener
 
     private IEnumerator TeleportSubRoot(GameObject subRoot)
     {
-        PrecursorTeleporter.activeTeleporter = teleporter;
         var subRigidbody = subRoot.GetComponent<Rigidbody>();
         var pilotingChair = subRoot.GetComponentInChildren<PilotingChair>();
 
@@ -189,7 +185,7 @@ internal class ProtoPhaseGateManager : MonoBehaviour, IProtoTreeEventListener
             Player.mainCollider.enabled = false;
         
             player.onTeleportationComplete += () => OnTeleportationComplete(subRigidbody, pilotingChair);
-            Camera.main.GetComponent<TeleportScreenFXController>().StartTeleport();
+            Camera.main.GetComponent<TeleportScreenFXController>().StartTeleport(null);
         }
 
         if (playerWasPiloting)
@@ -215,10 +211,6 @@ internal class ProtoPhaseGateManager : MonoBehaviour, IProtoTreeEventListener
         subRigidbody.isKinematic = false;
         Player.mainCollider.enabled = true;
 
-        if (PrecursorTeleporter.activeTeleporter == teleporter)
-        {
-            PrecursorTeleporter.activeTeleporter = null;
-        }
 
         StartCoroutine(ReEnterPilotingModeDelayed(pilotingChair));
         playerWasPiloting = false;

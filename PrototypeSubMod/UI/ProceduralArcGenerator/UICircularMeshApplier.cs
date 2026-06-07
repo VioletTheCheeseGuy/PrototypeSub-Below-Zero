@@ -18,7 +18,7 @@ public class UICircularMeshApplier : CircularMeshApplier
         // To avoid issues in the Unity Editor
         if (Player.main == null) return;
         
-        var shader = Plugin.ShadersAssetBundle.LoadAsset<Shader>(material.shader.name.Split('/')[^1]);
+        var shader = Plugin.ShadersAssetBundle.LoadAsset<Shader>(material.shader.name.Split('/')[material.shader.name.Split('/').Length - 1]);
         material.shader = shader;
     }
 

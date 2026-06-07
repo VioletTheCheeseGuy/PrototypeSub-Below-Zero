@@ -44,7 +44,7 @@ public class FactorUnlockTerminal : MonoBehaviour
             return;
         }
         
-        PDALog.Add(pdaLog);
+        PDALog.Add(pdaLog, false);
         var data = Language.main.GetMetaData(pdaLog);
         float delay = 0;
         for (int i = 0; i < data.lineCount; i++)
@@ -59,7 +59,7 @@ public class FactorUnlockTerminal : MonoBehaviour
     {
         yield return new WaitForSeconds(delay);
         
-        KnownTech.Add(unlockTechType.TechType);
-        PDAEncyclopedia.Add($"{unlockTechType.TechType.ToString()}Ency", true);
+        KnownTech.Add(unlockTechType.TechType,false);
+        PDAEncyclopedia.Add($"{unlockTechType.TechType.ToString()}Ency", true,false);
     }
 }

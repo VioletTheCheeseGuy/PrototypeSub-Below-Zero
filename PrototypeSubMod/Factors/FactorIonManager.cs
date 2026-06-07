@@ -38,7 +38,7 @@ public class FactorIonManager : MonoBehaviour, IProtoEventListener
 
     public bool ConsumeEnergy(float energy)
     {
-        if (GameModeUtils.IsCheatActive(GameModeOption.NoEnergy))
+        if ((GameModeManager.gameOptionsManager.options.technologyRequiresPower))
         {
             return true;
         }

@@ -96,7 +96,7 @@ internal class Player_Patches
         teleportManager.ResetColors();
     }
 
-    [HarmonyPatch(nameof(Player.CalculateBiome)), HarmonyTranspiler]
+    //[HarmonyPatch(nameof(Player.CalculateBiome)), HarmonyTranspiler]
     private static IEnumerable<CodeInstruction> CalculateBiome_Transpiler(IEnumerable<CodeInstruction> instructions)
     {
         var outOfWaterField = typeof(Player).GetField("precursorOutOfWater", BindingFlags.Public | BindingFlags.Instance);

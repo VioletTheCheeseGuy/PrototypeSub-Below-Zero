@@ -23,27 +23,27 @@ internal static class BiomeRegisterer
         var settings = BiomeUtils.CreateBiomeSettings(new Vector3(18, 15, 13), 1.1f, Color.white, 0.15f, Color.white, 0, temperature: 10);
 
         BiomeHandler.RegisterBiome(Plugin.DEFENSE_CHAMBER_BIOME_NAME, settings, new BiomeHandler.SkyReference("SkyMountains"));
-        BiomeHandler.AddBiomeMusic(Plugin.DEFENSE_CHAMBER_BIOME_NAME, AudioUtils.GetFmodAsset("DefenseFacilityExterior"));
+        BiomeHandler.AddBiomeAmbience(Plugin.DEFENSE_CHAMBER_BIOME_NAME, AudioUtils.GetFmodAsset("DefenseFacilityExterior"),FMODGameParams.InteriorState.Always);
         
         #region Tunnel Biomes
         var tunnelSettings = BiomeUtils.CreateBiomeSettings(new Vector3(20, 20, 20), 1f, Color.white, 0.12f, Color.white, 0, startDistance: 20);
 
         BiomeHandler.RegisterBiome("protodefensetunnel1", tunnelSettings, new BiomeHandler.SkyReference("SkyCrashZone"));
-        BiomeHandler.AddBiomeMusic("protodefensetunnel1", AudioUtils.GetFmodAsset("DefenseTunnelMusic1"), FMODGameParams.InteriorState.OnlyOutside);
+        BiomeHandler.AddBiomeAmbience("protodefensetunnel1", AudioUtils.GetFmodAsset("DefenseTunnelMusic1"), FMODGameParams.InteriorState.OnlyOutside);
         BiomeHandler.RegisterBiome("protodefensetunnel2", tunnelSettings, new BiomeHandler.SkyReference("SkyCrashZone"));
-        BiomeHandler.AddBiomeMusic("protodefensetunnel2", AudioUtils.GetFmodAsset("DefenseTunnelMusic2"), FMODGameParams.InteriorState.OnlyOutside);
+        BiomeHandler.AddBiomeAmbience("protodefensetunnel2", AudioUtils.GetFmodAsset("DefenseTunnelMusic2"), FMODGameParams.InteriorState.OnlyOutside);
         BiomeHandler.RegisterBiome("protodefensetunnel3", tunnelSettings, new BiomeHandler.SkyReference("SkyCrashZone"));
-        BiomeHandler.AddBiomeMusic("protodefensetunnel3", AudioUtils.GetFmodAsset("DefenseTunnelMusic3"), FMODGameParams.InteriorState.OnlyOutside);
+        BiomeHandler.AddBiomeAmbience("protodefensetunnel3", AudioUtils.GetFmodAsset("DefenseTunnelMusic3"), FMODGameParams.InteriorState.OnlyOutside);
         BiomeHandler.RegisterBiome("protodefensetunnel4", tunnelSettings, new BiomeHandler.SkyReference("SkyCrashZone"));
-        BiomeHandler.AddBiomeMusic("protodefensetunnel4", AudioUtils.GetFmodAsset("DefenseTunnelMusic4"), FMODGameParams.InteriorState.OnlyOutside);
+        BiomeHandler.AddBiomeAmbience("protodefensetunnel4", AudioUtils.GetFmodAsset("DefenseTunnelMusic4"), FMODGameParams.InteriorState.OnlyOutside);
         BiomeHandler.RegisterBiome("protodefensetunnel5", tunnelSettings, new BiomeHandler.SkyReference("SkyCrashZone"));
-        BiomeHandler.AddBiomeMusic("protodefensetunnel5", AudioUtils.GetFmodAsset("DefenseTunnelMusic5"), FMODGameParams.InteriorState.OnlyOutside);
+        BiomeHandler.AddBiomeAmbience("protodefensetunnel5", AudioUtils.GetFmodAsset("DefenseTunnelMusic5"), FMODGameParams.InteriorState.OnlyOutside);
         #endregion
 
         #region Interceptor Island
         var islandSettings = BiomeUtils.CreateBiomeSettings(new Vector3(40, 15, 9), 0.4f, Color.white, 0.12f, Color.white, 0, 25, 1.4f);
         BiomeHandler.RegisterBiome("interceptorisland", islandSettings, new BiomeHandler.SkyReference("SkyCrashZone"));
-        BiomeHandler.AddBiomeMusic("interceptorisland", AudioUtils.GetFmodAsset("ProtoIslandMusic"), FMODGameParams.InteriorState.OnlyOutside);
+        BiomeHandler.AddBiomeAmbience("interceptorisland", AudioUtils.GetFmodAsset("ProtoIslandMusic"), FMODGameParams.InteriorState.OnlyOutside);
         #endregion
 
         #region Engine Facility
@@ -52,7 +52,7 @@ internal static class BiomeRegisterer
             Color.clear,
             1f, 25, 0f, 0f, 24);
         BiomeHandler.RegisterBiome(Plugin.ENGINE_FACILITY_BIOME_NAME, engineSettings, new BiomeHandler.SkyReference("SkyBloodKelpTwo"));
-        BiomeHandler.AddBiomeMusic(Plugin.ENGINE_FACILITY_BIOME_NAME, AudioUtils.GetFmodAsset("EngineFacilityMusic"));
+        BiomeHandler.AddBiomeAmbience(Plugin.ENGINE_FACILITY_BIOME_NAME, AudioUtils.GetFmodAsset("EngineFacilityMusic"), FMODGameParams.InteriorState.Always);
 
         #endregion
         
@@ -62,7 +62,7 @@ internal static class BiomeRegisterer
             new Color(0f, 0.561f, 0.376f),0.05f,
             25f, 0f, 0f, 30);
         BiomeHandler.RegisterBiome("warpcore", warpCoreSettings, new BiomeHandler.SkyReference("SkyLostRiver_Junction"));
-        BiomeHandler.AddBiomeMusic("warpcore", AudioUtils.GetFmodAsset("WarpCoreMusic"));
+        BiomeHandler.AddBiomeAmbience("warpcore", AudioUtils.GetFmodAsset("WarpCoreMusic"), FMODGameParams.InteriorState.OnlyOutside);
 
         #endregion
 
@@ -72,12 +72,12 @@ internal static class BiomeRegisterer
                 0.25f, new Color(0, 0.95f, 1),
                 0.03f, 40, 0f, 0f);
         BiomeHandler.RegisterBiome("protohullfacilitycalm", hullSettings, new BiomeHandler.SkyReference("SkyPrecursorInterior_NoLightmaps"));
-        BiomeHandler.AddBiomeMusic("protohullfacilitycalm",
-            AudioUtils.GetFmodAsset("HullFacility_Calm"));
+        BiomeHandler.AddBiomeAmbience("protohullfacilitycalm",
+            AudioUtils.GetFmodAsset("HullFacility_Calm"), FMODGameParams.InteriorState.OnlyOutside);
 
         BiomeHandler.RegisterBiome("protohullfacilitytense", hullSettings, new BiomeHandler.SkyReference("SkyPrecursorInterior_NoLightmaps"));
-        BiomeHandler.AddBiomeMusic("protohullfacilitytense",
-            AudioUtils.GetFmodAsset("HullFacility_Tense"));
+        BiomeHandler.AddBiomeAmbience("protohullfacilitytense",
+            AudioUtils.GetFmodAsset("HullFacility_Tense"), FMODGameParams.InteriorState.OnlyOutside);
         #endregion
 
         #region Hull Outpost
@@ -116,7 +116,7 @@ internal static class BiomeRegisterer
         var puzzleSettings = BiomeUtils.CreateBiomeSettings(new Vector3(0, 0, 0), 0.1f, Color.white, 0.01f,
             Color.clear, sunlightScale:0f, ambientScale:0f);
         BiomeHandler.RegisterBiome("protopuzzlefacility", puzzleSettings, new BiomeHandler.SkyReference("SkyPrecursorInterior_NoLightmaps"));
-        BiomeHandler.AddBiomeMusic("protopuzzlefacility", AudioUtils.GetFmodAsset("ProtoPuzzleMusic"));
+        BiomeHandler.AddBiomeAmbience("protopuzzlefacility", AudioUtils.GetFmodAsset("ProtoPuzzleMusic"), FMODGameParams.InteriorState.OnlyOutside);
 
         #endregion
         

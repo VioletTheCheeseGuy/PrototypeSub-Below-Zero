@@ -60,7 +60,7 @@ internal class InterceptorReactorSequenceManager : MonoBehaviour
 
         if (distance < pdaMessageDistance)
         {
-            PDALog.Add("PDA_OnApproachWarpCore");
+            PDALog.Add("PDA_OnApproachWarpCore", false);
         }
     }
 
@@ -102,7 +102,7 @@ internal class InterceptorReactorSequenceManager : MonoBehaviour
 
         yield return new WaitForSeconds(3f);
         
-        PDALog.Add("OnInterceptorSequenceFinished");
+        PDALog.Add("OnInterceptorSequenceFinished", false);
     }
 
     private IEnumerator TeleportToIsland()

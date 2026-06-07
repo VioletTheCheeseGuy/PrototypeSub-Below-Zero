@@ -129,8 +129,8 @@
         "com.unity.modules.imgui": "1.0.0"
       }
     },
-    "subnautica": {
-      "version": "file:Subnautica",
+    "subnauticazero": {
+      "version": "file:SubnauticaZero",
       "depth": 0,
       "source": "embedded",
       "dependencies": {}

@@ -85,7 +85,7 @@ internal class CloakEffectHandler : ProtoUpgrade
 
     private void Awake()
     {
-        shader = Plugin.ShadersAssetBundle.LoadAsset<Shader>(shader.name.Split('/')[^1]);
+        shader = Plugin.ShadersAssetBundle.LoadAsset<Shader>(shader.name.Split('/')[shader.name.Split('/').Length - 1]); ;
     }
     
     private void Start()

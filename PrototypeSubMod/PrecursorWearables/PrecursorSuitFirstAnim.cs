@@ -26,7 +26,7 @@ public class PrecursorSuitFirstAnim : MonoBehaviour
 
         Player.main.playerAnimator.SetBool("suit_first_use", true);
         
-        PDALog.Add("PDA_PrecursorAugments");
+        PDALog.Add("PDA_PrecursorAugments", false);
 
         var restoreQuickSlot = -1;
         if (Inventory.main.GetHeldTool() != null)

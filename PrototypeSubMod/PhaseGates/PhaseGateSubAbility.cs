@@ -102,7 +102,7 @@ public class PhaseGateSubAbility : MonoBehaviour, IAbilityIcon
             Destroy(colliders[i]);
         }
 
-        ghostMaterial = new Material(MaterialUtils.GhostMaterial);
+        ghostMaterial = new Material(MaterialUtils.ShinyGlassMaterial);
         ghostMaterial.color = new Color(0.476f, 1f, 0.381f);
         ghostMaterial.SetColor(ShaderPropertyID._BorderColor, new Color(0.476f, 1f, 0.381f));
         foreach (var renderer in ghostObject.GetComponentsInChildren<Renderer>(true))
@@ -200,7 +200,7 @@ public class PhaseGateSubAbility : MonoBehaviour, IAbilityIcon
         gateManager.OnConstructionStarted();
 
         var vfxConstructing = gateInstance.GetComponent<VFXConstructing>();
-        vfxConstructing.ghostMaterial = MaterialUtils.GhostMaterial;
+        vfxConstructing.ghostMaterial = MaterialUtils.ShinyGlassMaterial;
         vfxConstructing.timeToConstruct = timeToConstruct;
         vfxConstructing.informGameObject = gameObject;
         vfxConstructing.StartConstruction();

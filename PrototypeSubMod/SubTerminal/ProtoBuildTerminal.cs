@@ -67,7 +67,7 @@ internal class ProtoBuildTerminal : Crafter
         UWE.CoroutineHost.StartCoroutine(PlayConstructSfxDelayed());
         StoryGoalManager.main.OnGoalComplete("PrototypeCrafted");
 
-        PDALog.Add(buildStartPdaKey);
+        PDALog.Add(buildStartPdaKey, false);
     }
 
     private IEnumerator PlayConstructSfxDelayed()
@@ -168,7 +168,7 @@ internal class ProtoBuildTerminal : Crafter
         
         yield return new WaitForEndOfFrame();
         var constructing = sub.GetComponent<VFXConstructing>();
-        constructing.ghostMaterial = MaterialUtils.GhostMaterial;
+        constructing.ghostMaterial = MaterialUtils.ShinyGlassMaterial;
         constructing.delay = 2;
         yield return new WaitForEndOfFrame();
         
@@ -214,7 +214,7 @@ internal class ProtoBuildTerminal : Crafter
             constructing.EndConstruct();
         }
         
-        PDALog.Add(buildFinishPdaKey);
+        PDALog.Add(buildFinishPdaKey,false);
     }
 
     private IEnumerator RecentralizeSubDelayed()

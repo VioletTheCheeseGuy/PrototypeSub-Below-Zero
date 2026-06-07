@@ -42,7 +42,7 @@ public class ProtoDockingManager : MonoBehaviour, IProtoEventListener, IProtoTre
         vehicle.SetActive(true);
         
         yield return new WaitForEndOfFrame();
-        yield return new WaitUntil(() => dockingBay._dockedVehicle);
+        yield return new WaitUntil(() => dockingBay.dockedObject);
         
         StoreVehicle();
         ignoreCinematicStart.enabled = false;
@@ -51,7 +51,7 @@ public class ProtoDockingManager : MonoBehaviour, IProtoEventListener, IProtoTre
     
     public void TeleportIntoSub()
     {
-        if (dockingBay.dockedVehicle == playersVehicle)
+        if (dockingBay.dockedObject == playersVehicle)
         {
             interfloorTeleporter.StartTeleportPlayer();
         }
@@ -74,19 +74,19 @@ public class ProtoDockingManager : MonoBehaviour, IProtoEventListener, IProtoTre
 
     public void StoreVehicle()
     {
-        if (!dockingBay.dockedVehicle) return;
+        if (!dockingBay.dockedObject) return;
         
-        dockingBay.dockedVehicle.transform.SetParent(vehicleHolder);
-        dockingBay.dockedVehicle.gameObject.SetActive(false);
+        dockingBay.dockedObject.transform.SetParent(vehicleHolder);
+        dockingBay.dockedObject.gameObject.SetActive(false);
         dockingBay.subRoot.voiceNotificationManager.TryPlayNext();
         
         onDockedStatusChanged?.Invoke();
         finsDockingManager.SetDockingPrep(false);
         finsDockingManager.GetComponent<ProtoFinsManager>().ResetFinAnimations();
 
-        dockingBay.dockedVehicle.GetComponent<WorldForces>().waterDepth = Ocean.GetOceanLevel();
+        dockingBay.dockedObject.GetComponent<WorldForces>().waterDepth = Ocean.GetOceanLevel();
 
-        VehicleFrameworkCompatManager.TryEndDocking(dockingBay.dockedVehicle);
+        VehicleFrameworkCompatManager.TryEndDocking(dockingBay.dockedObject.vehicle);
     }
 
     public void Undock()
@@ -99,17 +99,17 @@ public class ProtoDockingManager : MonoBehaviour, IProtoEventListener, IProtoTre
     // Called via VehicleDockingBay Invoke
     private void UnlockDoors()
     {
-        if (!dockingBay.dockedVehicle || dockingBay.dockedVehicle == lastDockedVehicle) return;
+        if (!dockingBay.dockedObject || dockingBay.dockedObject == lastDockedVehicle) return;
 
-        lastDockedVehicle = dockingBay.dockedVehicle;
+        lastDockedVehicle = dockingBay.dockedObject.vehicle;
         
-        var localPos = dockingBay.dockedVehicle.transform.InverseTransformPoint(dockingBay.dockedVehicle.playerPosition.transform.position);
+        var localPos = dockingBay.dockedObject.transform.InverseTransformPoint(dockingBay.dockedObject.vehicle.playerPosition.transform.position);
         playerPosition.localPosition = localPos;
     }
     
     private IEnumerator UndockDelayed()
     {
-        if (!dockingBay.dockedVehicle) yield break;
+        if (!dockingBay.dockedObject) yield break;
         
         FMODUWE.PlayOneShot(interfloorTeleporter.GetFMODAsset(), transform.position, 0.25f);
         InterfloorTeleporter.PlayTeleportEffect(0.2f);
@@ -192,9 +192,9 @@ public class ProtoDockingManager : MonoBehaviour, IProtoEventListener, IProtoTre
 
     private void OnSaveChanged(bool started)
     {
-        if (!dockingBay.dockedVehicle) return;
+        if (!dockingBay.dockedObject.vehicle) return;
         
-        dockingBay.dockedVehicle.gameObject.SetActive(started);
+        dockingBay.dockedObject.gameObject.SetActive(started);
     }
 
     private void OnEnable()

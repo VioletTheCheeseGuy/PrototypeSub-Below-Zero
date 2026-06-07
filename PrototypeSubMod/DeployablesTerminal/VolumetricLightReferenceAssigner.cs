@@ -28,7 +28,7 @@ internal class VolumetricLightReferenceAssigner : MonoBehaviour
     private void Start()
     {
         var rend = GetComponentInChildren<Renderer>();
-        rend.material.SetFloat(ShaderPropertyID._FresnelFade, fresnelFade);
+        rend.material.SetFloat(ShaderPropertyID._FadeRadius, fresnelFade);
         rend.material.SetFloat("_FresnelPow", fresnelPower);
     }
 }

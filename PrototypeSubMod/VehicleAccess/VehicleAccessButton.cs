@@ -26,7 +26,7 @@ public class VehicleAccessButton : MonoBehaviour, ISelectable
     
     public bool OnButtonDown(GameInput.Button pressedButton)
     {
-        if (GameInput.PrimaryDevice == GameInput.Device.Keyboard) return false;
+        if (GameInput.GetPrimaryDevice() == GameInput.Device.Keyboard) return false;
 
         if (pressedButton != GameInput.Button.LeftHand) return false;
 

@@ -944,10 +944,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 106284948}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: -1098756451, guid: 06dd3d5416bf43ea368cc39ff96e6d5a, type: 3}
+  m_Script: {fileID: -286774823, guid: 06dd3d5416bf43ea368cc39ff96e6d5a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   setToMotorModeOnEnter: 1
+  onPlayerEntered:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!65 &106284951
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -10231,6 +10234,7 @@ MonoBehaviour:
   overrideBiome: protoenginefacility
   highDetail: 1
   affectsVisuals: 1
+  playerSpeedModifier: {fileID: 0}
 --- !u!65 &235576321
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -15167,12 +15171,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   asset: {fileID: 11400000, guid: 20f56f281a0aacd47898d56f7cf17881, type: 2}
   playOnAwake: 0
-  stopImmediatelyOnDisable: 0
   followParent: 0
   restartOnPlay: 1
   debug: 0
-  subtitlesKey: 
-  playSubtitlesWithUnscaledTime: 1
 --- !u!1 &743960145
 GameObject:
   m_ObjectHideFlags: 0
@@ -20364,9 +20365,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 1180139267}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 802140329, guid: 06dd3d5416bf43ea368cc39ff96e6d5a, type: 3}
+  m_Script: {fileID: -311417207, guid: a7cf2516c626129479cfce7cab60699e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  colliders:
+  - {fileID: 1180139270}
 --- !u!65 &1180139270
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -28102,12 +28105,19 @@ MonoBehaviour:
   m_Script: {fileID: -458587425, guid: 06dd3d5416bf43ea368cc39ff96e6d5a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  rumbleCinematic: {fileID: 0}
+  animator: {fileID: 1690826320}
+  director: {fileID: 0}
+  continueTimelinePlaybackOnPlayerRelease: 0
+  labelTrack: 
+  label: 
   animatedTransform: {fileID: 1487055370}
   informGameObject: {fileID: 1762507579}
   endTransform: {fileID: 0}
   onlyUseEndTransformInVr: 0
   playInVr: 0
   interruptAutoMove: 1
+  restoreControl: 1
   playerViewAnimationName: precursor_teleporter_in
   playerViewInterpolateAnimParam: 
   animParam: 
@@ -28117,8 +28127,13 @@ MonoBehaviour:
   receiversAnimParam: 
   animParamReceivers: []
   interpolateDuringAnimation: 0
+  interpolationDelayTime: 0
+  resetToCullCompletely: 1
+  forcePlayerControllerSize: 1
+  leftIKTarget: {fileID: 0}
+  rightIKTarget: {fileID: 0}
+  ikSmoothTime: 0.15
   debug: 0
-  animator: {fileID: 1690826320}
   sound: {fileID: 0}
   enforceCinematicModeEnd: 1
 --- !u!1 &1694474527
@@ -36458,12 +36473,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   asset: {fileID: 11400000, guid: bb4bebd3f2bfb0f4a9402511ef220f25, type: 2}
   playOnAwake: 0
-  stopImmediatelyOnDisable: 0
   followParent: 0
   restartOnPlay: 0
   debug: 0
-  subtitlesKey: 
-  playSubtitlesWithUnscaledTime: 1
   assetStart: {fileID: 0}
   assetStop: {fileID: 0}
   stopSoundInterval: 0
@@ -36499,14 +36511,11 @@ MonoBehaviour:
   warpToPos: {x: 743, y: -468, z: -1314.5}
   warpToAngle: 270
   cinematicTriggerIn: {fileID: 1690826321}
-  cinematicEndControllerPrefabReference:
-    m_AssetGUID: 
-    m_SubObjectName: 
-    m_SubObjectType: 
-    m_EditorAssetChanged: 0
   portalFxPrefab: {fileID: 0}
   portalFxSpawnPoint: {fileID: 1429656565}
   registerPrisonExitPoint: {fileID: 0}
+  loadSceneOnTeleport: 
+  warpToInScene: 
   alwaysOn: 0
   hasFirstUse: 0
   powerUpSound: {fileID: 11400000, guid: 47f651d419a15d440ab273cae9bed15c, type: 2}
@@ -36812,10 +36821,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 1858730699}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: -1098756451, guid: 06dd3d5416bf43ea368cc39ff96e6d5a, type: 3}
+  m_Script: {fileID: -286774823, guid: 06dd3d5416bf43ea368cc39ff96e6d5a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   setToMotorModeOnEnter: 2
+  onPlayerEntered:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!65 &1858730702
 BoxCollider:
   m_ObjectHideFlags: 0

@@ -46,7 +46,7 @@ public class MarkerTetherLogic : Factor
         
         if (Player.main.isPiloting) return;
         if (Player.main.pda.isOpen) return;
-        if (Player.main.precursorOutOfWater && Plugin.GlobalSaveData.tetherFactorMarkerLocation == null) return;
+        if (Player.main.forceWalkMotorMode && Plugin.GlobalSaveData.tetherFactorMarkerLocation == null) return;
         if (Player.main.cinematicModeActive) return;
         if (Player.main.pda.isOpen) return;
         if (Player.main.currentSub != null) return;
@@ -116,7 +116,7 @@ public class MarkerTetherLogic : Factor
 
     private bool IsAreaLoaded(Vector3 position, LargeWorldEntity.CellLevel cellLevel)
     {
-        return LargeWorldStreamer.main.cellManager.AreCellsLoaded(new Bounds(position,Vector3.one * 0.1f), cellLevel);
+        return LargeWorldStreamer.main.loadedBatches.Count > 0;
     }
 
     private IEnumerator SpawnMarker(Vector3 position)

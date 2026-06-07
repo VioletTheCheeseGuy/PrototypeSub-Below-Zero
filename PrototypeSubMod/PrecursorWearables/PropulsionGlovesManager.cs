@@ -27,7 +27,7 @@ public class PropulsionGlovesManager : MonoBehaviour
     {
         suitManager = GetComponent<PrecursorSuitManager>();
         
-        UpdateToolActive();
+        //UpdateToolActive();
         var propulsionCannonTask = CraftData.GetPrefabForTechTypeAsync(TechType.PropulsionCannon);
         yield return propulsionCannonTask;
 
@@ -80,36 +80,26 @@ public class PropulsionGlovesManager : MonoBehaviour
         ikTarget.transform.localEulerAngles = new Vector3(4.28f, 80f, 145f);
     }
 
-    public void UpdateToolActive()
-    {
-        bool holdingItem = Inventory.main.quickSlots.heldItem != null;
-        var glovesSlotItem = Inventory.main.equipment.GetItemInSlot("Gloves");
-        bool wearingGloves = glovesSlotItem != null &&
-                             glovesSlotItem.techType == PrecursorPropulsionGloves.PrefabInfo.TechType;
-        if (!holdingItem && wearingGloves && !Player.main.armsController.IsBleederAttached())
-        {
-            toolActive = true;
-        }
-        else
-        {
-            toolActive = false;
-            suitManager.DeregisterEmissionController(this);
+    //public void UpdateToolActive()
+    //{
+        //bool holdingItem = Inventory.main.quickSlots.heldItem != null;
+        //var glovesSlotItem = Inventory.main.equipment.GetItemInSlot("Gloves");
+        //bool wearingGloves = glovesSlotItem != null &&
+                             //glovesSlotItem.techType == PrecursorPropulsionGloves.PrefabInfo.TechType;
+
+            //toolActive = false;
+            //suitManager.DeregisterEmissionController(this);
             
-            if (!propulsionCannon) return;
-            propulsionCannon.ReleaseGrabbedObject();
-            UpdateAnimationState(false);
-        }
-    }
+            //if (!propulsionCannon) return;
+            //propulsionCannon.ReleaseGrabbedObject();
+            //UpdateAnimationState(false);
+        
+    //}
 
     private void Update()
     {
-        if (Player.main.armsController.IsBleederAttached() && toolActive)
-        {
-            UpdateToolActive();
-            return;
-        }
             
-        if (!Player.main.IsFreeToInteract() || Player.main.IsInSub() || Player.main.precursorOutOfWater) return;
+        if (!Player.main.IsFreeToInteract() || Player.main.IsInSub() || Player.main.forceWalkMotorMode) return;
         if (!toolActive || !propulsionCannon) return;
         
         HandleTooltips();
@@ -161,7 +151,7 @@ public class PropulsionGlovesManager : MonoBehaviour
         if (propulsionCannon.IsGrabbingObject())
         {
             text1 = LanguageCache.GetButtonFormat("PropulsionCannonToShoot", GameInput.Button.RightHand);
-            text2 = Language.main.GetFormat("PropulsionGlovesRelease", GameInput.FormatButton(GameInput.Button.AltTool));
+            text2 = Language.main.GetFormat("PropulsionGlovesRelease");
         }
         else
         {

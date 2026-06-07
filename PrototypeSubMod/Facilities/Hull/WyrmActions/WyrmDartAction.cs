@@ -25,14 +25,14 @@ public class WyrmDartAction : WyrmAction
         OnReachedTarget += OnPointReached;
     }
     
-    public override void Perform(Creature creature, float time, float deltaTime)
+    public override void Perform(float time, float deltaTime)
     {
         if (performing) return;
         
         Plugin.Logger.LogInfo("Starting dart action");
         
         SetupTargetTransform();
-        base.Perform(creature, time, deltaTime);
+        base.Perform(time, deltaTime);
         speedIncreased = false;
         rightHandSign = (int)Mathf.Sign(Random.Range(-1f, 1f));
         rightHandSign = rightHandSign == 0 ? 1 : rightHandSign;

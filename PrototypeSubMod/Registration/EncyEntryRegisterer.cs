@@ -169,12 +169,12 @@ internal static class EncyEntryRegisterer
         };
         PDAHandler.AddCustomScannerEntry(alienBuildingBlockEntryData);
 
-        StoryGoalHandler.RegisterItemGoal("OnAlmanitePickedUp", Story.GoalType.Story,
+        Nautilus.Handlers.StoryGoalHandler.RegisterItemGoal("OnAlmanitePickedUp", Story.GoalType.Story,
             WarperRemnant.prefabInfo.TechType);
-        StoryGoalHandler.RegisterCustomEvent("OnAlmanitePickedUp", () =>
+        Nautilus.Handlers.StoryGoalHandler.RegisterCustomEvent("OnAlmanitePickedUp", () =>
         {
-            PDAEncyclopedia.Add("AlienBuildingBlockEncy", true);
-            KnownTech.Add(AlienBuildingBlock.prefabInfo.TechType);
+            PDAEncyclopedia.Add("AlienBuildingBlockEncy", true, false);
+            KnownTech.Add(AlienBuildingBlock.prefabInfo.TechType,false);
         });
         #endregion
 

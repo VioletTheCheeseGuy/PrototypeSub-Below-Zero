@@ -206,8 +206,8 @@ internal class uGUI_ProtoUpgradeIcon : MonoBehaviour
         hovered = true;
         progressMask.color = hoveredColor;
 
-        oldTooltipScale = uGUI_Tooltip.main.scaleFactor;
-        uGUI_Tooltip.main.scaleFactor = tooltipScreenScale;
+        oldTooltipScale = uGUI_Tooltip.main.scale.magnitude;
+        uGUI_Tooltip.main.scaleFactorMax = tooltipScreenScale;
     }
 
     public void OnPointerExit(BaseEventData data)
@@ -217,7 +217,7 @@ internal class uGUI_ProtoUpgradeIcon : MonoBehaviour
         
         if (!allowedToCraft) return;
 
-        uGUI_Tooltip.main.scaleFactor = oldTooltipScale;
+        uGUI_Tooltip.main.scaleFactorMax = oldTooltipScale;
         uGUI_Tooltip.Clear();
     }
 

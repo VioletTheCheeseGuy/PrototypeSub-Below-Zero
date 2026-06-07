@@ -21,48 +21,48 @@ internal static class StoryGoalsRegisterer
         
         #region Precursor Ingot Pickup Unlock
 
-        StoryGoalHandler.RegisterItemGoal("Ency_ProtoPrecursorIngot", Story.GoalType.Encyclopedia, PrecursorIngot_Craftable.prefabInfo.TechType);
+        Nautilus.Handlers.StoryGoalHandler.RegisterItemGoal("Ency_ProtoPrecursorIngot", Story.GoalType.Encyclopedia, PrecursorIngot_Craftable.prefabInfo.TechType);
         
-        StoryGoalHandler.RegisterCustomEvent("Ency_ProtoPrecursorIngot", () =>
+        Nautilus.Handlers.StoryGoalHandler.RegisterCustomEvent("Ency_ProtoPrecursorIngot", () =>
         {
-            KnownTech.Add(PrecursorIngot_Craftable.prefabInfo.TechType);
-            PDAEncyclopedia.Add("ProtoPrecursorIngot", true);
+            KnownTech.Add(PrecursorIngot_Craftable.prefabInfo.TechType,false);
+            PDAEncyclopedia.Add("ProtoPrecursorIngot", true, false);
         });
         #endregion
 
         #region Photon Beacon Pickup Unlock
-        StoryGoalHandler.RegisterItemGoal("DeployableLightPickup", Story.GoalType.Encyclopedia, DeployableLight_Craftable.prefabInfo.TechType);
+        Nautilus.Handlers.StoryGoalHandler.RegisterItemGoal("DeployableLightPickup", Story.GoalType.Encyclopedia, DeployableLight_Craftable.prefabInfo.TechType);
 
-        StoryGoalHandler.RegisterCustomEvent("DeployableLightPickup", () =>
+        Nautilus.Handlers.StoryGoalHandler.RegisterCustomEvent("DeployableLightPickup", () =>
         {
-            KnownTech.Add(DeployableLight_Craftable.prefabInfo.TechType);
-            PDAEncyclopedia.Add("ProtoDeployableLightEncy", true);
+            KnownTech.Add(DeployableLight_Craftable.prefabInfo.TechType, false);
+            PDAEncyclopedia.Add("ProtoDeployableLightEncy", true, false);
         });
         #endregion
 
         #region Phase Gate Items Pickup
-        StoryGoalHandler.RegisterItemGoal("Ency_ProtoPhaseGateStructure", Story.GoalType.Encyclopedia, ProtoPhaseGateStructure.PrefabInfo.TechType);
+        Nautilus.Handlers.StoryGoalHandler.RegisterItemGoal("Ency_ProtoPhaseGateStructure", Story.GoalType.Encyclopedia, ProtoPhaseGateStructure.PrefabInfo.TechType);
 
-        StoryGoalHandler.RegisterCustomEvent("Ency_ProtoPhaseGateStructure", () =>
+        Nautilus.Handlers.StoryGoalHandler.RegisterCustomEvent("Ency_ProtoPhaseGateStructure", () =>
         {
-            KnownTech.Add(ProtoPhaseGateStructure.PrefabInfo.TechType);
-            PDAEncyclopedia.Add("ProtoPhaseGateStructure", true);
+            KnownTech.Add(ProtoPhaseGateStructure.PrefabInfo.TechType, false);
+            PDAEncyclopedia.Add("ProtoPhaseGateStructure", true, false);
         });
 
-        StoryGoalHandler.RegisterItemGoal("Ency_ProtoPhaseGateStabilizer", Story.GoalType.Encyclopedia, ProtoPhaseGateStabilizer.PrefabInfo.TechType);
+        Nautilus.Handlers.StoryGoalHandler.RegisterItemGoal("Ency_ProtoPhaseGateStabilizer", Story.GoalType.Encyclopedia, ProtoPhaseGateStabilizer.PrefabInfo.TechType);
 
-        StoryGoalHandler.RegisterCustomEvent("Ency_ProtoPhaseGateStabilizer", () =>
+        Nautilus.Handlers.StoryGoalHandler.RegisterCustomEvent("Ency_ProtoPhaseGateStabilizer", () =>
         {
-            KnownTech.Add(ProtoPhaseGateStabilizer.PrefabInfo.TechType);
-            PDAEncyclopedia.Add("ProtoPhaseGateStabilizer", true);
+            KnownTech.Add(ProtoPhaseGateStabilizer.PrefabInfo.TechType, false);
+            PDAEncyclopedia.Add("ProtoPhaseGateStabilizer", true, false);
         });
 
-        StoryGoalHandler.RegisterItemGoal("Ency_ProtoPhaseGateTransmitter", Story.GoalType.Encyclopedia, ProtoPhaseGateTransmitter.PrefabInfo.TechType);
+        Nautilus.Handlers.StoryGoalHandler.RegisterItemGoal("Ency_ProtoPhaseGateTransmitter", Story.GoalType.Encyclopedia, ProtoPhaseGateTransmitter.PrefabInfo.TechType);
 
-        StoryGoalHandler.RegisterCustomEvent("Ency_ProtoPhaseGateTransmitter", () =>
+        Nautilus.Handlers.StoryGoalHandler.RegisterCustomEvent("Ency_ProtoPhaseGateTransmitter", () =>
         {
-            KnownTech.Add(ProtoPhaseGateTransmitter.PrefabInfo.TechType);
-            PDAEncyclopedia.Add("ProtoPhaseGateTransmitter", true);
+            KnownTech.Add(ProtoPhaseGateTransmitter.PrefabInfo.TechType, false);
+            PDAEncyclopedia.Add("ProtoPhaseGateTransmitter", true, false);
         });
         #endregion
 
@@ -71,251 +71,251 @@ internal static class StoryGoalsRegisterer
         #endregion
 
         #region Interceptor Unlock
-        StoryGoalHandler.RegisterCustomEvent("OnInterceptorTestDataDownloaded", () =>
+        Nautilus.Handlers.StoryGoalHandler.RegisterCustomEvent("OnInterceptorTestDataDownloaded", () =>
         {
-            PDALog.Add("OnInterceptorTestDataDownloaded");
+            PDALog.Add("OnInterceptorTestDataDownloaded", false);
         });
 
-        StoryGoalHandler.RegisterCompoundGoal("InterceptorTestEncy", Story.GoalType.Encyclopedia, 15f, new[] { "OnInterceptorTestDataDownloaded" });
-        StoryGoalHandler.RegisterCustomEvent("InterceptorTestEncy", () =>
+        Nautilus.Handlers.StoryGoalHandler.RegisterCompoundGoal("InterceptorTestEncy", Story.GoalType.Encyclopedia, 15f, new[] { "OnInterceptorTestDataDownloaded" });
+        Nautilus.Handlers.StoryGoalHandler.RegisterCustomEvent("InterceptorTestEncy", () =>
         {
-            PDAEncyclopedia.Add("InterceptorTestEncy", true);
+            PDAEncyclopedia.Add("InterceptorTestEncy", true, false);
         });
         #endregion
 
         #region Disable Defense Cloak
-        StoryGoalHandler.RegisterCustomEvent("OnDefenseCloakDisabled", () =>
+        Nautilus.Handlers.StoryGoalHandler.RegisterCustomEvent("OnDefenseCloakDisabled", () =>
         {
-            PDALog.Add("OnDefenseCloakDisabled");
+            PDALog.Add("OnDefenseCloakDisabled",false);
             FMODUWE.PlayOneShot(AudioUtils.GetFmodAsset("EngineAllBreachesRepaired"), Player.main.transform.position);
         });
         #endregion
 
         #region Moonpool Enter
-        StoryGoalHandler.RegisterCustomEvent("OnEnterDefenseMoonpool", () =>
+        Nautilus.Handlers.StoryGoalHandler.RegisterCustomEvent("OnEnterDefenseMoonpool", () =>
         {
-            PDALog.Add("OnEnterDefenseMoonpool");
+            PDALog.Add("OnEnterDefenseMoonpool",false);
         });
 
-        StoryGoalHandler.RegisterLocationGoal("OnEnterDefenseMoonpool", Story.GoalType.PDA, new Vector3(819, -463, -1115), 15, 0);
+        Nautilus.Handlers.StoryGoalHandler.RegisterLocationGoal("OnEnterDefenseMoonpool", Story.GoalType.PDA, new Vector3(819, -463, -1115), 15, 0);
         #endregion
 
         #region Moonpool Open Disallowed
-        StoryGoalHandler.RegisterCustomEvent("OnMoonpoolNoPrototype", () =>
+        Nautilus.Handlers.StoryGoalHandler.RegisterCustomEvent("OnMoonpoolNoPrototype", () =>
         {
-            PDALog.Add("OnMoonpoolNoPrototype");
+            PDALog.Add("OnMoonpoolNoPrototype", false);
         });
         #endregion
 
         #region On Approach Defense Beacon
-        StoryGoalHandler.RegisterCustomEvent("OnApproachDefenseFacility", () =>
+        Nautilus.Handlers.StoryGoalHandler.RegisterCustomEvent("OnApproachDefenseFacility", () =>
         {
-            PDALog.Add("OnApproachDefenseFacility");
+            PDALog.Add("OnApproachDefenseFacility", false);
         });
         #endregion
 
         #region Orion Logs
-        StoryGoalHandler.RegisterCustomEvent("Ency_OrionFacilityLogs", () =>
+        Nautilus.Handlers.StoryGoalHandler.RegisterCustomEvent("Ency_OrionFacilityLogs", () =>
         {
-            PDAEncyclopedia.Add("OrionFacilityLogsEncy", true);
+            PDAEncyclopedia.Add("OrionFacilityLogsEncy", true, false);
         });
         #endregion
 
         #region Facility Locations
-        StoryGoalHandler.RegisterCustomEvent("Ency_ProtoFacilitiesEncy", () =>
+        Nautilus.Handlers.StoryGoalHandler.RegisterCustomEvent("Ency_ProtoFacilitiesEncy", () =>
         {
-            PDAEncyclopedia.Add("ProtoFacilitiesEncy", true);
+            PDAEncyclopedia.Add("ProtoFacilitiesEncy", true, false);
         });
-        StoryGoalHandler.RegisterCustomEvent("ProtoFacilityLocationsHint", () =>
+        Nautilus.Handlers.StoryGoalHandler.RegisterCustomEvent("ProtoFacilityLocationsHint", () =>
         {
             PDALog.Add("ProtoFacilityLocationsHint", true);
         });
         #endregion
 
         #region Defense Audit Logs
-        StoryGoalHandler.RegisterCompoundGoal("DefenseFacilityAuditEncy", Story.GoalType.Encyclopedia, 7f, "OnDisableDefenseCloak");
+        Nautilus.Handlers.StoryGoalHandler.RegisterCompoundGoal("DefenseFacilityAuditEncy", Story.GoalType.Encyclopedia, 7f, "OnDisableDefenseCloak");
 
-        StoryGoalHandler.RegisterCustomEvent("DefenseFacilityAuditEncy", () =>
+        Nautilus.Handlers.StoryGoalHandler.RegisterCustomEvent("DefenseFacilityAuditEncy", () =>
         {
-            PDAEncyclopedia.Add("DefenseFacilityAuditEncy", true);
+            PDAEncyclopedia.Add("DefenseFacilityAuditEncy", true, false);
             
-            KnownTech.Add(DefenseFacilityKey.prefabInfo.TechType);
+            KnownTech.Add(DefenseFacilityKey.prefabInfo.TechType, false);
 
-            PDAEncyclopedia.Add("DefenseFacilityKey", true);
+            PDAEncyclopedia.Add("DefenseFacilityKey", true, false);
         });
         #endregion
 
         #region Engine Audit Logs
-        StoryGoalHandler.RegisterCustomEvent("EngineFacilityAuditEncy", () =>
+        Nautilus.Handlers.StoryGoalHandler.RegisterCustomEvent("EngineFacilityAuditEncy", () =>
         {
-            PDAEncyclopedia.Add("EngineFacilityAuditEncy", true);
+            PDAEncyclopedia.Add("EngineFacilityAuditEncy", true, false);
         });
         #endregion
 
         #region Enter Sub First Time
 
-        StoryGoalHandler.RegisterCustomEvent("OnEnterSubFirstTime", null);
+        Nautilus.Handlers.StoryGoalHandler.RegisterCustomEvent("OnEnterSubFirstTime", null);
 
         #endregion
 
         #region Hull Facility Logs
-        StoryGoalHandler.RegisterCustomEvent("HullFacilityLogsEncy", () =>
+        Nautilus.Handlers.StoryGoalHandler.RegisterCustomEvent("HullFacilityLogsEncy", () =>
         {
-            PDAEncyclopedia.Add("HullFacilityLogsEncy", true);
+            PDAEncyclopedia.Add("HullFacilityLogsEncy", true, false);
         });
         #endregion
         
         #region Hull Facility Orion Data
-        StoryGoalHandler.RegisterCustomEvent("OrionEndeavorsEncy", () =>
+        Nautilus.Handlers.StoryGoalHandler.RegisterCustomEvent("OrionEndeavorsEncy", () =>
         {
-            PDAEncyclopedia.Add("OrionEndeavorsEncy", true);
+            PDAEncyclopedia.Add("OrionEndeavorsEncy", true, false);
         });
         #endregion
 
         #region Alien Building Block Info
-        StoryGoalHandler.RegisterCustomEvent("AlienBuildingBlockEncy", () =>
+        Nautilus.Handlers.StoryGoalHandler.RegisterCustomEvent("AlienBuildingBlockEncy", () =>
         {
-            PDAEncyclopedia.Add("AlienBuildingBlockEncy", true);
+            PDAEncyclopedia.Add("AlienBuildingBlockEncy", true, false);
         });
         
-        StoryGoalHandler.RegisterCustomEvent("IonCubeUnlock", () =>
+        Nautilus.Handlers.StoryGoalHandler.RegisterCustomEvent("IonCubeUnlock", () =>
         {
-            KnownTech.Add(TechType.PrecursorIonCrystal);
+            KnownTech.Add(TechType.PrecursorIonCrystal, false);
         });
-        StoryGoalHandler.RegisterItemGoal("IonCubeUnlock", Story.GoalType.Story, AlienBuildingBlock.prefabInfo.TechType);
+        Nautilus.Handlers.StoryGoalHandler.RegisterItemGoal("IonCubeUnlock", Story.GoalType.Story, AlienBuildingBlock.prefabInfo.TechType);
         #endregion
         
         #region On Enter Engine Facility
-        StoryGoalHandler.RegisterCustomEvent("OnEnterEngineFacility", () =>
+        Nautilus.Handlers.StoryGoalHandler.RegisterCustomEvent("OnEnterEngineFacility", () =>
         {
-            PDALog.Add("OnEnterEngineFacility");
+            PDALog.Add("OnEnterEngineFacility", false);
         });
         #endregion
 
         #region Dead Zone Mapping Initiative Project Data
-        StoryGoalHandler.RegisterCustomEvent("HullFacilityWormTerminalEncy", () =>
+        Nautilus.Handlers.StoryGoalHandler.RegisterCustomEvent("HullFacilityWormTerminalEncy", () =>
         {
-            PDAEncyclopedia.Add("HullFacilityWormTerminalEncy", true);
+            PDAEncyclopedia.Add("HullFacilityWormTerminalEncy", true, false);
             
             // Set up new void goals
             
-            StoryGoalHandler.RegisterCustomEvent("OnEnterVoidWyrmActive", () =>
+            Nautilus.Handlers.StoryGoalHandler.RegisterCustomEvent("OnEnterVoidWyrmActive", () =>
             {
-                PDALog.Add("OnEnterVoidWyrmActive");
+                PDALog.Add("OnEnterVoidWyrmActive", false);
             });
             
-            StoryGoalHandler.RegisterBiomeGoal("OnEnterVoidWyrmActive", Story.GoalType.PDA, "void", 5f);
+            Nautilus.Handlers.StoryGoalHandler.RegisterBiomeGoal("OnEnterVoidWyrmActive", Story.GoalType.PDA, "void", 5f);
             
-            StoryGoalHandler.RegisterBiomeGoal("WyrmRadioMessageVoid",  Story.GoalType.Radio, "void", 40f);
+            Nautilus.Handlers.StoryGoalHandler.RegisterBiomeGoal("WyrmRadioMessageVoid",  Story.GoalType.Radio, "void", 40f);
             
         });
         #endregion
 
         #region Fragmentation Terminal
-        StoryGoalHandler.RegisterCustomEvent("FragmentationTerminalEncy", () =>
+        Nautilus.Handlers.StoryGoalHandler.RegisterCustomEvent("FragmentationTerminalEncy", () =>
         {
-            PDAEncyclopedia.Add("FragmentationTerminalEncy", true);
+            PDAEncyclopedia.Add("FragmentationTerminalEncy", true, false);
         });
         #endregion
 
         #region Animate Entropy Terminal
-        StoryGoalHandler.RegisterCustomEvent("AnimateEntropyTerminalEncy", () =>
+        Nautilus.Handlers.StoryGoalHandler.RegisterCustomEvent("AnimateEntropyTerminalEncy", () =>
         {
-            PDAEncyclopedia.Add("AnimateEntropyTerminalEncy", true);
+            PDAEncyclopedia.Add("AnimateEntropyTerminalEncy", true, false);
         });
         #endregion
 
         #region Interceptor Facility Locked
-        StoryGoalHandler.RegisterLocationGoal("OnApproachInterceptorFacility", Story.GoalType.Story,
+        Nautilus.Handlers.StoryGoalHandler.RegisterLocationGoal("OnApproachInterceptorFacility", Story.GoalType.Story,
             new Vector3(547, -709, 955), 400, 1);
-        StoryGoalHandler.RegisterCustomEvent("OnApproachInterceptorFacility", () =>
+        Nautilus.Handlers.StoryGoalHandler.RegisterCustomEvent("OnApproachInterceptorFacility", () =>
         {
             if (!Plugin.GlobalSaveData.EngineFacilityPointsRepaired)
             {
-                PDALog.Add("ProtoRevisitInterceptorFacility");
+                PDALog.Add("ProtoRevisitInterceptorFacility", false);
             }
         });
         #endregion
 
         #region Transmission Device Unlock
-        StoryGoalHandler.RegisterCustomEvent("TransmissionDeviceUnlock", () =>
+        Nautilus.Handlers.StoryGoalHandler.RegisterCustomEvent("TransmissionDeviceUnlock", () =>
         {
-            KnownTech.Add(ProtoTransmissionDevice.prefabInfo.TechType);
-            PDAEncyclopedia.Add("TransmissionTerminalEncy", true);
+            KnownTech.Add(ProtoTransmissionDevice.prefabInfo.TechType, false);
+            PDAEncyclopedia.Add("TransmissionTerminalEncy", true, false);
         });
         #endregion
 
         #region Precursor Suit Unlock
-        StoryGoalHandler.RegisterCustomEvent("PrecursorSuitTerminal", () =>
+        Nautilus.Handlers.StoryGoalHandler.RegisterCustomEvent("PrecursorSuitTerminal", () =>
         {
-            KnownTech.Add(PrecursorSuit.prefabInfo.TechType);
-            PDAEncyclopedia.Add("PrecursorSuitTerminalEncy", true);
+            KnownTech.Add(PrecursorSuit.prefabInfo.TechType, false);
+            PDAEncyclopedia.Add("PrecursorSuitTerminalEncy", true, false);
         });
         #endregion
 
         #region Tether Factor Unlock
-        StoryGoalHandler.RegisterCustomEvent("TetherFactorTerminal", () =>
+        Nautilus.Handlers.StoryGoalHandler.RegisterCustomEvent("TetherFactorTerminal", () =>
         {
-            KnownTech.Add(TetherFactor.prefabInfo.TechType);
-            PDAEncyclopedia.Add("TetherFactorEncy", true);
+            KnownTech.Add(TetherFactor.prefabInfo.TechType, false);
+            PDAEncyclopedia.Add("TetherFactorEncy", true, false);
         });
         #endregion
 
         #region Biomechanics Factor Unlock
-        StoryGoalHandler.RegisterCustomEvent("BiomechanicsFactorTerminal", () =>
+        Nautilus.Handlers.StoryGoalHandler.RegisterCustomEvent("BiomechanicsFactorTerminal", () =>
         {
-            KnownTech.Add(BiomechanicsFactor.prefabInfo.TechType);
-            PDAEncyclopedia.Add("BiomechanicsFactorTerminalEncy", true);
+            KnownTech.Add(BiomechanicsFactor.prefabInfo.TechType, false);
+            PDAEncyclopedia.Add("BiomechanicsFactorTerminalEncy", true, false);
         });
         #endregion
         
         #region Color Factor Unlock
-        StoryGoalHandler.RegisterCustomEvent("ColorFactorTerminal", () =>
+        Nautilus.Handlers.StoryGoalHandler.RegisterCustomEvent("ColorFactorTerminal", () =>
         {
-            KnownTech.Add(SuitColorFactor.prefabInfo.TechType);
-            PDAEncyclopedia.Add("SuitColorFactorEncy", true);
+            KnownTech.Add(SuitColorFactor.prefabInfo.TechType, false);
+            PDAEncyclopedia.Add("SuitColorFactorEncy", true, false);
         });
         #endregion
 
         #region Propulsion Gloves Terminal
-        StoryGoalHandler.RegisterCustomEvent("PrecursorPropulsionGlovesTerminal", () =>
+        Nautilus.Handlers.StoryGoalHandler.RegisterCustomEvent("PrecursorPropulsionGlovesTerminal", () =>
         {
-            KnownTech.Add(PrecursorPropulsionGloves.PrefabInfo.TechType);
-            PDAEncyclopedia.Add("PrecursorPropulsionGlovesTerminalEncy", true);
+            KnownTech.Add(PrecursorPropulsionGloves.PrefabInfo.TechType, false);
+            PDAEncyclopedia.Add("PrecursorPropulsionGlovesTerminalEncy", true, false);
         });
         #endregion
 
         #region Precursor Suit Pickup
-        StoryGoalHandler.RegisterItemGoal("OnPrecursorSuitPickup", Story.GoalType.PDA, PrecursorSuit.prefabInfo.TechType);
+        Nautilus.Handlers.StoryGoalHandler.RegisterItemGoal("OnPrecursorSuitPickup", Story.GoalType.PDA, PrecursorSuit.prefabInfo.TechType);
 
         #endregion
 
         #region Hoverfish Plush Unlock
-        StoryGoalHandler.RegisterCustomEvent("OnHoverfishPlushUnlocked", () =>
+        Nautilus.Handlers.StoryGoalHandler.RegisterCustomEvent("OnHoverfishPlushUnlocked", () =>
         {
-            KnownTech.Add(HoverfishPlush.prefabInfo.TechType);
-            PDALog.Add("OnHoverfishPlushUnlocked");
+            KnownTech.Add(HoverfishPlush.prefabInfo.TechType, false);
+            PDALog.Add("OnHoverfishPlushUnlocked", false);
         });
         #endregion
 
         #region Survivor PDA 1
-        StoryGoalHandler.RegisterCustomEvent("SurvivorPDA1", () =>
+        Nautilus.Handlers.StoryGoalHandler.RegisterCustomEvent("SurvivorPDA1", () =>
         {
-            PDAEncyclopedia.Add("SurvivorPDA1Ency", true);
+            PDAEncyclopedia.Add("SurvivorPDA1Ency", true, false);
         });
         #endregion
 
         #region Survivor PDA 2
-        StoryGoalHandler.RegisterCustomEvent("SurvivorPDA2", () =>
+        Nautilus.Handlers.StoryGoalHandler.RegisterCustomEvent("SurvivorPDA2", () =>
         {
-            PDAEncyclopedia.Add("SurvivorPDA2Ency", true);
+            PDAEncyclopedia.Add("SurvivorPDA2Ency", true, false);
         });
         #endregion
 
         #region Number Puzzle Entry Voiceline
-        StoryGoalHandler.RegisterCustomEvent("OnEnterProtoNumberPuzzle", () =>
+        Nautilus.Handlers.StoryGoalHandler.RegisterCustomEvent("OnEnterProtoNumberPuzzle", () =>
         {
-            PDALog.Add("OnEnterProtoNumberPuzzle");
+            PDALog.Add("OnEnterProtoNumberPuzzle", false);
 
             if (StoryGoalManager.main.IsGoalComplete("PlayerFirstPPTInteraction"))
             {
@@ -327,108 +327,108 @@ internal static class StoryGoalsRegisterer
             }
         });
 
-        StoryGoalHandler.RegisterCustomEvent("OnEnterProtoNumberPuzzle_ProfileFound", () =>
+        Nautilus.Handlers.StoryGoalHandler.RegisterCustomEvent("OnEnterProtoNumberPuzzle_ProfileFound", () =>
         {
-            PDALog.Add("OnEnterProtoNumberPuzzle_ProfileFound");
+            PDALog.Add("OnEnterProtoNumberPuzzle_ProfileFound", false);
         });
 
-        StoryGoalHandler.RegisterCustomEvent("OnEnterProtoNumberPuzzle_ProfileNotFound", () =>
+        Nautilus.Handlers.StoryGoalHandler.RegisterCustomEvent("OnEnterProtoNumberPuzzle_ProfileNotFound", () =>
         {
-            PDALog.Add("OnEnterProtoNumberPuzzle_ProfileNotFound");
+            PDALog.Add("OnEnterProtoNumberPuzzle_ProfileNotFound", false);
         });
 
         #endregion
 
         #region Bearing Puzzle Entry Voiceline
-        StoryGoalHandler.RegisterCustomEvent("OnEnterProtoBearingPuzzle", () =>
+        Nautilus.Handlers.StoryGoalHandler.RegisterCustomEvent("OnEnterProtoBearingPuzzle", () =>
         {
-            PDALog.Add("OnEnterProtoBearingPuzzle");
+            PDALog.Add("OnEnterProtoBearingPuzzle", false);
         });
         #endregion
 
         #region Lifepod 3 PDA
-        StoryGoalHandler.RegisterCustomEvent("ProtoLifepod3PDA", () =>
+        Nautilus.Handlers.StoryGoalHandler.RegisterCustomEvent("ProtoLifepod3PDA", () =>
         {
-            PDAEncyclopedia.Add("Lifepod3PDAEncy", true);
+            PDAEncyclopedia.Add("Lifepod3PDAEncy", true, false);
         });
         #endregion
 
         #region Number Puzzle Completion
-        StoryGoalHandler.RegisterCustomEvent("Ency_ProtoNumbers", () =>
+        Nautilus.Handlers.StoryGoalHandler.RegisterCustomEvent("Ency_ProtoNumbers", () =>
         {
-            PDAEncyclopedia.Add("ProtoNumbersEncy", true);
+            PDAEncyclopedia.Add("ProtoNumbersEncy", true, false);
         });
-        StoryGoalHandler.RegisterCustomEvent("ProtoNumbersHint", () =>
+        Nautilus.Handlers.StoryGoalHandler.RegisterCustomEvent("ProtoNumbersHint", () =>
         {
             PDALog.Add("ProtoNumbersHint", true);
         });
 
-        StoryGoalHandler.RegisterCompoundGoal("Ency_ProtoNumbers", Story.GoalType.Story, 15f,
+        Nautilus.Handlers.StoryGoalHandler.RegisterCompoundGoal("Ency_ProtoNumbers", Story.GoalType.Story, 15f,
             "ProtoNumberPuzzleComplete");
-        StoryGoalHandler.RegisterCompoundGoal("ProtoNumbersHint", Story.GoalType.Story, 10f,
+        Nautilus.Handlers.StoryGoalHandler.RegisterCompoundGoal("ProtoNumbersHint", Story.GoalType.Story, 10f,
             "ProtoNumberPuzzleComplete");
         #endregion
 
         #region Bearing Puzzle Completion
         
-        StoryGoalHandler.RegisterCustomEvent("ProtoBearingsEncy", () =>
+        Nautilus.Handlers.StoryGoalHandler.RegisterCustomEvent("ProtoBearingsEncy", () =>
         {
-            PDAEncyclopedia.Add("ProtoBearingsEncy", true);
+            PDAEncyclopedia.Add("ProtoBearingsEncy", true, false);
         });
         
-        StoryGoalHandler.RegisterCompoundGoal("ProtoBearingsEncy", Story.GoalType.Encyclopedia, 20f,
+        Nautilus.Handlers.StoryGoalHandler.RegisterCompoundGoal("ProtoBearingsEncy", Story.GoalType.Encyclopedia, 20f,
             "ProtoBearingPuzzleComplete");
-        StoryGoalHandler.RegisterCompoundGoal("ProtoBearingsHint", Story.GoalType.PDA, 10f,
+        Nautilus.Handlers.StoryGoalHandler.RegisterCompoundGoal("ProtoBearingsHint", Story.GoalType.PDA, 10f,
             "ProtoBearingPuzzleComplete");
 
         #endregion
 
         #region Calibration Site Completion
 
-        StoryGoalHandler.RegisterCompoundGoal("ProtoCalibrationCodeEncy", Story.GoalType.Encyclopedia, 15f,
+        Nautilus.Handlers.StoryGoalHandler.RegisterCompoundGoal("ProtoCalibrationCodeEncy", Story.GoalType.Encyclopedia, 15f,
             "OnCalibrationRunCompleted");
 
         #endregion
         
         #region On Almanite Material Identified
-        StoryGoalHandler.RegisterCustomEvent("OnAlmaniteIdentified", () =>
+        Nautilus.Handlers.StoryGoalHandler.RegisterCustomEvent("OnAlmaniteIdentified", () =>
         {
-            PDALog.Add("OnAlmaniteIdentified");
+            PDALog.Add("OnAlmaniteIdentified", false);
         });
-        StoryGoalHandler.RegisterCustomEvent("AlmaniteEncy", () =>
+        Nautilus.Handlers.StoryGoalHandler.RegisterCustomEvent("AlmaniteEncy", () =>
         {
-            PDAEncyclopedia.Add("AlmaniteEncy", true);
+            PDAEncyclopedia.Add("AlmaniteEncy", true,false);
         });
-        StoryGoalHandler.RegisterCompoundGoal("AlmaniteEncy", Story.GoalType.Story, 5f, "OnAlmaniteIdentified");
+        Nautilus.Handlers.StoryGoalHandler.RegisterCompoundGoal("AlmaniteEncy", Story.GoalType.Story, 5f, "OnAlmaniteIdentified");
         #endregion
 
         #region Transmission Device First Loaded
-        StoryGoalHandler.RegisterCustomEvent("TransmissionDeviceFirstLoaded", () =>
+        Nautilus.Handlers.StoryGoalHandler.RegisterCustomEvent("TransmissionDeviceFirstLoaded", () =>
         {
-            PDALog.Add("Proto_OnTransmissionDeviceFirstLoaded");
+            PDALog.Add("Proto_OnTransmissionDeviceFirstLoaded", false);
         });
         #endregion
 
         #region Engine Facility Scream + PDA hint
-        StoryGoalHandler.RegisterCustomEvent("EngineScream", () =>
+        Nautilus.Handlers.StoryGoalHandler.RegisterCustomEvent("EngineScream", () =>
         {
             FMODUWE.PlayOneShot(AudioUtils.GetFmodAsset("EngineScream"), Plugin.FACILITY_POSITIONS["EngineFacility"]);
         });
 
         var engineFacilityReturnHint = CustomPing.CreatePing("EngineFacilityReturnPing", Plugin.HintPingType);
-        StoryGoalHandler.RegisterCustomEvent("EngineFacilityReturnHint", () =>
+        Nautilus.Handlers.StoryGoalHandler.RegisterCustomEvent("EngineFacilityReturnHint", () =>
         {
-            PDALog.Add("EngineFacilityReturnHint");
+            PDALog.Add("EngineFacilityReturnHint", false);
             UWE.CoroutineHost.StartCoroutine(PuzzleHintRegistration.SpawnPrefab(engineFacilityReturnHint,
                 Plugin.FACILITY_POSITIONS["EngineFacility"]));
         });
 
-        StoryGoalHandler.RegisterCompoundGoal("EngineScream", Story.GoalType.Story, 1000f, "HullFacilityWormTerminalEncy");
-        StoryGoalHandler.RegisterCompoundGoal("EngineFacilityReturnHint", Story.GoalType.PDA, 10f, "EngineScream");
+        Nautilus.Handlers.StoryGoalHandler.RegisterCompoundGoal("EngineScream", Story.GoalType.Story, 1000f, "HullFacilityWormTerminalEncy");
+        Nautilus.Handlers.StoryGoalHandler.RegisterCompoundGoal("EngineFacilityReturnHint", Story.GoalType.PDA, 10f, "EngineScream");
         #endregion
 
         #region Fins first installed
-        StoryGoalHandler.RegisterCustomEvent("FinsFirstInstalled", () =>
+        Nautilus.Handlers.StoryGoalHandler.RegisterCustomEvent("FinsFirstInstalled", () =>
         {
             var hintText = Language.main.Get("ProtoDockVehicleHint");
             Hint.main.message.SetText(hintText, TextAnchor.MiddleCenter);
@@ -439,21 +439,21 @@ internal static class StoryGoalsRegisterer
         #region Extra worms
 
         var grandReefPing = CustomPing.CreatePing("ProtoGrandReefPing", Plugin.HintPingType);
-        StoryGoalHandler.RegisterCustomEvent("OnScannedSparseReefWyrms", () =>
+        Nautilus.Handlers.StoryGoalHandler.RegisterCustomEvent("OnScannedSparseReefWyrms", () =>
         {
-            PDALog.Add("OnSparseReefWyrmScanned");
+            PDALog.Add("OnSparseReefWyrmScanned", false);
             UWE.CoroutineHost.StartCoroutine(
                 PuzzleHintRegistration.SpawnPrefab(grandReefPing, new Vector3(-1147, -445, -1110)));
         });
 
-        StoryGoalHandler.RegisterCustomEvent("OnScannedGrassyWyrms", () =>
+        Nautilus.Handlers.StoryGoalHandler.RegisterCustomEvent("OnScannedGrassyWyrms", () =>
         {
-            PDALog.Add("OnGrassyWyrmScanned");
+            PDALog.Add("OnGrassyWyrmScanned", false);
         });
         #endregion
         
         #region Archway override installed
-        StoryGoalHandler.RegisterCustomEvent("ArchwayOverrideHint", () =>
+        Nautilus.Handlers.StoryGoalHandler.RegisterCustomEvent("ArchwayOverrideHint", () =>
         {
             var hintText = Language.main.Get("ArchwayOverrideHint");
             Hint.main.message.SetText(hintText, TextAnchor.MiddleCenter);
@@ -462,141 +462,141 @@ internal static class StoryGoalsRegisterer
         #endregion
         
         #region Bad ending voicelines
-        StoryGoalHandler.RegisterCustomEvent("OnEnterStoryEndProximity", () =>
+        Nautilus.Handlers.StoryGoalHandler.RegisterCustomEvent("OnEnterStoryEndProximity", () =>
         {
-            PDALog.Add("BadEndingIntro");
+            PDALog.Add("BadEndingIntro", false);
         });
 
-        StoryGoalHandler.RegisterCustomEvent("Proto_DeadZoneMappingImminent", () =>
+        Nautilus.Handlers.StoryGoalHandler.RegisterCustomEvent("Proto_DeadZoneMappingImminent", () =>
         {
-            PDALog.Add("Proto_DeadZoneMappingImminent");
+            PDALog.Add("Proto_DeadZoneMappingImminent", false);
         });
 
-        StoryGoalHandler.RegisterCustomEvent("Proto_ReadyingDetectors", () =>
+        Nautilus.Handlers.StoryGoalHandler.RegisterCustomEvent("Proto_ReadyingDetectors", () =>
         {
-            PDALog.Add("Proto_ReadyingDetectors");
+            PDALog.Add("Proto_ReadyingDetectors", false);
         });
 
-        StoryGoalHandler.RegisterCustomEvent("Proto_PleaseDoNotProceed", () =>
+        Nautilus.Handlers.StoryGoalHandler.RegisterCustomEvent("Proto_PleaseDoNotProceed", () =>
         {
-            PDALog.Add("Proto_PleaseDoNotProceed");
+            PDALog.Add("Proto_PleaseDoNotProceed", false);
         });
 
-        StoryGoalHandler.RegisterCustomEvent("Proto_DeadZoneMappingInitialized", () =>
+        Nautilus.Handlers.StoryGoalHandler.RegisterCustomEvent("Proto_DeadZoneMappingInitialized", () =>
         {
-            PDALog.Add("Proto_DeadZoneMappingInitialized");
+            PDALog.Add("Proto_DeadZoneMappingInitialized", false);
         });
 
-        StoryGoalHandler.RegisterCompoundGoal("Proto_DeadZoneMappingImminent", Story.GoalType.Story, 10, "OnEnterStoryEndProximity");
+        Nautilus.Handlers.StoryGoalHandler.RegisterCompoundGoal("Proto_DeadZoneMappingImminent", Story.GoalType.Story, 10, "OnEnterStoryEndProximity");
 
-        StoryGoalHandler.RegisterCompoundGoal("Proto_ReadyingDetectors", Story.GoalType.Story, 10, "Proto_DeadZoneMappingImminent");
+        Nautilus.Handlers.StoryGoalHandler.RegisterCompoundGoal("Proto_ReadyingDetectors", Story.GoalType.Story, 10, "Proto_DeadZoneMappingImminent");
 
-        StoryGoalHandler.RegisterCompoundGoal("Proto_PleaseDoNotProceed", Story.GoalType.Story, 10, "Proto_ReadyingDetectors");
+        Nautilus.Handlers.StoryGoalHandler.RegisterCompoundGoal("Proto_PleaseDoNotProceed", Story.GoalType.Story, 10, "Proto_ReadyingDetectors");
 
         #endregion
 
-        StoryGoalHandler.RegisterCustomEvent("HullFacilityTeleporterUnlocked", () =>
+        Nautilus.Handlers.StoryGoalHandler.RegisterCustomEvent("HullFacilityTeleporterUnlocked", () =>
         {
             FMODUWE.PlayOneShot(AudioUtils.GetFmodAsset("EngineAllBreachesRepaired"), Player.main.transform.position);
         });
 
-        StoryGoalHandler.RegisterCustomEvent("OrionSurgicalRoomTome", () =>
+        Nautilus.Handlers.StoryGoalHandler.RegisterCustomEvent("OrionSurgicalRoomTome", () =>
         {
             FMODUWE.PlayOneShot(AudioUtils.GetFmodAsset("HullFacilityOrionTone"), Player.main.transform.position);
         });
 
-        StoryGoalHandler.RegisterCustomEvent("HullFacilityActivateWorm", () => WormSpawnEvent.TimeWormsEnabled = Time.time);
-        StoryGoalHandler.RegisterCustomEvent("PrototypeCrafted", () =>
+        Nautilus.Handlers.StoryGoalHandler.RegisterCustomEvent("HullFacilityActivateWorm", () => WormSpawnEvent.TimeWormsEnabled = Time.time);
+        Nautilus.Handlers.StoryGoalHandler.RegisterCustomEvent("PrototypeCrafted", () =>
         {
             var finType1 = (TechType)Enum.Parse(typeof(TechType), "ProtoFinUpgrade1");
-            KnownTech.Add(finType1);
+            KnownTech.Add(finType1, false);
             
             var relayType1 = (TechType)Enum.Parse(typeof(TechType), "ProtoRelayUpgrade1");
-            KnownTech.Add(relayType1);
+            KnownTech.Add(relayType1, false);
         });
 
-        StoryGoalHandler.RegisterCustomEvent("SubUpgradeHint", () =>
+        Nautilus.Handlers.StoryGoalHandler.RegisterCustomEvent("SubUpgradeHint", () =>
         {
             var hintText = Language.main.Get("SubUpgradeHint");
             Hint.main.message.SetText(hintText, TextAnchor.MiddleCenter);
             Hint.main.message.Show();
         });
-        StoryGoalHandler.RegisterCompoundGoal("SubUpgradeHint", Story.GoalType.Story, 35, "PrototypeCrafted");
+        Nautilus.Handlers.StoryGoalHandler.RegisterCompoundGoal("SubUpgradeHint", Story.GoalType.Story, 35, "PrototypeCrafted");
 
-        StoryGoalHandler.RegisterCustomEvent("LocatorFactorTerminal", () =>
+        Nautilus.Handlers.StoryGoalHandler.RegisterCustomEvent("LocatorFactorTerminal", () =>
         {
-            KnownTech.Add(LocatorFactor.prefabInfo.TechType);
-            PDAEncyclopedia.Add("LocatorFactorTerminalEncy", true);
+            KnownTech.Add(LocatorFactor.prefabInfo.TechType, false);
+            PDAEncyclopedia.Add("LocatorFactorTerminalEncy", true, false);
         });
         
-        StoryGoalHandler.RegisterCompoundGoal("Ency_ProtoFacilitiesEncy", Story.GoalType.Story, 156,
+        Nautilus.Handlers.StoryGoalHandler.RegisterCompoundGoal("Ency_ProtoFacilitiesEncy", Story.GoalType.Story, 156,
             "PrototypeCrafted");
-        StoryGoalHandler.RegisterCompoundGoal("ProtoFacilityLocationsHint", Story.GoalType.Story, 150,
+        Nautilus.Handlers.StoryGoalHandler.RegisterCompoundGoal("ProtoFacilityLocationsHint", Story.GoalType.Story, 150,
             "PrototypeCrafted");
 
-        StoryGoalHandler.RegisterItemGoal("OnPickupDefenseTablet", Story.GoalType.Story,
+        Nautilus.Handlers.StoryGoalHandler.RegisterItemGoal("OnPickupDefenseTablet", Story.GoalType.Story,
             DefenseFacilityKey.prefabInfo.TechType);
-        StoryGoalHandler.RegisterCustomEvent("OnPickupDefenseTablet", () =>
+        Nautilus.Handlers.StoryGoalHandler.RegisterCustomEvent("OnPickupDefenseTablet", () =>
         {
-            KnownTech.Add(DefenseFacilityKey.prefabInfo.TechType);
-            PDAEncyclopedia.Add("DefenseFacilityTabletEncy", true);
+            KnownTech.Add(DefenseFacilityKey.prefabInfo.TechType, false);
+            PDAEncyclopedia.Add("DefenseFacilityTabletEncy", true, false);
         });
         
-        StoryGoalHandler.RegisterItemGoal("OnPickupIonPrism", Story.GoalType.Story,
+        Nautilus.Handlers.StoryGoalHandler.RegisterItemGoal("OnPickupIonPrism", Story.GoalType.Story,
             IonPrism_Craftable.prefabInfo.TechType);
-        StoryGoalHandler.RegisterCustomEvent("OnPickupIonPrism", () =>
+        Nautilus.Handlers.StoryGoalHandler.RegisterCustomEvent("OnPickupIonPrism", () =>
         {
-            KnownTech.Add(IonPrism_Craftable.prefabInfo.TechType);
-            PDAEncyclopedia.Add("ProtoIonPrismEncy", true);
+            KnownTech.Add(IonPrism_Craftable.prefabInfo.TechType, false);
+            PDAEncyclopedia.Add("ProtoIonPrismEncy", true, false);
         });
 
-        StoryGoalHandler.RegisterLocationGoal("ProtoApproachEngineFacility", Story.GoalType.Story, new Vector3(-530, -465, 1530), 300,
+        Nautilus.Handlers.StoryGoalHandler.RegisterLocationGoal("ProtoApproachEngineFacility", Story.GoalType.Story, new Vector3(-530, -465, 1530), 300,
             3);
-        StoryGoalHandler.RegisterCustomEvent("ProtoApproachEngineFacility", () =>
+        Nautilus.Handlers.StoryGoalHandler.RegisterCustomEvent("ProtoApproachEngineFacility", () =>
         {
-            PDALog.Add("ProtoApproachEngineFacility");
+            PDALog.Add("ProtoApproachEngineFacility", false);
         });
 
         #region Interceptor tablet
 
-        StoryGoalHandler.RegisterCustomEvent("InterceptorFacilityTabletEncy", () =>
+        Nautilus.Handlers.StoryGoalHandler.RegisterCustomEvent("InterceptorFacilityTabletEncy", () =>
         {
-            PDALog.Add("InterceptorFacilityTabletUnlock");
+            PDALog.Add("InterceptorFacilityTabletUnlock", false);
         });
 
-        StoryGoalHandler.RegisterCustomEvent("InterceptorFacilityTabletEncyUnlock", () =>
+        Nautilus.Handlers.StoryGoalHandler.RegisterCustomEvent("InterceptorFacilityTabletEncyUnlock", () =>
         {
-            KnownTech.Add(InterceptorFacilityKey.prefabInfo.TechType);
-            PDAEncyclopedia.Add("InterceptorFacilityTabletEncy", true);
+            KnownTech.Add(InterceptorFacilityKey.prefabInfo.TechType, false);
+            PDAEncyclopedia.Add("InterceptorFacilityTabletEncy", true, false);
         });
 
-        StoryGoalHandler.RegisterCompoundGoal("InterceptorFacilityTabletEncyUnlock", Story.GoalType.Encyclopedia, 7, "InterceptorFacilityTabletEncy");
+        Nautilus.Handlers.StoryGoalHandler.RegisterCompoundGoal("InterceptorFacilityTabletEncyUnlock", Story.GoalType.Encyclopedia, 7, "InterceptorFacilityTabletEncy");
         #endregion
 
-        StoryGoalHandler.RegisterCompoundGoal("UnlockEngineFacilityKey", Story.GoalType.Story, 16,
+        Nautilus.Handlers.StoryGoalHandler.RegisterCompoundGoal("UnlockEngineFacilityKey", Story.GoalType.Story, 16,
             "ProtoApproachEngineFacility");
-        StoryGoalHandler.RegisterCustomEvent("UnlockEngineFacilityKey", () =>
+        Nautilus.Handlers.StoryGoalHandler.RegisterCustomEvent("UnlockEngineFacilityKey", () =>
         {
-            KnownTech.Add(EngineFacilityKey.prefabInfo.TechType);
-            PDAEncyclopedia.Add("EngineFacilityTabletEncy", true);
+            KnownTech.Add(EngineFacilityKey.prefabInfo.TechType, false);
+            PDAEncyclopedia.Add("EngineFacilityTabletEncy", true, false);
         });
         
 
-        StoryGoalHandler.RegisterBiomeGoal("OnEnterPrecursorGun", Story.GoalType.PDA, "Precursor_Gun_OuterRooms", 0, delay: 20);
-        StoryGoalHandler.RegisterCustomEvent("OnEnterPrecursorGun", () =>
+        Nautilus.Handlers.StoryGoalHandler.RegisterBiomeGoal("OnEnterPrecursorGun", Story.GoalType.PDA, "Precursor_Gun_OuterRooms", 0, delay: 20);
+        Nautilus.Handlers.StoryGoalHandler.RegisterCustomEvent("OnEnterPrecursorGun", () =>
         {
-            PDALog.Add("OnEnterPrecursorGun");
+            PDALog.Add("OnEnterPrecursorGun", false);
         });
         
-        StoryGoalHandler.RegisterCustomEvent("OnApproachPPT", () =>
+        Nautilus.Handlers.StoryGoalHandler.RegisterCustomEvent("OnApproachPPT", () =>
         {
-            PDALog.Add("Proto_ApproachTerminal");
+            PDALog.Add("Proto_ApproachTerminal", false);
         });
         
-        StoryGoalHandler.RegisterBiomeGoal("ProtoOnEnterGrandReef", Story.GoalType.PDA, "grandReef", 10);
-        StoryGoalHandler.RegisterCustomEvent("ProtoOnEnterGrandReef", () =>
+        Nautilus.Handlers.StoryGoalHandler.RegisterBiomeGoal("ProtoOnEnterGrandReef", Story.GoalType.PDA, "grandReef", 10);
+        Nautilus.Handlers.StoryGoalHandler.RegisterCustomEvent("ProtoOnEnterGrandReef", () =>
         {
-            PDALog.Add("ProtoOnEnterGrandReef");
+            PDALog.Add("ProtoOnEnterGrandReef", false);
         });
         
         sw.Stop();

@@ -37,8 +37,7 @@ internal class PDALog_Patches
                 key = item.key,
                 type = PDALog.EntryType.Default,
                 icon = sprite,
-                sound = fmodAsset,
-                doNotAutoPlay = false
+                sound = fmodAsset
             };
 
             if (!PDALog.mapping.ContainsKey(item.key))

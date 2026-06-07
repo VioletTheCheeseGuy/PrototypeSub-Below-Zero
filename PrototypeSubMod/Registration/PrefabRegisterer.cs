@@ -91,7 +91,7 @@ internal static class PrefabRegisterer
         ProtoPhaseGate.Register();
         ProtoPhaseGateItem.Register();
         ProtoTransmissionDevice.Register();
-        PrecursorFabricator.Register();
+        PrototypeSubMod.Prefabs.PrecursorFabricator.Register();
         HoverfishPlush.Register();
 
         StoryGoalTerminal.CreateTerminal("AlienBuildingBlockTerminal", "AlienBuildingBlockEncy");

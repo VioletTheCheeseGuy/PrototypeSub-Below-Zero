@@ -1,6 +1,7 @@
 ﻿using PrototypeSubMod.IonGenerator;
 using PrototypeSubMod.Upgrades;
 using System.Collections;
+using System;
 using System.Collections.Generic;
 using Nautilus.Utility;
 using PrototypeSubMod.PowerSystem;
@@ -52,7 +53,7 @@ internal class ProtoDeployableManager : ProtoUpgrade
     {
         canDeployLight = false;
 
-        var slot = availableLightSlots[^1];
+        var slot = availableLightSlots[availableLightSlots.Count - 1];
         storageTerminal.equipment.RemoveItem(slot, true, false);
 
         Invoke(nameof(SpawnLightDelayed), launchLightDelay);

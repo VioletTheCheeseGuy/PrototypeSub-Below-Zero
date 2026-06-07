@@ -50,7 +50,7 @@ public class ProtoVehicleAccessTerminal : MonoBehaviour
         string key = string.Empty;
 
         var handReticle = HandReticle.IconType.Hand;
-        if (dockingBay.dockedVehicle)
+        if (dockingBay.dockedObject.vehicle)
         {
             key = "ProtoAccessVehicle";
         }
@@ -73,7 +73,7 @@ public class ProtoVehicleAccessTerminal : MonoBehaviour
 
     public void OnUse(HandTargetEventData eventData)
     {
-        if (!dockingBay.dockedVehicle) return;
+        if (!dockingBay.dockedObject.vehicle) return;
 
         inventoryTab.usedStorageGrids.Clear();
         Inventory.main.SetUsedStorage(equipment);
@@ -85,8 +85,8 @@ public class ProtoVehicleAccessTerminal : MonoBehaviour
 
     public bool OpenStorage(PDA.OnClose onClosePda = null)
     {
-        var storageInputs = dockingBay.dockedVehicle.GetComponentsInChildren<SeamothStorageInput>();
-        var storageContainers = dockingBay.dockedVehicle.GetComponentsInChildren<StorageContainer>();
+        var storageInputs = dockingBay.dockedObject.GetComponentsInChildren<SeamothStorageInput>();
+        var storageContainers = dockingBay.dockedObject.GetComponentsInChildren<StorageContainer>();
 
         if ((storageContainers == null || storageContainers.Length == 0) &&
             (storageInputs == null || storageInputs.Length == 0)) return false;
@@ -121,7 +121,7 @@ public class ProtoVehicleAccessTerminal : MonoBehaviour
 
     public void OpenUpgrades(PDA.OnClose onClosePda = null)
     {
-        var upgradeConsoleInput = dockingBay.dockedVehicle.GetComponentInChildren<VehicleUpgradeConsoleInput>();
+        var upgradeConsoleInput = dockingBay.dockedObject.GetComponentInChildren<VehicleUpgradeConsoleInput>();
         if (!upgradeConsoleInput) return;
         
         var pda = Player.main.pda;
@@ -163,7 +163,7 @@ public class ProtoVehicleAccessTerminal : MonoBehaviour
 
     public void OnPlayerEnterRange()
     {
-        if (!dockingBay.dockedVehicle) return;
+        if (!dockingBay.dockedObject.vehicle) return;
         animator.SetBool(ProxyActivated, true);
         depotOpenSFX.Play();
     }
@@ -171,7 +171,7 @@ public class ProtoVehicleAccessTerminal : MonoBehaviour
     public void OnPlayerExitRange()
     {
         animator.SetBool(ProxyActivated, false);
-        if (!dockingBay.dockedVehicle) return;
+        if (!dockingBay.dockedObject.vehicle) return;
         depotCloseSFX.Play();
     }
 }

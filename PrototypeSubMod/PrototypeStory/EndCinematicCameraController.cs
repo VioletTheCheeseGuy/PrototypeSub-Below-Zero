@@ -65,7 +65,7 @@ internal class EndCinematicCameraController : MonoBehaviour
     {
         freezeWhenFar.enabled = false;
 
-        externalCams.SetActive(false);
+        externalCams.EnterCameraView();
         Player.main.TryEject();
         MainCameraControl.main.enabled = false;
         SNCameraRoot.main.transform.position = cameraPos.position;

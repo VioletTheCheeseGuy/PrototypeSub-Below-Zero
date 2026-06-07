@@ -48,7 +48,7 @@ internal class ProtoMaterialModifier : MaterialModifier
         if (matName.Contains("transparent") && applyPrecursorChanges)
         {
             var materials = renderer.materials;
-            materials[materialIndex] = MaterialUtils.PrecursorGlassMaterial;
+            materials[materialIndex] = MaterialUtils.ShinyGlassMaterial;
             renderer.materials = materials;
         }
 

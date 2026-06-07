@@ -45,6 +45,6 @@ public class SubSpawnManager : MonoBehaviour
         yield return Prototype_Craftable.SetupProtoGameObject(prefab);
         
         yield return new WaitForEndOfFrame();
-        prefab.GetComponent<VFXConstructing>().ghostMaterial = MaterialUtils.GhostMaterial;
+        prefab.GetComponent<VFXConstructing>().ghostMaterial = MaterialUtils.ShinyGlassMaterial;
     }
 }

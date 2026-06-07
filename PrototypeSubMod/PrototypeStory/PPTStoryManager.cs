@@ -11,7 +11,7 @@ internal class PPTStoryManager : MonoBehaviour
 
     public static void RegisterGoals()
     {
-        StoryGoalHandler.RegisterCustomEvent("PlayerFirstPPTInteraction", () =>
+        Nautilus.Handlers.StoryGoalHandler.RegisterCustomEvent("PlayerFirstPPTInteraction", () =>
         {
             OnFirstPlayerInteraction?.Invoke();
         });
@@ -29,7 +29,7 @@ internal class PPTStoryManager : MonoBehaviour
 
     private void OnPlayerFirstIneract()
     {
-        PDAEncyclopedia.Add("ProtoDatabankEncy", true);
-        KnownTech.Add(Prototype_Craftable.SubInfo.TechType);
+        PDAEncyclopedia.Add("ProtoDatabankEncy", true, false);
+        KnownTech.Add(Prototype_Craftable.SubInfo.TechType,false);
     }
 }

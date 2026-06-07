@@ -45,7 +45,7 @@ internal class ProtoRepairBot : PathfindingObject
         welderController.transform.localPosition = Vector3.zero;
 
         animator = GetComponentInChildren<Animator>();
-        animator.SetBool(AnimatorHashID.on_ground, true);
+        animator.SetBool(AnimatorHashID.on_surface, true);
 
         placeholderGraphic.SetActive(false);
         base.OnPathFinished += OnPathFinished;

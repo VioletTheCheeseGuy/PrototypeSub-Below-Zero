@@ -93,7 +93,7 @@ public class AlienFabricator : GhostCrafter
             if(crafting)
                 loopEmitter.Play();
             else
-                loopEmitter.Stop(FMOD.Studio.STOP_MODE.ALLOWFADEOUT);
+                loopEmitter.Stop();
         }
         
         if(fxSparksInstances == null)

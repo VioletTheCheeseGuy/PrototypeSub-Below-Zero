@@ -25,7 +25,7 @@ public class FireMusicManager : MonoBehaviour
     {
         if (!inCalibrationRun) return;
 
-        fireMusic.Stop(STOP_MODE.IMMEDIATE);
+        fireMusic.Stop();
     }
 
     private void OnDestroy()

@@ -73,14 +73,11 @@ public class TooltipFactory_Patches
         var colorFactor = item.item.GetComponent<ColorFactor>();
         string editKey = colorFactor.GetIsEditingColor() ? "Color" : "Intensity";
         
-        TooltipFactory.WriteAction(sb, GameInput.FormatButton(colorFactor.GetNextButton()),
-            Language.main.Get($"Suit{editKey}Next"));
-        TooltipFactory.WriteAction(sb, GameInput.FormatButton(colorFactor.GetPrevButton()),
-            Language.main.Get($"Suit{editKey}Prev"));
-        TooltipFactory.WriteAction(sb, GameInput.FormatButton(GameInput.Button.AltTool),
-            Language.main.Get("SuitToggleEditMode"));
-        TooltipFactory.WriteAction(sb, GameInput.FormatButton(GameInput.Button.Deconstruct),
-            Language.main.Get("SuitToggleEditSub"));
+        
+            Language.main.Get($"Suit{editKey}Next");
+            Language.main.Get($"Suit{editKey}Prev");
+            Language.main.Get("SuitToggleEditMode");
+            Language.main.Get("SuitToggleEditSub");
     }
     
     private static void HandleLocatorFactorTooltips(StringBuilder sb, InventoryItem item)
@@ -88,16 +85,15 @@ public class TooltipFactory_Patches
         if (item.techType != LocatorFactor.prefabInfo.TechType) return;
 
         var locatorFactor = item.item.GetComponent<Factors.Locator.Locator>();
-        TooltipFactory.WriteAction(sb, GameInput.FormatButton(locatorFactor.GetUseButton()),
-            Language.main.Get("LocatorToggle"));
+            Language.main.Get("LocatorToggle");
     }
 
     private static void HandlePrecursorSuitTooltips(StringBuilder sb, InventoryItem item)
     {
         if (item.techType != PrecursorSuit.prefabInfo.TechType) return;
 
-        TooltipFactory.WriteAction(sb, GameInput.FormatButton(GameInput.Button.AltTool), 
-            Language.main.Get("PrecursorSuitRemnantToggle"));
+        
+            Language.main.Get("PrecursorSuitRemnantToggle");
         var key = Plugin.GlobalSaveData.precursorSuitGivesRemnants ? "LocalizedTrue" : "LocalizedFalse";
         var localizedRemnantValue = Language.main.Get(key);
         

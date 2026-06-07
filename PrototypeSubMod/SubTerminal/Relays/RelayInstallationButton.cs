@@ -83,7 +83,7 @@ public class RelayInstallationButton : MonoBehaviour
     
     public void UnlockTechType()
     {
-        KnownTech.Add(relayUpgradeTechType.TechType);
+        KnownTech.Add(relayUpgradeTechType.TechType, false);
     }
     
     public void LockTechType()
