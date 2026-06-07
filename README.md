@@ -5,8 +5,15 @@ The Prototype is a vehicle story mod for Subnautica which takes the player throu
 
 # New story
 
-The Prototype features an all-new additional storyline to the Subnautica base game and is designed to be played on a fresh save file. The story takes the player through the highest quality precursor facilities in Subnautica modding, all to create the most advanced vehicle in the Subnautica franchise.
+The Original Prototype Expansion took place in The Crater how ever this version of The Prototype Expansion takes place in Sector-0 after the <details><summary>Spoiler Alert For One Of The Prototypes Original Endings Click to reveal this spoiler you have been warned!</summary>
+<br>
+Dead Zone Mapping Started
+</details>
+there for this new story it will continue the main story via Robin in below zero!
 
+# Helping the project
+
+Currently its only me Violet so any people wanting to help out feel free to open a pull request for fixing or something else or ping me in the prototype discord via the user name (Violet (im not a prototype)) and LMK you want to help im happy to have anyone to help out!
 # Content
 
   -  A new submarine, The Prototype
