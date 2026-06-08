@@ -14,6 +14,7 @@ there for this new story it will continue the main story via Robin in below zero
 # Helping the project
 
 Currently its only me Violet so any people wanting to help out feel free to open a pull request for fixing or something else or ping me in the prototype discord via the user name (Violet (im not a prototype)) and LMK you want to help im happy to have anyone to help out!
+
 # Content
 
   -  A new submarine, The Prototype
@@ -40,22 +41,26 @@ You may notice a "TerrainPatches" folder inside the main mod folder. Please do n
 
 # Dependencies
 
-    - Nautilus
-    - Sub Library
-    - Terrain Patcher
-    - Epic Structure Loader
-    - Suit Library (Not to be confused with Sub Library)
+    - Nautilus Zero (aka Nautilus Below Zero Release) - 1.0.49pre
+    - Sub Library - Below Zero Port
+    - Terrain Patcher - 1.2.4
+    - Epic Structure Loader (unsure if it works on Below Zero)
+    - Suit Library - Below Zero Port (Not to be confused with Sub Library)
 
 
-## Join our discord
+## Join the prototech discord
 https://discord.gg/dwwfdy3bJN﻿
 
-## Support the developers
+## Support the original developers
 Note: Does not grant special development access or increase mod content<br>
-https://ko-fi.com/prototechmodteam﻿
+https://ko-fi.com/prototechmodteam
 
-## Interested in the code?
+I (violet) dont get or want any donations or money at all since all the work was put into by the original devs of the mod
+if you want to donate to someone donate to the original devs since if they didnt make all this code for the PT avalible i wouldnt
+beable to make this port/sector 0 story!
+
+## Interested in the original code?
 https://github.com/Indigocoder1/PrototypeSub﻿
 
-## Questions about translations?
-Contact one of the Prototype developers via our Discord (linked above). 
+## Questions about original mod translations?
+Contact one of the original developers via there Discord (linked above). 
